@@ -1,6 +1,6 @@
 class CreateScheduledSitting < ActiveRecord::Migration
   def change
-    create_table :scheduled_sitting do |t|
+    create_table :scheduled_sittings do |t|
 
     	t.integer :sitter_id
     	t.integer :owner_id
@@ -11,11 +11,11 @@ class CreateScheduledSitting < ActiveRecord::Migration
       t.boolean :swap_payment?, default: nil
       t.boolean :cash_payment?, default: nil
       t.decimal :cash_price
-      t.intenger :swap_price
+      t.integer :swap_price
 
       t.timestamps
-      add_index :scheduled_sitting, :sitter_id
-      add_index :scheduled_sitting, :owner_id
     end
+    add_index :scheduled_sittings, :sitter_id
+    add_index :scheduled_sittings, :owner_id
   end
 end

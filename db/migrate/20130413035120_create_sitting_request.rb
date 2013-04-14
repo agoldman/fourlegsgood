@@ -1,6 +1,6 @@
 class CreateSittingRequest < ActiveRecord::Migration
   def change
-    create_table :sitting_request do |t|
+    create_table :sitting_requests do |t|
 
     	t.integer :owner_id
     	t.date :start_date
@@ -9,6 +9,6 @@ class CreateSittingRequest < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :sitting_request, :owner_id
+    add_index :sitting_requests, :owner_id
   end
 end

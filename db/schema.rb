@@ -11,17 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130413182159) do
-
-  create_table "message_ancestors", :force => true do |t|
-    t.integer  "parent_id"
-    t.integer  "child_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "message_ancestors", ["child_id"], :name => "index_message_ancestors_on_child_id"
-  add_index "message_ancestors", ["parent_id"], :name => "index_message_ancestors_on_parent_id"
+ActiveRecord::Schema.define(:version => 20130414033753) do
 
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
@@ -55,27 +45,23 @@ ActiveRecord::Schema.define(:version => 20130413182159) do
     t.datetime "updated_at",        :null => false
   end
 
-  create_table "requested_swaps", :force => true do |t|
-    t.integer  "user_id"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.boolean  "cash_option"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "requested_swaps", ["user_id"], :name => "index_requested_swaps_on_user_id"
-
-  create_table "scheduled_swaps", :force => true do |t|
+  create_table "scheduled_sittings", :force => true do |t|
     t.integer  "sitter_id"
     t.integer  "owner_id"
     t.integer  "rate"
     t.date     "start_date"
     t.date     "end_date"
     t.string   "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "swap_payment?"
+    t.boolean  "cash_payment?"
+    t.decimal  "cash_price"
+    t.integer  "swap_price"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
+
+  add_index "scheduled_sittings", ["owner_id"], :name => "index_scheduled_sittings_on_owner_id"
+  add_index "scheduled_sittings", ["sitter_id"], :name => "index_scheduled_sittings_on_sitter_id"
 
   create_table "sitter_reviews", :force => true do |t|
     t.integer  "reviewer_id"
@@ -89,18 +75,41 @@ ActiveRecord::Schema.define(:version => 20130413182159) do
   add_index "sitter_reviews", ["reviewee_id"], :name => "index_sitter_reviews_on_reviewee_id"
   add_index "sitter_reviews", ["reviewer_id"], :name => "index_sitter_reviews_on_reviewer_id"
 
+  create_table "sitting_requests", :force => true do |t|
+    t.integer  "owner_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.boolean  "cash_option"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "sitting_requests", ["owner_id"], :name => "index_sitting_requests_on_owner_id"
+
+  create_table "swap_exchanges", :force => true do |t|
+    t.integer  "requester_id"
+    t.integer  "posessor_id"
+    t.string   "status"
+    t.decimal  "price"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "swap_exchanges", ["posessor_id"], :name => "index_swap_exchanges_on_posessor_id"
+  add_index "swap_exchanges", ["requester_id"], :name => "index_swap_exchanges_on_requester_id"
+
   create_table "users", :force => true do |t|
     t.string   "name"
+    t.string   "email"
     t.string   "password"
     t.string   "remember_key"
     t.decimal  "latitude"
     t.decimal  "longitude"
-    t.string   "email"
-    t.boolean  "accepts_cash"
-    t.decimal  "rate"
+    t.decimal  "sitter_rate"
     t.integer  "dog_karma"
     t.integer  "sitter_karma"
-    t.integer  "swaps_earned", :default => 0
+    t.integer  "swaps_earned", :default => 1
+    t.integer  "swap_price"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
   end
