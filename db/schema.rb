@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130414033753) do
   create_table "pets", :force => true do |t|
     t.string   "name"
     t.integer  "age"
+    t.integer  "owner_id"
     t.text     "care_instructions"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false

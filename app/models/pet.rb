@@ -1,5 +1,7 @@
 class Pet < ActiveRecord::Base
-   attr_accessible :name, :age, :care_instructions
+   attr_accessible :name, :age, :owner_id, :care_instructions
 
-   validates :name, :age, presence: true
+   validates :name, :age, :owner_id, presence: true
+
+   belongs_to :user
 end
