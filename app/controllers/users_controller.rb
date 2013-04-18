@@ -13,13 +13,15 @@ class UsersController < ApplicationController
 	end
 
 	def create
+		p "no"
 		@user = User.new(params[:user])
 		if @user.save
 		#	login
 			flash[:succes] = "Thank you for signing up!"
 			redirect_to user_url(@user)
 		else
-			flash[:error] = "Please try again"
+			flash[:error] = "Try Again, Please"
+			p "no"
 			render :new
 		end
 	end

@@ -1,3 +1,43 @@
-<h2>@user.name</h2>
+<header class="global">
+	<div class="container">
+	</div>
+</header>
+
+
+<div class="profiletop">
+<section class="user_subheader">
+	<div class="container">
+		<div class="row">
+			<div class="span6">
+			<h1 class="headerprofile"><%=@user.user_name%></h1>
+			</div>
+			<div class="span5">
+				<table class="totals">
+					<tbody>
+						<tr>
+							<th class="totals-num"><%= @user.swaps_earned %></th>
+							<th class="totals-desc">Swap Credits</th>
+						</tr>
+						<tr>
+							<th class="totals-num"></th>
+							<th class="totals-desc">New Messages</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<nav id="tabs">
+		<ul class="nav navtabs">
+			<li class="active"></li>
+			<a href="#">Pets</a>
+		</ul>
+	</nav>
+
+
 
 <p>email: <%=@user.email%> </p>
+</section>
+
+</div>

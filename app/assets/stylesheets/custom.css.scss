@@ -7,8 +7,8 @@ html {
 }
 
 body {
-  padding-top: 60px;
-  background: Seashell;
+  background: WhiteSmoke;
+  font-family: Helvetica;
 }
 
 section {
@@ -19,40 +19,246 @@ textarea {
   resize: vertical;
 }
 
+.global {
+  color: #2e3131;
+  background-color: WhiteSmoke;
+  height: 80px;
+}
+
+.alert {
+
+  background: WhiteSmoke;
+  text-align: center;
+  color: Maroon;
+  border-radius: 0;
+
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+.navbar-inner {
+	margin-bottom: 0px;
+	background: WhiteSmoke;
+	border-radius: 0;
+}
+
+#masthead-title {
+  font-size: 60px;
+  letter-spacing: .75px;
+  font-family: 'Ovo', serif;
+}
+
+#masthead-subtitle{
+  color: WhiteSmoke; 
+  font-weight: 200;
+  letter-spacing: .75px;
+}
+
+.masthead {
+	background-image:url("http://placekitten.com/g/1600/2400");
+	background-size: cover;
+	min-height: 550px;
+}
+
 .center {
   text-align: center;
+}
+
+#About_us {
+  line-height: 1;
+  color: Maroon;
 }
 
 .center h1 {
   margin-bottom: 10px;
 }
 
-#welcome {
-
+.masthead-content {
 	text-align: center;
-	padding: 30px;
-	width: 350;
-	margin: 100px;
+	margin-top:  120px;
+	padding: 20px;
 	background: IndianRed;
 }
 
+.button {
+	font-size: 20px;
+	border: 2px solid WhiteSmoke;
+	background: IndianRed;
+	padding: 10px;
+	color: white;
+	display: inline-block;
+	margin-bottom: 15px;
+  font-family: 'Ovo', serif;
+}
 
+.button:hover {
+  background: WhiteSmoke;
+  color: IndianRed;
+  text-decoration: none;
+}
+
+form.signup_form {
+	text-align: center;
+	padding: 75px;
+	height: 600px;
+	background: IndianRed;
+}
+
+.second_welcome{
+  font-family: 'Ovo', serif;
+}
+
+.navbar .navbar-inner .nav a {
+  font-size: 1.7em;
+  font-weight: bolder;
+  letter-spacing: -1px;
+  text-align: center;
+  font-family: 'Ovo', serif;
+  color: IndianRed;
+
+}
 /* typography */
 
-#title{
-
+.masthead-content {
 	color: WhiteSmoke;
-	font-family: 'Ovo', serif;
 }
 
-#subtitle {
+#hellolinks a {
 	color: WhiteSmoke;
-	font-family: 'Ovo', serif;
+  font-weight: 200;
+  font-size: 15px;
 }
+
+.secondary-headers {
+  margin-top: 15px;
+  text-align: center;
+  color: Maroon;
+  font-size: 30px;
+}
+
+.second-subheader {
+  font-family: 'Ovo', serif;
+}
+
+.subheader {
+  color: DarkSlateGray;
+  text-align: center;
+  font-weight: 300;
+}
+
+.welcomedeets {
+  text-align: center;
+}
+
+.span4.first {
+  margin-left: 0;
+  text-align: center;
+}
+
+.span4{
+  text-align: center;
+}
+
+/* user sign up page */
+
+.signup_background {
+  background-image:url("http://placekitten.com/g/1600/2400");
+  background-size: cover;
+  min-height: 550px;
+
+}
+
+.span4 {
+  text-align: left;
+}
+
+label {
+  color: WhiteSmoke;
+  font-size: 20px;
+}
+
+.textbox1 {
+  background: blue;
+}
+
+#signup {
+  padding-top: 100px;
+  font-family: 'Ovo', serif;
+}
+
+.submit_button {
+
+    font-family: 'Ovo', serif;
+    background: IndianRed; 
+    color: WhiteSmoke;
+    font-size: 20px;
+    padding:10px;
+    border-width: 0;
+}
+
+.submit_button:hover {
+  background: Maroon;
+  color: white;
+  text-decoration: none;
+  border-width: 0;
+}
+
+label {
+    display:block; 
+    padding-bottom:5px; 
+    margin-top:20px;
+}
+
+#signup_lower {
+  background: IndianRed;
+}
+
+/* Profile Page */
+.headerprofile {
+  font-size: 80px;
+  margin: 50px;
+  color: WhiteSmoke;
+  font-family: 'Ovo', serif;
+
+}
+
+.profiletop {
+  background: IndianRed;
+  min-height: 350px;
+}
+
+.totals {
+  margin: 70px;
+}
+
+.totals-num {
+  font-size: 150%;
+  font-weight: bold;
+  color: WhiteSmoke;
+}
+
+.totals-desc {
+  font-size: 150%;
+  font-weight: bold;
+  color: WhiteSmoke;
+  padding-left: 5px;
+}
+
+tr {
+  padding: 20px;
+  margin: 20px;
+}
+
+nav {
+  display: block;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  	font-family: 'Ovo', serif;
+
+  	
 }
 
 h1 {
@@ -60,7 +266,6 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
-  color: DarkSlateGray;
 }
 
 h2 {
@@ -69,29 +274,21 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
 }
 
 h3 {
-	
-   color: DarkSlateGray;
+   margin-bottom: 30px;
 }
 
 h4 {
-	
-   color: DarkSlateGray;
+   
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
-  color: DarkSlateGray;
+ 
 }
-
-#hellolinks a {
-	color: Moccasin;
-}
-
 /* header */
 
 #logo {
