@@ -47,24 +47,6 @@ ActiveRecord::Schema.define(:version => 20130414033753) do
     t.datetime "updated_at",        :null => false
   end
 
-  create_table "scheduled_sittings", :force => true do |t|
-    t.integer  "sitter_id"
-    t.integer  "owner_id"
-    t.integer  "rate"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.string   "status"
-    t.boolean  "swap_payment?"
-    t.boolean  "cash_payment?"
-    t.decimal  "cash_price"
-    t.integer  "swap_price"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  add_index "scheduled_sittings", ["owner_id"], :name => "index_scheduled_sittings_on_owner_id"
-  add_index "scheduled_sittings", ["sitter_id"], :name => "index_scheduled_sittings_on_sitter_id"
-
   create_table "sitter_reviews", :force => true do |t|
     t.integer  "reviewer_id"
     t.integer  "reviewee_id"
@@ -77,16 +59,20 @@ ActiveRecord::Schema.define(:version => 20130414033753) do
   add_index "sitter_reviews", ["reviewee_id"], :name => "index_sitter_reviews_on_reviewee_id"
   add_index "sitter_reviews", ["reviewer_id"], :name => "index_sitter_reviews_on_reviewer_id"
 
-  create_table "sitting_requests", :force => true do |t|
-    t.integer  "owner_id"
+  create_table "sittings", :force => true do |t|
+    t.integer  "sitter_id"
+    t.integer  "sat_for_owner_id"
     t.date     "start_date"
     t.date     "end_date"
-    t.boolean  "cash_option"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "status"
+    t.decimal  "cash_price"
+    t.integer  "swap_price"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
-  add_index "sitting_requests", ["owner_id"], :name => "index_sitting_requests_on_owner_id"
+  add_index "sittings", ["sat_for_owner_id"], :name => "index_sittings_on_sat_for_owner_id"
+  add_index "sittings", ["sitter_id"], :name => "index_sittings_on_sitter_id"
 
   create_table "swap_exchanges", :force => true do |t|
     t.integer  "requester_id"
