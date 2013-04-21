@@ -3,5 +3,5 @@ class Pet < ActiveRecord::Base
 
    validates :name, :age, :owner_id, presence: true
 
-   belongs_to :user
+   belongs_to :owner, class_name: "User"
 end

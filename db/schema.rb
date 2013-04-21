@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20130414033753) do
     t.integer  "receiver_id"
     t.string   "title"
     t.text     "content"
+    t.boolean  "read"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

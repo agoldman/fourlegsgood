@@ -13,10 +13,10 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		p "no"
 		@user = User.new(params[:user])
 		if @user.save
 		#	login
+			UserMailer.welcome_email(@user).deliver
 			flash[:succes] = "Thank you for signing up!"
 			redirect_to user_url(@user)
 		else

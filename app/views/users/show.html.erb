@@ -1,43 +1,65 @@
-<header class="global">
+<header class="profileheader">
 	<div class="container">
+		<div class="row profheader">
+			<a class="span4 profile_title" href="#">Four Legs Good</a>
+			<div class="profile-bar-subs">
+				<h3><a class="span4 profile-title-search" href="#">Search Dogs to Sit</a></h3>
+				<h4><a class="profile-logout" href="#">Logout</a></h4>
+			</div>
+		</div>
 	</div>
 </header>
 
 
 <div class="profiletop">
 <section class="user_subheader">
+	<header class="profile-header">
 	<div class="container">
-		<div class="row">
-			<div class="span6">
-			<h1 class="headerprofile"><%=@user.user_name%></h1>
-			</div>
-			<div class="span5">
-				<table class="totals">
-					<tbody>
-						<tr>
-							<th class="totals-num"><%= @user.swaps_earned %></th>
-							<th class="totals-desc">Swap Credits</th>
-						</tr>
-						<tr>
-							<th class="totals-num"></th>
-							<th class="totals-desc">New Messages</th>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+		<div class="row headerprofrow">
+			<h1 class="headerprofile span6"><%=@user.user_name%></h1>
+			
+							<h2 class="row totals span5" href="#">Swaps to Spend: <%= @user.swaps_earned %> 
+								<button class="profilebutton button">Find A Sitter</button>
+							</h2>
+
+			
 		</div>
+
+		<ul class="nav nav-tabs">
+			<li class="active">
+			<a href="#">Profile</a>
+			</li>
+			<li><a class="tab-titles" href="#">Messages (num)</a></li>
+			<li><a class="tab-titles" href="#">Swap $$ Offers (num)</a></li>
+		</ul>
+
+		<p>email: <%=@user.email%> </p> <br/>
+		<p>address: </p><br/>
+		<p>dog karma: </p><br/>
+		<p>sitter karma: </p><br/>
 	</div>
+</header>
+
+
 
 	<nav id="tabs">
 		<ul class="nav navtabs">
 			<li class="active"></li>
-			<a href="#">Pets</a>
+			<a href="#">My Pets</a>	
+			<a href="#">Swap Trade Requests (count)</a>
+			<a href="#">My Reviews (count)</a>
+			<a href="#">Reviews of My Pets</a>
+			<a href="#">My Swap History</a>
 		</ul>
 	</nav>
 
 
 
-<p>email: <%=@user.email%> </p>
-</section>
+
+
+
+
+<div class="profilebottom">
+	<div class=row
 
 </div>

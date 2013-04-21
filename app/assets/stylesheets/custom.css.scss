@@ -22,7 +22,7 @@ textarea {
 .global {
   color: #2e3131;
   background-color: WhiteSmoke;
-  height: 80px;
+  height: 70px;
 }
 
 .alert {
@@ -162,6 +162,14 @@ form.signup_form {
 
 /* user sign up page */
 
+.signin_title {
+
+  color: Maroon;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
 .signup_background {
   background-image:url("http://placekitten.com/g/1600/2400");
   background-size: cover;
@@ -215,39 +223,103 @@ label {
 }
 
 /* Profile Page */
+
+.profile_title {
+  color: WhiteSmoke;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.profile_title:hover {
+  color: IndianRed;
+  text-decoration: none;
+}
+
+
+.profile-bar-subs {
+  float: right;
+}
+
+.profile-title-search {
+  color: IndianRed;
+}
+
+.profile-title-search:hover {
+  color: WhiteSmoke;
+  text-decoration: none;
+}
+
+.profile-logout {
+  color: WhiteSmoke;
+  display: inline;
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.profile-logout:hover {
+  text-decoration: none;
+  color: IndianRed;
+}
+
+.profheader {
+  display: inline;
+}
+
+.profileheader {
+  background-color: black;
+  height: 70px;
+}
+
 .headerprofile {
   font-size: 80px;
   margin: 50px;
-  color: WhiteSmoke;
   font-family: 'Ovo', serif;
 
 }
 
+.profile-header {
+  display: inline;
+}
+
+.tab-titles {
+  color:gray;
+}
+
 .profiletop {
-  background: IndianRed;
-  min-height: 350px;
+
+  min-height: 200px;
+}
+
+
+.totals {
+  font-size: 150%;
+  font-weight: bold;
+  color: IndianRed;
+  
+}
+
+.profilebottom {
+  min-height: 500px;
+  background: white;
+  border-top: solid;
+  border-width: 1px;
+  border-color: LightGray;
 }
 
 .totals {
-  margin: 70px;
+  height: 10px;
+  margin: 30px;
+  font-size: 20px;
 }
 
-.totals-num {
-  font-size: 150%;
-  font-weight: bold;
-  color: WhiteSmoke;
+.profilebutton {
+  
 }
 
-.totals-desc {
-  font-size: 150%;
-  font-weight: bold;
-  color: WhiteSmoke;
-  padding-left: 5px;
-}
 
-tr {
-  padding: 20px;
-  margin: 20px;
+.numstotals {
+  margin-top: 40px;
 }
 
 nav {
