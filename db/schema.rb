@@ -27,16 +27,16 @@ ActiveRecord::Schema.define(:version => 20130414033753) do
   add_index "messages", ["sender_id"], :name => "index_messages_on_sender_id"
 
   create_table "pet_reviews", :force => true do |t|
-    t.integer  "reviewer_id"
-    t.integer  "reviewee_id"
+    t.integer  "pet_reviewer_id"
+    t.integer  "pet_reviewee_id"
     t.integer  "score"
     t.text     "comment"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
-  add_index "pet_reviews", ["reviewee_id"], :name => "index_pet_reviews_on_reviewee_id"
-  add_index "pet_reviews", ["reviewer_id"], :name => "index_pet_reviews_on_reviewer_id"
+  add_index "pet_reviews", ["pet_reviewee_id"], :name => "index_pet_reviews_on_pet_reviewee_id"
+  add_index "pet_reviews", ["pet_reviewer_id"], :name => "index_pet_reviews_on_pet_reviewer_id"
 
   create_table "pets", :force => true do |t|
     t.string   "name"
