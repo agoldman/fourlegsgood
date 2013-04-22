@@ -75,16 +75,16 @@ ActiveRecord::Schema.define(:version => 20130414033753) do
   add_index "sittings", ["sitter_id"], :name => "index_sittings_on_sitter_id"
 
   create_table "swap_exchanges", :force => true do |t|
-    t.integer  "requester_id"
-    t.integer  "posessor_id"
+    t.integer  "swap_requester_id"
+    t.integer  "swap_posessor_id"
     t.string   "status"
     t.decimal  "price"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
-  add_index "swap_exchanges", ["posessor_id"], :name => "index_swap_exchanges_on_posessor_id"
-  add_index "swap_exchanges", ["requester_id"], :name => "index_swap_exchanges_on_requester_id"
+  add_index "swap_exchanges", ["swap_posessor_id"], :name => "index_swap_exchanges_on_swap_posessor_id"
+  add_index "swap_exchanges", ["swap_requester_id"], :name => "index_swap_exchanges_on_swap_requester_id"
 
   create_table "users", :force => true do |t|
     t.string   "user_name"

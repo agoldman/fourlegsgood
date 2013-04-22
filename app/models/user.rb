@@ -25,5 +25,9 @@ class User < ActiveRecord::Base
   has_many :sitter_reviewees, through: :written_sitter_reviews
   has_many :sitter_reviewers, through: :received_sitter_reviews
 
+  has_many :sent_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_requester_id
+  has_many :received_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_posessor_id
+  has_many :swap_posessors, through: :sent_swap_exchange_requests #users who had swaps this user requested to buy
+  has_many :swap_requesters, through: :received_swap_exchange_requests #users who requested to buy swaps from this user
 
 end
