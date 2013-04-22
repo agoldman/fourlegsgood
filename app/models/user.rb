@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
   has_many :sitters, through: :sits_as_owner  #all users who have pet sat for this user
   has_many :sat_for_owners, through: :sits_as_sitter  #all users this users has pet sat for
 
+  has_many :written_sitter_reviews, class_name: "SitterReview", foreign_key: :sitter_reviewer_id
+  has_many :received_sitter_reviews, class_name: "SitterReview", foreign_key: :sitter_reviewee_id
+  has_many :sitter_reviewees, through: :written_sitter_reviews
+  has_many :sitter_reviewers, through: :received_sitter_reviews
 
 
 end

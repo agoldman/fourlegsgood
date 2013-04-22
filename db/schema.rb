@@ -48,16 +48,16 @@ ActiveRecord::Schema.define(:version => 20130414033753) do
   end
 
   create_table "sitter_reviews", :force => true do |t|
-    t.integer  "reviewer_id"
-    t.integer  "reviewee_id"
+    t.integer  "sitter_reviewer_id"
+    t.integer  "sitter_reviewee_id"
     t.integer  "score"
     t.text     "comment"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
-  add_index "sitter_reviews", ["reviewee_id"], :name => "index_sitter_reviews_on_reviewee_id"
-  add_index "sitter_reviews", ["reviewer_id"], :name => "index_sitter_reviews_on_reviewer_id"
+  add_index "sitter_reviews", ["sitter_reviewee_id"], :name => "index_sitter_reviews_on_sitter_reviewee_id"
+  add_index "sitter_reviews", ["sitter_reviewer_id"], :name => "index_sitter_reviews_on_sitter_reviewer_id"
 
   create_table "sittings", :force => true do |t|
     t.integer  "sitter_id"
