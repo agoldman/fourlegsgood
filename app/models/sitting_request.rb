@@ -9,4 +9,11 @@ class SittingRequest < ActiveRecord::Base
   def self.Requested
   	SittingRequest.where(status: "requested")
   end
+
+  def self.addressesofRequested
+	  User.find_by_sql("SELECT address FROM users
+		  INNER JOIN sitting_requests ON users.id = sitting_requests.owner_id
+		  WHERE sitting_requests.status = 'requested'"
+	    )
+  end
 end
