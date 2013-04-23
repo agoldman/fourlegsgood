@@ -11,16 +11,40 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnvbLDQSjjhrvu3HO5XZJ1dtl4MMJuoME&sensor=false">
     </script>
     <script type="text/javascript">
+
+    var map;
+    var geocoder;
       function initialize() {
+      	geocoder = new google.maps.Geocoder()
         var mapOptions = {
           center: new google.maps.LatLng(-34.397, 150.644),
           zoom: 11,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
+        map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
       }
+
+
+		function codeAddress() {
+		  var address = "v7a 2a5";
+		  console.log("here");
+		  geocoder.geocode( { 'address': address}, function(results, status) {
+		    if (status == google.maps.GeocoderStatus.OK) {
+		    	console.log("here");
+		      map.setCenter(results[0].geometry.location);
+		      var marker = new google.maps.Marker({
+		          map: map,
+		          position: results[0].geometry.location
+		      });
+		    } else {
+		      alert('Geocode was not successful for the following reason: ' + status);
+		    }
+		  });
+		}
+
       google.maps.event.addDomListener(window, 'load', initialize);
+      google.maps.event.addDomListener(window, 'load', codeAddress);
     </script>
   </head>
   <body>
