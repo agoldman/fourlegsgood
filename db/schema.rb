@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414033753) do
+ActiveRecord::Schema.define(:version => 20130423041728) do
 
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
@@ -76,14 +76,14 @@ ActiveRecord::Schema.define(:version => 20130414033753) do
 
   create_table "swap_exchanges", :force => true do |t|
     t.integer  "swap_requester_id"
-    t.integer  "swap_posessor_id"
+    t.integer  "swap_possessor_id"
     t.string   "status"
     t.decimal  "price"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
 
-  add_index "swap_exchanges", ["swap_posessor_id"], :name => "index_swap_exchanges_on_swap_posessor_id"
+  add_index "swap_exchanges", ["swap_possessor_id"], :name => "index_swap_exchanges_on_swap_possessor_id"
   add_index "swap_exchanges", ["swap_requester_id"], :name => "index_swap_exchanges_on_swap_requester_id"
 
   create_table "users", :force => true do |t|
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20130414033753) do
     t.integer  "sitter_karma"
     t.integer  "swaps_earned", :default => 1
     t.integer  "swap_price"
+    t.text     "description"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
   end

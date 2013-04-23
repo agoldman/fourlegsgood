@@ -1,65 +1,50 @@
-<header class="profileheader">
-	<div class="container">
-		<div class="row profheader">
-			<a class="span4 profile_title" href="#">Four Legs Good</a>
-			<div class="profile-bar-subs">
-				<h3><a class="span4 profile-title-search" href="#">Search Dogs to Sit</a></h3>
-				<h4><a class="profile-logout" href="#">Logout</a></h4>
-			</div>
-		</div>
-	</div>
-</header>
 
 
-<div class="profiletop">
-<section class="user_subheader">
-	<header class="profile-header">
-	<div class="container">
-		<div class="row headerprofrow">
-			<h1 class="headerprofile span6"><%=@user.user_name%></h1>
-			
-							<h2 class="row totals span5" href="#">Swaps to Spend: <%= @user.swaps_earned %> 
-								<button class="profilebutton button">Find A Sitter</button>
-							</h2>
+<p> float left logo, search for sitters box -- float right user+name linking to profile, Watch a Dog/Earn Credits button <p>
 
-			
-		</div>
+<h1><%=@user.user_name%></h1>
 
-		<ul class="nav nav-tabs">
-			<li class="active">
-			<a href="#">Profile</a>
-			</li>
-			<li><a class="tab-titles" href="#">Messages (num)</a></li>
-			<li><a class="tab-titles" href="#">Swap $$ Offers (num)</a></li>
-		</ul>
+<h2> Dashboard Tab </h2>
+<ul>
+	<li>picture with edit profile link</li>
+	<li>Messages List (includes msgs and sitting requests/responses organized chronologically) - 5 most recent</li>
+	<li>Two Buttons: Swaps Earned, Search For Sitters | Earn More Credits, Find Dogs to Sit </li>
+</ul>
 
-		<p>email: <%=@user.email%> </p> <br/>
-		<p>address: </p><br/>
-		<p>dog karma: </p><br/>
-		<p>sitter karma: </p><br/>
-	</div>
-</header>
+<h2>Inbox Tab</h2>
+	<ul>
+		<li>List chronologically of all messages and sitting requests/responses grouped by user corresponded with</li>
+	</ul>
 
+<h2>Profile Tab</h2>
+<ul>
+	<li>Photo</li>
+	<li>Swaps Ready to Use</li>
+	<li><%=@user.email%></li>
+	<li>address</li>
+	<li>DogKarma</li>
+	<li>SitterKarma</li>
+	<li>My Sitter Rate</li>
+</ul>
 
+<h2> My Pets Tab </h2>
+<ul>
+	<li>picture, name, age, instructions</li>
+	<li>picture, name, age, instructions</li>
+</ul>
 
-	<nav id="tabs">
-		<ul class="nav navtabs">
-			<li class="active"></li>
-			<a href="#">My Pets</a>	
-			<a href="#">Swap Trade Requests (count)</a>
-			<a href="#">My Reviews (count)</a>
-			<a href="#">Reviews of My Pets</a>
-			<a href="#">My Swap History</a>
-		</ul>
-	</nav>
+<h2>Reviews Tab</h2>
+<ul>
+	<li>Reviews of me as a Sitter</li>
+	<li>My Reviews of Sitters</li>
+	<li>Reviews of my Dogs</li>
+	<li>My Reviews of Dogs</li>
+</ul>
 
+<h2>My History Tab</h2>
+<ul>
+	<li>My Sitting History</li>
+	<li>My Sitters History</li>
+</ul>
 
-
-
-
-
-
-<div class="profilebottom">
-	<div class=row
-
-</div>
+	

@@ -6,7 +6,7 @@ class CreateSittingRequest < ActiveRecord::Migration
     	t.integer :sat_for_owner_id
     	t.date :start_date
     	t.date :end_date
-    	t.string :status, default: "requested"
+    	t.string :status
       t.decimal :cash_price
       t.integer :swap_price
 

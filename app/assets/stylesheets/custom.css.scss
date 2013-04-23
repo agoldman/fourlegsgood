@@ -34,6 +34,23 @@ textarea {
 
 }
 
+.search-query {
+  margin-left: 20px;
+}
+
+#navbutton{
+  background: Gold;
+  color: black;
+}
+
+
+#login, #signup {
+  color: black;
+  font-family: helvetica;
+  font-size: 15px;
+  font-weight: lighter;
+}
+
 .navbar {
   margin-bottom: 0;
 }
@@ -311,10 +328,6 @@ label {
   height: 10px;
   margin: 30px;
   font-size: 20px;
-}
-
-.profilebutton {
-  
 }
 
 
