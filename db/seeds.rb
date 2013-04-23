@@ -13,7 +13,7 @@ user_1.sent_messages.create!(receiver_id: 2, title: "hi again", content: "seriou
 
 user_1.written_pet_reviews.create!(pet_reviewee_id: 2, score: 2)
 
-user_1.sits_as_owner.create!(sitter_id: 2, status: "pending", start_date: "01/01/01", end_date: "01/02/01", cash_price: 0, swap_price: 1)
+user_1.sitting_requests.create!(start_date: "01/01/01", end_date: "01/02/01")
 
 user_1.sent_swap_exchange_requests.create!(swap_possessor_id: 2, status: "pending", price: 10.50)
 

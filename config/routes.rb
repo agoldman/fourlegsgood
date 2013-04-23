@@ -4,4 +4,5 @@ Fourlegsgood::Application.routes.draw do
   resources :statics
   resources :users
   resources :sessions
+  resources :sitting_requests
 end

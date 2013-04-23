@@ -1,8 +1,12 @@
 class SittingRequest < ActiveRecord::Base
-  attr_accessible :sitter_id, :sat_for_owner_id, :start_date, :end_date, :status, :cash_price, :swap_price
+  attr_accessible :owner_id, :start_date, :end_date, :status
 
-  validates :sat_for_owner_id, :start_date, :end_date, :status, :cash_price, :swap_price, presence: true
+  validates :owner_id, :start_date, :end_date, :status, presence: true
 
-  belongs_to :sitter, class_name: "User"
-  belongs_to :sat_for_owner, class_name: "User"
+  belongs_to :owner, class_name: "User"
+
+
+  def self.Requested
+  	SittingRequest.where(status: "requested")
+  end
 end

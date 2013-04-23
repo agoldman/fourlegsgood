@@ -59,20 +59,16 @@ ActiveRecord::Schema.define(:version => 20130423041728) do
   add_index "sitter_reviews", ["sitter_reviewee_id"], :name => "index_sitter_reviews_on_sitter_reviewee_id"
   add_index "sitter_reviews", ["sitter_reviewer_id"], :name => "index_sitter_reviews_on_sitter_reviewer_id"
 
-  create_table "sittings", :force => true do |t|
-    t.integer  "sitter_id"
-    t.integer  "sat_for_owner_id"
+  create_table "sitting_requests", :force => true do |t|
+    t.integer  "owner_id"
     t.date     "start_date"
     t.date     "end_date"
-    t.string   "status"
-    t.decimal  "cash_price"
-    t.integer  "swap_price"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string   "status",     :default => "requested"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
   end
 
-  add_index "sittings", ["sat_for_owner_id"], :name => "index_sittings_on_sat_for_owner_id"
-  add_index "sittings", ["sitter_id"], :name => "index_sittings_on_sitter_id"
+  add_index "sitting_requests", ["owner_id"], :name => "index_sitting_requests_on_owner_id"
 
   create_table "swap_exchanges", :force => true do |t|
     t.integer  "swap_requester_id"
