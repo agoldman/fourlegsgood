@@ -14,6 +14,7 @@
 
     var map;
     var geocoder;
+    var bounds;
       function initialize() {
       	geocoder = new google.maps.Geocoder()
         var mapOptions = {
@@ -31,6 +32,7 @@
 		  geocoder.geocode( { 'address': address}, function(results, status) {
 		    if (status == google.maps.GeocoderStatus.OK) {
 		      map.setCenter(results[0].geometry.location);
+		      bounds = map.getBounds());
 		      var marker = new google.maps.Marker({
 		          map: map,
 		          position: results[0].geometry.location
