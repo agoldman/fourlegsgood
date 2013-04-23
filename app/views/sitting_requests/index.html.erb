@@ -27,8 +27,7 @@
 
 
 		function codeAddress() {
-		  var address = "v7a 2a5";
-		  console.log("here");
+		  var address = "<%=@zip%>";
 		  geocoder.geocode( { 'address': address}, function(results, status) {
 		    if (status == google.maps.GeocoderStatus.OK) {
 		    	console.log("here");
