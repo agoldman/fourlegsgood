@@ -1,6 +1,6 @@
 ActiveRecord::Base.transaction do
 
-user_1 = User.create!(user_name: "April", email: "aprileliza@gmail.com", password: "p")
+user_1 = User.create!(user_name: "April", email: "aprileliza@gmail.com", password: "p", address: "160 Randall Street, San Francisco, CA, 94131")
 user_2 = User.create!(user_name: "Laura", email: "laurapalmer.gmail.com", password: "l")
 
 pet_1 = Pet.create!(name: "blixa", age: 8, owner_id: 1)
