@@ -20,7 +20,7 @@ class SittingRequest < ActiveRecord::Base
 	    )
   end
 
-  def self.geocodedAddressesOfRequested  
+  def self.geocodedAddresses
   queries = (self.addressesOfRequested).map do |address|
 				geocode = Addressable::URI.new(
 				  :scheme => "http",
