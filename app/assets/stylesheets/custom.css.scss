@@ -20,6 +20,31 @@
   margin-top: 20px;
 }
 
+.profilenavtab {
+  font-size: 24px;
+  padding-right: 10px;
+  text-align: left;
+  width: auto;
+}
+
+.profilenavlink:hover {
+    text-decoration: none;
+    color: rgb(67, 77, 81);
+}
+
+#profilenav li.active a {
+color: #434d51;
+}
+
+.profilenavlink {
+  color: #bfc2c4;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  width: auto;
+  font-family: Helvetica;
+}
+
 .profile-nav {
   background: rgb(255, 255, 255);
   padding: 9px;
@@ -28,10 +53,15 @@
   border-top-left-radius: 10px;
   -webkit-background-clip: border-box;
   height: 23px;
+  font-family: Helvetica;
 }
 
 ul {
     list-style: none;
+}
+
+li {
+  text-align: -webkit-match-parent;
 }
 
 #profilenav li{
