@@ -1,5 +1,111 @@
 @import "bootstrap";
 
+/* profile page */
+
+#dashboard {
+ background:WhiteSmoke;
+}
+
+#left-user-box {
+  float:left;
+  height: 615px;
+  width: 250px;
+  -webkit-background-clip: border-box;
+}
+
+.user-photo {
+  color: rgb(57, 60, 61);
+  display: block;
+  float: left;
+  font-family: 'Helvetica Neue';
+  font-size: 13px;
+  height: 217px;
+  left: -4px;
+  line-height: 18px;
+  margin-bottom: 5px;
+  position: relative;
+  text-align: center;
+  top: -4px;
+  width: 217px;
+}
+
+#prof-username {
+  font-size: 30px;
+  font-family: Helvetica;
+}
+
+#profstuff {
+-webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+-webkit-box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgb(255, 255, 255);
+background-image: none;
+background-origin: padding-box;
+background-size: auto;
+border-bottom-left-radius: 7px;
+border-bottom-right-radius: 7px;
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
+clear: both;
+color: rgb(57, 60, 61);
+display: block;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 13px;
+height: 279px;
+line-height: 18px;
+margin-bottom: 10px;
+margin-left: 20px;
+margin-right: 10px;
+margin-top: 30px;
+min-height: 40px;
+padding-bottom: 15px;
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 15px;
+text-align: center;
+width: 209px;
+}
+
+#user-box{
+-webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+-webkit-box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgb(255, 255, 255);
+background-image: none;
+background-origin: padding-box;
+background-size: auto;
+border-bottom-left-radius: 7px;
+border-bottom-right-radius: 7px;
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
+clear: both;
+color: rgb(57, 60, 61);
+display: block;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 13px;
+height: 279px;
+line-height: 18px;
+margin-bottom: 10px;
+margin-left: 20px;
+margin-right: 10px;
+margin-top: 10px;
+min-height: 40px;
+padding-bottom: 15px;
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 15px;
+text-align: center;
+width: 209px;
+}
+
 .profile {
   background: rgb(255, 255, 255);
 }
@@ -39,7 +145,6 @@ color: #434d51;
 .profilenavlink {
   color: #bfc2c4;
   font-size: 24px;
-  font-weight: bold;
   text-align: left;
   width: auto;
   font-family: Helvetica;
