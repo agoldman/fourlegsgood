@@ -11,9 +11,6 @@
 					<a href="#" class="profilenavlink"> Inbox</a>
 				</li>
 				<li class="profilenavtab">
-					<a href="#" class="profilenavlink">Profile</a>
-				</li>
-				<li class="profilenavtab">
 					<a href="#" class="profilenavlink">My Pets</a>
 				</li>
 				<li class="profilenavtab">
@@ -26,48 +23,47 @@
 		</div>
 
 
-		<div class="holder">
+		<div class="holder span12">
 
 				<div id="alerts-box">  
 					<p id="classalerts">Alerts!<br>
 					Messages List (includes msgs and sitting requests/responses organized chronologically) - 5 most recent</p>
 				</div>
-		</div>
 
 
 			<div id="left-user-box">
 				<div id="user-box">
-					<div class= "user-photo"> photo </div>	
+					<div class= "user-photo"> photo <br> edit photo link</div>	
 					<p id="prof-username"><%=@user.user_name%></p>
 				</div>
 				<div id="profstuff">
 				</div>
 			</div>
 
-
-				
-			<row class="span12">
-				<h2> Dashboard Tab </h2>
-				<ul>
-					<li>picture with edit profile link</li>
-					<li>Two Buttons: Swaps Earned, Search For Sitters | Earn More Credits, Find Dogs to Sit </li>
-				</ul>
-
-				<h2>Inbox Tab</h2>
-					<ul>
-						<li>List chronologically of all messages and sitting requests/responses grouped by user corresponded with</li>
-					</ul>
-
-				<h2>Profile Tab</h2>
-				<ul>
-					<li>Photo</li>
+			<div class="profile-box">
+				<div id="profile-info">
+					<p>
+			
 					<li>Swaps Ready to Use</li>
 					<li><%=@user.email%></li>
 					<li>address</li>
 					<li>DogKarma</li>
 					<li>SitterKarma</li>
 					<li>My Sitter Rate</li>
-				</ul>
+					edit links
+					</p>
+				</div>
+			</div>
+		</div>
+				
+			<row class="span12">
+		
+
+				<h2>Inbox Tab</h2>
+					<ul>
+						<li>List chronologically of all messages and sitting requests/responses grouped by user corresponded with</li>
+					</ul>
+
 
 				<h2> My Pets Tab </h2>
 				<ul>
