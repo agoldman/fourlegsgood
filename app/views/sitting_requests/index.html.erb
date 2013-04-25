@@ -15,7 +15,6 @@
     var map;
     var geocoder;
     var bounds;
-    var ll;
       function initialize() {
       	geocoder = new google.maps.Geocoder()
         var mapOptions = {
@@ -33,22 +32,33 @@
 		  geocoder.geocode( { 'address': address}, function(results, status) {
 		    if (status == google.maps.GeocoderStatus.OK) {
 		    	bounds = map.getBounds();
+          bounds = [bounds.getNorthEast(), bounds.getSouthWest()];
+          bounds = [[bounds[0].lat(), bounds[0].lng()], [bounds[0].lat(), bounds[1].lng()]]
           console.log(bounds);
-          ll = new google.maps.LatLng(<%=@addresses[0][0]%>, <%=@addresses[0][1]%>);
-          console.log(bounds.contains(ll));
 		      map.setCenter(results[0].geometry.location);
 		      var marker = new google.maps.Marker({
 		          map: map,
 		          position: results[0].geometry.location
 		      });
+          setRequesters(bounds);
 		    } else {
 		      alert('Geocode was not successful for the following reason: ' + status);
 		    }
 		  });
 		}
 
+    function setRequesters(bounds) { 
+
+      var addresses = <%=@addresses.to_json.html_safe %>;
+
+     // console.log(addresses);
+        //ll = new google.maps.LatLng(<%=@addresses[0][0]%>, <%=@addresses[0][1]%>);
+        //console.log(bounds.contains(ll));
+    }
+
       google.maps.event.addDomListener(window, 'load', initialize);
       google.maps.event.addDomListener(window, 'load', codeAddress);
+      
     </script>
   </head>
   <body>
