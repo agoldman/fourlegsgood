@@ -1,50 +1,65 @@
 
+<body class="profile">
+<div class="container">
+	<div class="row profilebackground">
+		<div class="span12 profile-nav">
+			<ul id="profilenav">
+				<li class="active">
+					<a href="#"> Tab1</a>
+				</li>
+				<li class="active">
+					<a href="#"> Tab1</a>
+				</li>
+			</ul>
+		</div>
+			
 
-<p> float left logo, search for sitters box -- float right user+name linking to profile, Watch a Dog/Earn Credits button <p>
+				<h1><%=@user.user_name%></h1>
 
-<h1><%=@user.user_name%></h1>
+				<h2> Dashboard Tab </h2>
+				<ul>
+					<li>picture with edit profile link</li>
+					<li>Messages List (includes msgs and sitting requests/responses organized chronologically) - 5 most recent</li>
+					<li>Two Buttons: Swaps Earned, Search For Sitters | Earn More Credits, Find Dogs to Sit </li>
+				</ul>
 
-<h2> Dashboard Tab </h2>
-<ul>
-	<li>picture with edit profile link</li>
-	<li>Messages List (includes msgs and sitting requests/responses organized chronologically) - 5 most recent</li>
-	<li>Two Buttons: Swaps Earned, Search For Sitters | Earn More Credits, Find Dogs to Sit </li>
-</ul>
+				<h2>Inbox Tab</h2>
+					<ul>
+						<li>List chronologically of all messages and sitting requests/responses grouped by user corresponded with</li>
+					</ul>
 
-<h2>Inbox Tab</h2>
-	<ul>
-		<li>List chronologically of all messages and sitting requests/responses grouped by user corresponded with</li>
-	</ul>
+				<h2>Profile Tab</h2>
+				<ul>
+					<li>Photo</li>
+					<li>Swaps Ready to Use</li>
+					<li><%=@user.email%></li>
+					<li>address</li>
+					<li>DogKarma</li>
+					<li>SitterKarma</li>
+					<li>My Sitter Rate</li>
+				</ul>
 
-<h2>Profile Tab</h2>
-<ul>
-	<li>Photo</li>
-	<li>Swaps Ready to Use</li>
-	<li><%=@user.email%></li>
-	<li>address</li>
-	<li>DogKarma</li>
-	<li>SitterKarma</li>
-	<li>My Sitter Rate</li>
-</ul>
+				<h2> My Pets Tab </h2>
+				<ul>
+					<li>picture, name, age, instructions</li>
+					<li>picture, name, age, instructions</li>
+				</ul>
 
-<h2> My Pets Tab </h2>
-<ul>
-	<li>picture, name, age, instructions</li>
-	<li>picture, name, age, instructions</li>
-</ul>
+				<h2>Reviews Tab</h2>
+				<ul>
+					<li>Reviews of me as a Sitter</li>
+					<li>My Reviews of Sitters</li>
+					<li>Reviews of my Dogs</li>
+					<li>My Reviews of Dogs</li>
+				</ul>
 
-<h2>Reviews Tab</h2>
-<ul>
-	<li>Reviews of me as a Sitter</li>
-	<li>My Reviews of Sitters</li>
-	<li>Reviews of my Dogs</li>
-	<li>My Reviews of Dogs</li>
-</ul>
+				<h2>My History Tab</h2>
+				<ul>
+					<li>My Sitting History</li>
+					<li>My Sitters History</li>
+				</ul>
 
-<h2>My History Tab</h2>
-<ul>
-	<li>My Sitting History</li>
-	<li>My Sitters History</li>
-</ul>
 
-	
+	</div>
+</div>
+</body>

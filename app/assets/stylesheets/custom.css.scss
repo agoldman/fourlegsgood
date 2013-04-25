@@ -1,5 +1,45 @@
 @import "bootstrap";
 
+.profile {
+  background: rgb(255, 255, 255);
+}
+
+.profilebackground {
+  background: WhiteSmoke ;
+  -webkit-background-clip: border-box;
+  -webkit-background-origin: padding-box;
+  -webkit-background-size: auto;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  min-height: 500px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  width: 964px;
+  margin-top: 20px;
+}
+
+.profile-nav {
+  background: rgb(255, 255, 255);
+  padding: 9px;
+  width: 900px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  -webkit-background-clip: border-box;
+  height: 23px;
+}
+
+ul {
+    list-style: none;
+}
+
+#profilenav li{
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 /* universal */
 
 html {

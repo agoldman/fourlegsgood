@@ -33,8 +33,7 @@
 		    if (status == google.maps.GeocoderStatus.OK) {
 		    	bounds = map.getBounds();
           bounds = [bounds.getNorthEast(), bounds.getSouthWest()];
-          bounds = [[bounds[0].lat(), bounds[0].lng()], [bounds[0].lat(), bounds[1].lng()]]
-          console.log(bounds);
+          bounds = [[bounds[0].lat(), bounds[0].lng()], [bounds[0].lat(), bounds[1].lng()]];
 		      map.setCenter(results[0].geometry.location);
 		      var marker = new google.maps.Marker({
 		          map: map,
