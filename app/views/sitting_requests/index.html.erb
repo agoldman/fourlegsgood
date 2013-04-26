@@ -50,8 +50,7 @@
 
       var addresses = <%=@addresses.to_json.html_safe %>;
 
-     // console.log(addresses);
-        //ll = new google.maps.LatLng(<%=@addresses[0][0]%>, <%=@addresses[0][1]%>);
+      new google.maps.LatLng(<%=@addresses[0][0]%>, <%=@addresses[0][1]%>);
         //console.log(bounds.contains(ll));
     }
 

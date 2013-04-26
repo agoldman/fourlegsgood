@@ -17,6 +17,11 @@ class User < ActiveRecord::Base
 
   has_many :sitting_requests, foreign_key: :owner_id
 
+  has_many :was_owner_of_sittings, class_name: "Sitting", foreign_key: :sat_for_owner_id
+  has_many :was_sitter_of_sittings, class_name: "Sitting", foreign_key: :sitter_id
+  has_many :sitters, through: :was_owner_of_sittings
+  has_many :sat_for_owners, through: :was_sitter_of_sittings
+
   has_many :written_sitter_reviews, class_name: "SitterReview", foreign_key: :sitter_reviewer_id
   has_many :received_sitter_reviews, class_name: "SitterReview", foreign_key: :sitter_reviewee_id
   has_many :sitter_reviewees, through: :written_sitter_reviews

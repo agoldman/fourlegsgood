@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423041728) do
+ActiveRecord::Schema.define(:version => 20130426062156) do
 
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
@@ -69,6 +69,21 @@ ActiveRecord::Schema.define(:version => 20130423041728) do
   end
 
   add_index "sitting_requests", ["owner_id"], :name => "index_sitting_requests_on_owner_id"
+
+  create_table "sittings", :force => true do |t|
+    t.integer  "sitter_id"
+    t.integer  "sat_for_owner_id"
+    t.string   "status"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.decimal  "cash_price"
+    t.integer  "swap_price"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "sittings", ["sat_for_owner_id"], :name => "index_sittings_on_sat_for_owner_id"
+  add_index "sittings", ["sitter_id"], :name => "index_sittings_on_sitter_id"
 
   create_table "swap_exchanges", :force => true do |t|
     t.integer  "swap_requester_id"

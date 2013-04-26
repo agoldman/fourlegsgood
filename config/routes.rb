@@ -5,4 +5,6 @@ Fourlegsgood::Application.routes.draw do
   resources :users
   resources :sessions
   resources :sitting_requests
+  resources :reviews
+  resources :sittings
 end
