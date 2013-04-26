@@ -27,15 +27,19 @@ class User < ActiveRecord::Base
   has_many :sitter_reviewees, through: :written_sitter_reviews
   has_many :sitter_reviewers, through: :received_sitter_reviews
 
-  has_many :sent_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_requester_id
-  has_many :received_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_possessor_id
-  has_many :swap_possessors, through: :sent_swap_exchange_requests #users who had swaps this user requested to buy
-  has_many :swap_requesters, through: :received_swap_exchange_requests #users who requested to buy swaps from this user
+  # has_many :sent_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_requester_id
+  # has_many :received_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_possessor_id
+  # has_many :swap_possessors, through: :sent_swap_exchange_requests #users who had swaps this user requested to buy
+  # has_many :swap_requesters, through: :received_swap_exchange_requests #users who requested to buy swaps from this user
 
 
-  def myMessageThreadFirsts() 
+  def inbox
     params = { id: @id }
-    Message.where("sender_id = :id OR receiver_id = :id", {id: self.id })
+    Message.where("receiver_id = :id AND read = :bool", {id: self.id, bool: false })
+  end
+
+  def messageHistoryRoots
+    Message.where("(receiver_id = :id OR sender_id = :id) AND parent_id = 0", {id: self.id})
   end
 
 end

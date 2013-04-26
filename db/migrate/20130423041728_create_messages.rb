@@ -6,8 +6,8 @@ class CreateMessages < ActiveRecord::Migration
     	t.integer :receiver_id
     	t.string :title
     	t.text :content
-      t.boolean :read
-      t.integer :parent_id, default: nil
+      t.boolean :read, default: false
+      t.integer :parent_id, default: 0
 
       t.timestamps
     end
