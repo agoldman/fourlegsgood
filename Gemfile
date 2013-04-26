@@ -12,6 +12,7 @@ gem 'mail'
 gem 'addressable'
 gem 'rest-client'
 gem 'ejs'
+gem "mailboxer", "~> 0.8.0"
 
 # Gems used only for assets and not required
 # in production environments by default.

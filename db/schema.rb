@@ -11,22 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426062156) do
+ActiveRecord::Schema.define(:version => 20130426205412) do
 
-  create_table "messages", :force => true do |t|
-    t.integer  "sender_id"
-    t.integer  "receiver_id"
-    t.string   "title"
-    t.text     "content"
-    t.boolean  "read"
-    t.integer  "parent_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "conversations", :force => true do |t|
+    t.string   "subject",    :default => ""
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
-  add_index "messages", ["parent_id"], :name => "index_messages_on_parent_id"
-  add_index "messages", ["receiver_id"], :name => "index_messages_on_receiver_id"
-  add_index "messages", ["sender_id"], :name => "index_messages_on_sender_id"
+  create_table "notifications", :force => true do |t|
+    t.string   "type"
+    t.text     "body"
+    t.string   "subject",              :default => ""
+    t.integer  "sender_id"
+    t.string   "sender_type"
+    t.integer  "conversation_id"
+    t.boolean  "draft",                :default => false
+    t.datetime "updated_at",                              :null => false
+    t.datetime "created_at",                              :null => false
+    t.integer  "notified_object_id"
+    t.string   "notified_object_type"
+    t.string   "notification_code"
+    t.string   "attachment"
+    t.boolean  "global",               :default => false
+    t.datetime "expires"
+  end
+
+  add_index "notifications", ["conversation_id"], :name => "index_notifications_on_conversation_id"
 
   create_table "pet_reviews", :force => true do |t|
     t.integer  "pet_reviewer_id"
@@ -48,6 +59,20 @@ ActiveRecord::Schema.define(:version => 20130426062156) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
+
+  create_table "receipts", :force => true do |t|
+    t.integer  "receiver_id"
+    t.string   "receiver_type"
+    t.integer  "notification_id",                                  :null => false
+    t.boolean  "is_read",                       :default => false
+    t.boolean  "trashed",                       :default => false
+    t.boolean  "deleted",                       :default => false
+    t.string   "mailbox_type",    :limit => 25
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
+  end
+
+  add_index "receipts", ["notification_id"], :name => "index_receipts_on_notification_id"
 
   create_table "sitter_reviews", :force => true do |t|
     t.integer  "sitter_reviewer_id"
@@ -100,7 +125,7 @@ ActiveRecord::Schema.define(:version => 20130426062156) do
   add_index "swap_exchanges", ["swap_requester_id"], :name => "index_swap_exchanges_on_swap_requester_id"
 
   create_table "users", :force => true do |t|
-    t.string   "user_name"
+    t.string   "name"
     t.string   "email"
     t.string   "password"
     t.string   "remember_key"
