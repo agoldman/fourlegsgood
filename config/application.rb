@@ -60,5 +60,6 @@ module Fourlegsgood
     config.assets.version = '1.0'
 
     config.action_mailer.default_url_options = { host: 'fourlegsgoodsf.com' }
+    config.assets.paths << "app/assets/templates"
   end
 end

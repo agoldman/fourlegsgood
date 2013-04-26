@@ -1,11 +1,19 @@
 class UsersController < ApplicationController
 
+	respond_to :json
+	respond_to :html, only: [:show]
+
 	def index
 		@users = User.all
 	end
 
 	def show
-		@user = User.find(params[:id])
+		@user = User.find(params[:id])  #with login this will change to current_user
+
+		respond_to do |format|
+			format.html { render :show }
+			format.json { render json: @user }
+		end
 	end
 
 	def new 

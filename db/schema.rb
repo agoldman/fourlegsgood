@@ -19,10 +19,12 @@ ActiveRecord::Schema.define(:version => 20130426062156) do
     t.string   "title"
     t.text     "content"
     t.boolean  "read"
+    t.integer  "parent_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "messages", ["parent_id"], :name => "index_messages_on_parent_id"
   add_index "messages", ["receiver_id"], :name => "index_messages_on_receiver_id"
   add_index "messages", ["sender_id"], :name => "index_messages_on_sender_id"
 

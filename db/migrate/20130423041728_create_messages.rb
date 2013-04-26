@@ -7,10 +7,12 @@ class CreateMessages < ActiveRecord::Migration
     	t.string :title
     	t.text :content
       t.boolean :read
+      t.integer :parent_id, default: nil
 
       t.timestamps
     end
     add_index :messages, :sender_id
     add_index :messages, :receiver_id
+    add_index :messages, :parent_id
   end
 end
