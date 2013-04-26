@@ -1,5 +1,76 @@
 @import "bootstrap";
 
+/* sittings history template */
+
+
+#sittings-detail-holder {
+  loat:left;
+  height: 500px;
+  -webkit-background-clip: border-box;
+}
+
+#sittings-detail-box{
+-webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+-webkit-box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgb(255, 255, 255);
+background-image: none;
+background-origin: padding-box;
+background-size: auto;
+border-bottom-left-radius: 7px;
+border-bottom-right-radius: 7px;
+border-top-left-radius: 7px;
+border-top-right-radius: 7px;
+box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
+clear: both;
+color: rgb(57, 60, 61);
+display: block;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 13px;
+height: 279px;
+line-height: 18px;
+margin-bottom: 18px;
+margin-right: 10px;
+margin-top: 10px;
+min-height: 40px;
+padding-bottom: 15px;
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 15px;
+width: 892px;
+}
+
+#sittings-tabs-box{
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: rgb(255, 255, 255);
+  background-origin: padding-box;
+  background-size: auto;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
+  color: rgb(57, 60, 61);
+  font-family: 'Helvetica';
+  font-size: 13px;
+  height: 100px;
+  line-height: 18px;
+  margin-bottom: 18px;
+  margin-right: 10px;
+  margin-top: 20px;
+  min-height: 40px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  width: 892px;
+}
+
+
 /* reviews template */
 
 #reviews-closeup-box{
@@ -159,7 +230,6 @@ font-size: 13px;
 height: 615px;
 line-height: 18px;
 margin-left: 20px;
-
 }
 
 .profile-box{ 
