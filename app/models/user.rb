@@ -1,9 +1,14 @@
 class User < ActiveRecord::Base
-  attr_accessible :id, :name, :email, :password, :remember_key, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :description
+  attr_accessible :id, :user_name, :email, :password, :remember_key, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :description
 
-  validates :name, :email, :password, presence: true 
+  validates :user_name, :email, :password, presence: true 
 
   has_many :pets, foreign_key: :owner_id
+
+  has_many :sent_messages, class_name: "Message", foreign_key: :sender_id
+  has_many :received_messages, class_name: "Message", foreign_key: :receiver_id
+  has_many :senders, through: :received_messages
+  has_many :receivers, through: :sent_messages
 
   has_many :written_pet_reviews, class_name: "PetReview", foreign_key: :pet_reviewer_id
   has_many :received_pet_reviews, class_name: "PetReview", foreign_key: :pet_reviewee_id
@@ -27,6 +32,10 @@ class User < ActiveRecord::Base
   has_many :swap_possessors, through: :sent_swap_exchange_requests #users who had swaps this user requested to buy
   has_many :swap_requesters, through: :received_swap_exchange_requests #users who requested to buy swaps from this user
 
-  acts_as_messageable
+
+  def myMessageThreadFirsts() 
+    params = { id: @id }
+    Message.where("sender_id = :id OR receiver_id = :id", {id: self.id })
+  end
 
 end

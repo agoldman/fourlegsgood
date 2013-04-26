@@ -35,9 +35,6 @@ GEM
       erubis (>= 2.6.6)
     bootstrap-sass (2.1.0.0)
     builder (3.0.4)
-    carrierwave (0.8.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -50,8 +47,6 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    foreigner (1.4.1)
-      activerecord (>= 3.0.0)
     hike (1.2.2)
     i18n (0.6.1)
     journey (1.0.4)
@@ -63,11 +58,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mailboxer (0.8.0)
-      carrierwave (>= 0.5.8)
-      foreigner (>= 0.9.1)
-      rails (> 3.0.0)
-    mime-types (1.23)
+    mime-types (1.22)
     multi_json (1.7.2)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -97,7 +88,7 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    sass (3.2.8)
+    sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -129,7 +120,6 @@ DEPENDENCIES
   ejs
   jquery-rails
   mail
-  mailboxer (~> 0.8.0)
   rails (= 3.2.13)
   rest-client
   sass-rails (~> 3.2.3)
