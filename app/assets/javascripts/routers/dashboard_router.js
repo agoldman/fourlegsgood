@@ -12,7 +12,12 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 	},
 
 	index: function() {
+		var that = this;
+		var UserDashBoardView = new FLG.Views.UserDashBoardView({
+			model: that.user
+		});
 
+		that.$holder.html(UserDashBoardView.render().$el);
 	},
 
 	msgs: function() {
