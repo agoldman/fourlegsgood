@@ -6,11 +6,9 @@ FLG.Views.UserDashBoardView = Backbone.View.extend({
 
 		that.model.fetch({
 			success: function() {
-				console.log(that.model.attributes);
 			var renderedContent = JST["dashboards/dashboard"]({
 				user: that.model
 			});
-
 			that.$el.html(renderedContent)
 			    }
 			})
