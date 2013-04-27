@@ -7,7 +7,7 @@
 	<div id="left-user-box">
 		<div id="user-box">
 			<div class= "user-photo"> photo <br> edit photo link</div>	
-			<p id="prof-username"></p>
+			<p id="prof-user.escape('user_name')"></p>
 		</div>
 		<div id="profstuff">
 			Verifications
@@ -16,15 +16,46 @@
 
 	<div class="profile-box">
 		<div id="profile-info">
-			<p>
-			<li>Swaps Ready to Use</li>
-			<li>email</li>
-			<li>address</li>
-			<li>DogKarma</li>
-			<li>SitterKarma</li>
-			<li>My Sitter Rate</li>
-			edit links
-			</p>
+			
+				<div class="p-info-left"
+					<li><h4>Swaps Ready to Use</h4><h6> <%=user.escape('swaps_earned')%> </h6></li><br>
+
+					<li><h4>Email</h4> <h6><%=user.escape('email')%></h6></li><br>
+
+					<li>
+						<%if(user.escape('address')) { %>
+							<h4> Address </h4><h6><%= user.escape('address') %></h6>
+						<% } %>
+					</li>
+
+					<li>
+					<%if(user.escape('sitter_rate')) { %>
+						My Sitter Rate:  <%=user.escape('sitter_rate') %>
+					<% } %>
+					</li>
+
+					<li>
+					<%if(user.escape('dog_karma')) { %>
+						My Dog Karma:  <%=user.escape('dog_karma') %>
+					<% } %>
+					</li>
+
+					<li>
+					<%if(user.escape('dog_karma')) { %>
+						My Sitter Karma:  <%=user.escape('dog_karma') %>
+					<% } %>
+					</li>
+
+					<br><br>
+						<h4><a href=""> Update Profile </a></h4>
+				</div>
+
+				
+				<div class="about-me-box">
+					About Me
+				</div>
+				
+			
 		</div>
 	</div>
 

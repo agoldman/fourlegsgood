@@ -17,6 +17,8 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 			model: that.user
 		});
 
+		window.$(".activedashtab").removeClass("activedashtab");
+		window.$(".profilenavtabdash").addClass("activedashtab");
 		that.$holder.html(UserDashBoardView.render().$el);
 	},
 
@@ -25,6 +27,8 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 		var UserMessagesIndexView = new FLG.Views.UserMessagesIndexView({
 			model: that.user
 		});
+		window.$(".activedashtab").removeClass("activedashtab");
+		window.$(".profilenavtabmsg").addClass("activedashtab");
 		that.$holder.html(UserMessagesIndexView.render().$el);
 	}
 
