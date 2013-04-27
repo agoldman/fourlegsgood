@@ -9,10 +9,12 @@ FLG.Views.UserMessagesIndexView = Backbone.View.extend({
 
 		receivedMessages.fetch({
 			success: function() {
+				console.log(receivedMessages);
 			var renderedContent = JST["msgs/list"]({
-				receivedMsgs: that.receivedMessages
+				receivedMsgs: receivedMessages
 			});
 
+			that.$el.html(renderedContent)
 			    }
 			})
 		return that;

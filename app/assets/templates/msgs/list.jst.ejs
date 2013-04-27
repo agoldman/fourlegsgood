@@ -1,0 +1,28 @@
+<div class="left-inbox-holder">
+
+				<div class= "inbox-tabs-box">
+					<ul class="inbox-nav-tabs">
+						<li class="selected inbox-link">
+							<a class= "selected" href="">Inbox</a>
+						</li>
+						<li class="inbox-link">
+							<a class= "msglink" href="">Sent</a>
+						</li>
+						<li class="inbox-link">
+							<a class= "msglink" href="">All </a>
+						</li>
+						<li class="inbox-link">
+							<a class= "msglink" href="">New Message!</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="messages-list-box">
+				<h3>New Messages</h3>
+				<br>
+				
+				<% receivedMsgs.each(function(msg){ %>
+					<%= msg.escape('title') %>
+				<% }) %>
+							</div>
