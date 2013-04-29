@@ -4,5 +4,5 @@
 	<% if(dogreview.escape("comment")) { %>
 	<%= dogreview.escape("comment") %>
 	<% } %>
-	on <%= moment(dogreview.escape("created_at")).format("dddd, MMMM Do YYYY, h:mm:ss a") %>
+	-- <%= moment(dogreview.escape("created_at")).format("dddd, MMMM Do YYYY, h:mm:ss a") %>
 <% }) %>

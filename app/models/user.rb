@@ -53,4 +53,16 @@ class User < ActiveRecord::Base
     ActiveRecord::Base.connection.execute(query);
   end
 
+  def reviewsOfMySitting
+    query = "SELECT uu.user_name, sr.score, sr.comment, sr.created_at
+            FROM users u JOIN sitter_reviews sr
+            ON u.id = sr.sitter_reviewee_id
+            JOIN users uu 
+            ON uu.id = sr.sitter_reviewer_id
+            WHERE u.id = #{self.id}
+            ORDER BY sr.created_at DESC"
+    ActiveRecord::Base.connection.execute(query);
+  end
+
+
 end

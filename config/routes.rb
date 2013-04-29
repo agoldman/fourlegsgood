@@ -8,6 +8,7 @@ Fourlegsgood::Application.routes.draw do
     resources :messages, only: [:index]
     resources :pets, only: [:index]
     resources :my_dogs_reviews, only: [:index]
+    resources :my_sitting_reviews, only: [:index]
   end
   resources :sessions
   resources :sitting_requests

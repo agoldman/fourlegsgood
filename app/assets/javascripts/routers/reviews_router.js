@@ -13,13 +13,28 @@ FLG.Routers.ReviewsRouter = Backbone.Router.extend({
 	},
 
 		mydogs: function() {
-		var that = this;
-		var ReviewsOfMyDogsView = new FLG.Views.ReviewsOfMyDogsView({
-			model: that.user
-		});
-		window.$(".activereviewlist").addClass("reviewnameholder").removeClass("activereviewlist");
-		window.$(".mydogreview").removeClass("reviewnameholder").addClass("activereviewlist");
-		window.$(".reviewsofmydogs").html(ReviewsOfMyDogsView.render().$el);
+			var that = this;
+			var ReviewsOfMyDogsView = new FLG.Views.ReviewsOfMyDogsView({
+				model: that.user
+			});
+			window.$(".activereviewlist").addClass("reviewnameholder").removeClass("activereviewlist");
+			window.$(".mydogreview").removeClass("reviewnameholder").addClass("activereviewlist");
+			window.$(".activelist").empty();
+			window.$(".reviewsofmydogs").addClass('activelist');
+			window.$(".reviewsofmydogs").html(ReviewsOfMyDogsView.render().$el);
+
+	},
+
+		mysitting: function() {
+			var that = this;
+			var ReviewsOfMySittingView = new FLG.Views.ReviewsOfMySittingView({
+				model: that.user
+			});
+			window.$(".activereviewlist").addClass("reviewnameholder").removeClass("activereviewlist");
+			window.$(".mysittingreview").removeClass("reviewnameholder").addClass("activereviewlist");
+			window.$(".activelist").empty();
+			window.$(".reviewsofmysittings").addClass('activelist');
+			window.$(".reviewsofmysitting").html(ReviewsOfMySittingView.render().$el);
 
 	}
 	// },

@@ -1,0 +1,8 @@
+<% reviews.each(function(review) { %>
+	<%=review.escape("user_name") %> says -- 
+	<%=review.escape("score")%>/5
+	<% if(review.escape("comment")) { %>
+	<%= review.escape("comment") %>
+	<% } %>
+	-- <%= moment(review.escape("created_at")).format("dddd, MMMM Do YYYY, h:mm:ss a") %>
+<% }) %>
