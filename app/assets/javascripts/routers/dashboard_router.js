@@ -37,7 +37,7 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 		});
 
 		that.MSGSrouter.addEl($(".messages-list-box"));
-		that.MSGSrouter.index();
+		that.MSGSrouter.inbox();
 	}
 
 });

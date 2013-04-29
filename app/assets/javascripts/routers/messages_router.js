@@ -17,17 +17,14 @@ FLG.Routers.MessagesRouter = Backbone.Router.extend({
 		"msgs/new" : "new"
 	},
 
-		index: function() {
+		inbox: function() {
 		var that = this;
 		var MessagesInboxView = new FLG.Views.MessagesInboxView({
 			model: that.user
 		});
-
 		window.$(".selectedmsgs").addClass("msglink").removeClass("selectedmsgs");
 		window.$(".inboxlist").removeClass("msglink").addClass("selectedmsgs");
-
 		that.detailEl.html(MessagesInboxView.render().$el);
-		console.log(that.detailEl);
 	},
 
 		sent: function(){
@@ -35,11 +32,9 @@ FLG.Routers.MessagesRouter = Backbone.Router.extend({
 		var SentMessagesView = new FLG.Views.SentMessagesView({
 			model: that.user
 		});
-
 		that.detailEl.html(SentMessagesView.render().$el);
 		window.$(".selectedmsgs").addClass("msglink").removeClass("selectedmsgs");
 		window.$(".sentlist").removeClass("msglink").addClass("selectedmsgs");
-		console.log(that.detailEl);
 		}
 
 })
