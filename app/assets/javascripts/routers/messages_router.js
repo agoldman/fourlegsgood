@@ -23,9 +23,23 @@ FLG.Routers.MessagesRouter = Backbone.Router.extend({
 			model: that.user
 		});
 
-		//window.$(".activedashtab").removeClass("activedashtab");
-		//window.$(".profilenavtabdash").addClass("activedashtab");
+		window.$(".selectedmsgs").addClass("msglink").removeClass("selectedmsgs");
+		window.$(".inboxlist").removeClass("msglink").addClass("selectedmsgs");
+
 		that.detailEl.html(MessagesInboxView.render().$el);
 		console.log(that.detailEl);
-	}
+	},
+
+		sent: function(){
+		var that = this;
+		var SentMessagesView = new FLG.Views.SentMessagesView({
+			model: that.user
+		});
+
+		that.detailEl.html(SentMessagesView.render().$el);
+		window.$(".selectedmsgs").addClass("msglink").removeClass("selectedmsgs");
+		window.$(".sentlist").removeClass("msglink").addClass("selectedmsgs");
+		console.log(that.detailEl);
+		}
+
 })

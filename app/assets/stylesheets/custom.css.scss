@@ -2,9 +2,6 @@
 
 /* messages template */
 
-a{
-  color: #018fe1
-}
 
 a:hover {
   text-decoration: none;
@@ -33,7 +30,7 @@ li {
 }
 
 .messages-list-box{
-  -webkit-background-clip: border-box;
+-webkit-background-clip: border-box;
 -webkit-background-origin: padding-box;
 -webkit-background-size: auto;
 -webkit-box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
@@ -49,7 +46,7 @@ border-top-left-radius: 7px;
 border-top-right-radius: 7px;
 box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
 float:left;
-color: rgb(57, 60, 61);
+
 display: block;
 font-family: 'Helvetica';
 font-size: 13px;
@@ -68,16 +65,16 @@ padding-top: 15px;
 width: 648px;
 }
 
-.selected {
+.selectedmsgs {
   color: IndianRed;
   letter-spacing: 1px;
 }
 
-.inbox-link:hover {
+.msglink:hover {
   color: IndianRed;
 }
 
-.selected:hover{
+.selectedmsgs:hover{
   text-decoration: none;
   color:#bfc2c4;
 }
@@ -89,7 +86,6 @@ width: 648px;
 }
 
 .inbox-link {
-color: rgb(151, 151, 151);
 cursor: auto;
 display: block;
 font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -125,7 +121,6 @@ border-bottom-width: 0px;
 border-top-color: rgb(57, 60, 61);
 border-top-style: none;
 border-top-width: 0px;
-color: rgb(57, 60, 61);
 display: block;
 font-family: 'Helvetica';
 font-size: 13px;
