@@ -1,0 +1,7 @@
+
+<br/>
+<%mypets.each(function(pet) { %>
+	<div class="span3 dogphoto"> <p> photo </p> </div>
+	<div class="dogabout"> <%= pet.escape('name') %> </div> 
+	<br>
+<% }); %>

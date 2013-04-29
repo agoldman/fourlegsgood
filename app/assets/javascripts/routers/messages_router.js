@@ -35,6 +35,16 @@ FLG.Routers.MessagesRouter = Backbone.Router.extend({
 		that.detailEl.html(SentMessagesView.render().$el);
 		window.$(".selectedmsgs").addClass("msglink").removeClass("selectedmsgs");
 		window.$(".sentlist").removeClass("msglink").addClass("selectedmsgs");
+		},
+
+		all: function(){
+		var that = this;
+		var MessagesHistoryView = new FLG.Views.MessagesHistoryView({
+			model: that.user
+		});
+		that.detailEl.html(MessagesHistoryView.render().$el);
+		window.$(".selectedmsgs").addClass("msglink").removeClass("selectedmsgs");
+		window.$(".historylist").removeClass("msglink").addClass("selectedmsgs");
 		}
 
 })

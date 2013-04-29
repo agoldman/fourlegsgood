@@ -9,7 +9,9 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 	routes: {
 
 		"": "index",
-		"msgs" : "msgs"
+		"msgs" : "msgs",
+		"pets" : "pets",
+		"reviews": "reviews"
 	},
 
 	index: function() {
@@ -38,6 +40,30 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 
 		that.MSGSrouter.addEl($(".messages-list-box"));
 		that.MSGSrouter.inbox();
+	},
+
+	pets: function() {
+		var that = this;
+		var PetView = new FLG.Views.PetView({
+			model: that.user
+		});
+		window.$(".activedashtab").removeClass("activedashtab");
+		window.$(".profilenavtabpets").addClass("activedashtab");
+		that.$holder.html(PetView.render().$el);
+	},
+
+	reviews: function() {
+		var that = this;
+		var ReviewsView = new FLG.Views.ReviewsView({
+			model: that.user
+		});
+		window.$(".activedashtab").removeClass("activedashtab");
+		window.$(".profilenavtabrev").addClass("activedashtab");
+		that.$holder.html(ReviewsView.render().$el);
 	}
+
+
+
+
 
 });

@@ -1,0 +1,7 @@
+<% dogreviews.each(function(dogreview) { %>
+	<%=dogreview.escape("user_name") %> 
+	<%=dogreview.escape("score") %> 
+	<% if(dogreview.escape("comment")) { %>
+	<%= dogreview.escape("comment") %>
+	<% } %>
+<% }) %>
