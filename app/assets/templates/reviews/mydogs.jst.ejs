@@ -1,7 +1,8 @@
 <% dogreviews.each(function(dogreview) { %>
-	<%=dogreview.escape("user_name") %> 
-	<%=dogreview.escape("score") %> 
+	<%=dogreview.escape("user_name") %> says -- 
+	<%=dogreview.escape("score")%>/5
 	<% if(dogreview.escape("comment")) { %>
 	<%= dogreview.escape("comment") %>
 	<% } %>
+	on <%= moment(dogreview.escape("created_at")).format("dddd, MMMM Do YYYY, h:mm:ss a") %>
 <% }) %>

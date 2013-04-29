@@ -43,12 +43,13 @@ class User < ActiveRecord::Base
   end
 
   def reviewsOfMyDogs
-    query = "SELECT uu.user_name, pr.score, pr.comment
+    query = "SELECT uu.user_name, pr.score, pr.comment, pr.created_at
             FROM users u JOIN pet_reviews pr
             ON u.id = pr.pet_reviewee_id
             JOIN users uu 
             ON uu.id = pr.pet_reviewer_id
-            WHERE u.id = #{self.id}"
+            WHERE u.id = #{self.id}
+            ORDER BY pr.created_at DESC"
     ActiveRecord::Base.connection.execute(query);
   end
 
