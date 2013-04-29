@@ -33,7 +33,7 @@ FLG.Routers.ReviewsRouter = Backbone.Router.extend({
 			window.$(".activereviewlist").addClass("reviewnameholder").removeClass("activereviewlist");
 			window.$(".mysittingreview").removeClass("reviewnameholder").addClass("activereviewlist");
 			window.$(".activelist").empty();
-			window.$(".reviewsofmysittings").addClass('activelist');
+			window.$(".reviewsofmysitting").addClass('activelist');
 			window.$(".reviewsofmysitting").html(ReviewsOfMySittingView.render().$el);
 
 	}
