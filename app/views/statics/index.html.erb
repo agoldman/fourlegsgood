@@ -7,23 +7,36 @@
 		);
 	});
 
-  	var gallery = ["url('/assets/dog.jpg')", "url('assets/dog2.jpg')"];
+  	var gallery = ["url('/assets/dog3.jpeg')", "url('assets/dog2.jpg')", "url('/assets/dog.jpg')"];
   	counter = 0;
   	function swapImages(){
-  		if(counter%2) {
-  			$(".masthead").css("background-image", gallery[0]);
+		if(counter==0) {
+			$(".masthead").fadeTo('slow', 0.2, function() {
+				$(this).css("background-image", gallery[0]);
+		}).fadeTo('slow', 1)
+  		}
+  		else { if(counter==1) {
+  				$(".masthead").fadeTo('slow', 0.2, function() {
+  						$(this).css("background-image", gallery[1]);
+  				}).fadeTo('slow', 1)
+  			}
+  				else {
+  					$(".masthead").fadeTo('slow', 0.2, function() {
+  						$(this).css("background-image", gallery[2]);
+  					}).fadeTo('slow', 1);  		
+  				}
+  			}
+  		if (counter == 2) {
+  			counter = 0;
   		}
   		else {
-  			$(".masthead").css("background-image", gallery[1]);
+  			counter++;
   		}
-  		counter++;
   	}
   	setInterval(swapImages, 5000);
 
   });
 </script>
-
-
 
 <div class="masthead">
 	<div class="container">
