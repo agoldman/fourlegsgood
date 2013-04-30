@@ -21,6 +21,8 @@ user_2.written_sitter_reviews.create!(sitter_reviewee_id: 1, score: 4, comment: 
 user_1.sitting_requests.create!(start_date: "01/01/01", end_date: "01/02/01")
 # user_1.sent_swap_exchange_requests.create!(swap_possessor_id: 2, status: "pending", price: 10.50)
 user_1.was_owner_of_sittings.create!(sitter_id: 2, start_date: '01/01/01', end_date: '02/02/02', status: 'pending', cash_price: 10, swap_price: 1)
+user_1.was_sitter_of_sittings.create!(sat_for_owner_id: 2, start_date: '02/02/02', end_date: '03/03/03', status: 'occurred', cash_price: 0, swap_price: 0)
+
 
 end
 

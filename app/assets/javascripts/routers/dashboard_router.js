@@ -11,7 +11,8 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 		"": "index",
 		"msgs" : "msgs",
 		"pets" : "pets",
-		"reviews": "reviews"
+		"reviews": "reviews", 
+		"history": "history"
 	},
 
 	index: function() {
@@ -60,6 +61,17 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 		window.$(".activedashtab").removeClass("activedashtab");
 		window.$(".profilenavtabrev").addClass("activedashtab");
 		that.$holder.html(ReviewsView.render().$el);
+	}, 
+
+	history: function() {
+		var that = this;
+		var HistoryView = new FLG.Views.HistoryView({
+			model: that.user
+		});
+		
+		window.$(".activedashtab").removeClass("activedashtab");
+		window.$(".profilenavtabhist").addClass("activedashtab");
+		that.$holder.html(HistoryView.render().$el);
 	}
 
 

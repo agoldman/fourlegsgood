@@ -88,4 +88,18 @@ class User < ActiveRecord::Base
     ActiveRecord::Base.connection.execute(query);
   end
 
+  def satForDogs
+    query = "SELECT d.name
+            FROM users u JOIN sittings s 
+            ON u.id = s.sitter_id
+            JOIN users uu
+            ON uu.id = s.sat_for_owner_id
+            JOIN pets d 
+            ON d.owner_id = uu.id
+            WHERE u.id = #{self.id}
+            AND s.status = 'occurred'
+            ORDER BY s.created_at DESC"
+    ActiveRecord::Base.connection.execute(query);
+  end
+
 end

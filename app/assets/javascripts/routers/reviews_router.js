@@ -63,5 +63,4 @@ FLG.Routers.ReviewsRouter = Backbone.Router.extend({
 			window.$(".reviewsofothersitters").html(ReviewsOfOtherSittersView.render().$el);
 		}
 
-
 })

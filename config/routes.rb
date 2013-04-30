@@ -11,6 +11,7 @@ Fourlegsgood::Application.routes.draw do
     resources :my_sitting_reviews, only: [:index]
     resources :other_dogs_reviews, only: [:index]
     resources :other_sitters_reviews, only: [:index]
+    resources :sittings, only: [:index]
   end
   resources :sessions
   resources :sitting_requests
