@@ -8,13 +8,20 @@
 	});
 
   	var gallery = ["url('/assets/dog3.jpeg')", "url('assets/dog2.jpg')", "url('/assets/dog.jpg')"];
-  	counter = 0;
+  	counter = 2;
   	function swapImages(){
 		$(".masthead").fadeTo('slow', 0, function() {
-				$(this).addClass("background"+counter);
+				if(counter==1) {
+					$(this).removeClass("background3");
+					$(this).addClass("background"+counter);
+				}
+				else {
+					$(this).removeClass("background"+(counter-1));
+					$(this).addClass("background"+counter);
+				}
 		}).fadeTo('slow', 1)
-  		if (counter == 2) {
-  			counter = 0;
+  		if (counter == 3) {
+  			counter = 1;
   		}
   		else {
   			counter++;
@@ -25,7 +32,7 @@
   });
 </script>
 
-<div class="masthead" style="position:relative; z-index:0;">
+<div class="masthead background2" style="position:relative; z-index:0;">
 </div>
 
 <div class="container" style="position:absolute; z-index:1; top:0;">
