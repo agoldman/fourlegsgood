@@ -1,12 +1,17 @@
 <div class="sittingbox dogs">
 	Dogs
-	<div>
-	<%mysittings.each(function(sitting){ %>
-		<%= sitting.escape("sitter_id") %>
-	<% }); %>
+	<div class="dogpics">
+		<%mysittings.each(function(sitting){ %>
+			<%= sitting.escape("name") %>
+		<% }); %>
 	</div>
  </div> 
 
  <div class="sittingbox sitters">
  	Sitters
+ 	<div class="sitterpics">
+	 	<%mysitters.each(function(sitter) { %>
+	 		<%=sitter.escape("user_name") %>
+	 	<% }); %>
+	</div>
  </div>
