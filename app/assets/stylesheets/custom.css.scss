@@ -1059,7 +1059,7 @@ textarea {
 }
 
 .masthead {
-	background-image:url("http://placekitten.com/g/1600/2400");
+	background-image:url("dog.jpg");
 	background-size: cover;
 	min-height: 550px;
 }
@@ -1222,32 +1222,10 @@ width: 200px;
 
 /* user sign up page */
 
-.signin_title {
-
-  color: Maroon;
-  font-size: 30px;
-  font-weight: bold;
-  padding-top: 10px;
-}
-
-.signup_background {
-  background-image:url("http://placekitten.com/g/1600/2400");
-  background-size: cover;
-  min-height: 550px;
-
-}
-
-.span4 {
-  text-align: left;
-}
 
 label {
   color: WhiteSmoke;
   font-size: 20px;
-}
-
-.textbox1 {
-  background: blue;
 }
 
 #signup {
@@ -1276,10 +1254,6 @@ label {
     display:block; 
     padding-bottom:5px; 
     margin-top:20px;
-}
-
-#signup_lower {
-  background: IndianRed;
 }
 
 /* Profile Page */
