@@ -1,20 +1,23 @@
+<script type="text/javascript">
+  $(function () {
+
+  	$('.signupbutton').click(function(event) {
+ 	  $(".welcomebox").html(
+ 	  	"<form accept-charset='UTF-8' action='/users' id='signup' method='post'><label for='user_name'>Username</label><input id='user_name' name='user[user-name]' type='text'><br><br><label for='user_email'>Email</label><input id='user_email' name='user[email]' type='text'><br><br><label for='user_password'>Password</label><input id='user_password' name='user[password]' type='password'><br><br><input class='submit_button' name='commit' type='submit' value='Sign Up'></form>"
+		);
+	});
+
+  });
+</script>
+
+
 
 <div class="masthead">
 	<div class="container">
 		<div class="row">
 			<div class="span6 offset3 masthead-content">
-				<h1 id="masthead-title">Four Legs Good</h1>
-					<h2 id="masthead-subtitle">
-						<ul>
-							Watch someone's dog. <br/>
-							Earn swaps. <br/>
-							Get free dog sitting from other owners. 
-						</ul>
-					</h2>
-					<a href="/users/new" class="button">Sign Up</a>
-				<div id="hellolinks">
-
-				<h4><%=link_to "Can I pay Cash instead? (yes)", statics_url%></h4> 
+				<div class="welcomebox">
+					<%= render partial: "signup" %>
 				</div>
 			</div>
 
@@ -47,10 +50,6 @@
 		</div>
 	</div>
 </div>
-
-
-
-
 
 
 

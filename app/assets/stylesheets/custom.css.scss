@@ -1033,6 +1033,10 @@ textarea {
   font-weight: lighter;
 }
 
+#signup {
+  padding-top: 40px;
+}
+
 .navbar {
   margin-bottom: 0;
 }
@@ -1247,15 +1251,15 @@ label {
 }
 
 #signup {
-  padding-top: 100px;
+  padding-top: 40px;
   font-family: 'Ovo', serif;
 }
 
 .submit_button {
 
     font-family: 'Ovo', serif;
-    background: IndianRed; 
-    color: WhiteSmoke;
+    background: WhiteSmoke; 
+    color: IndianRed;
     font-size: 20px;
     padding:10px;
     border-width: 0;
