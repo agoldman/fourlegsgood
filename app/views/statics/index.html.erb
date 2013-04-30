@@ -7,6 +7,19 @@
 		);
 	});
 
+  	var gallery = ["url('/assets/dog.jpg')", "url('assets/dog2.jpg')"];
+  	counter = 0;
+  	function swapImages(){
+  		if(counter%2) {
+  			$(".masthead").css("background-image", gallery[0]);
+  		}
+  		else {
+  			$(".masthead").css("background-image", gallery[1]);
+  		}
+  		counter++;
+  	}
+  	setInterval(swapImages, 5000);
+
   });
 </script>
 
