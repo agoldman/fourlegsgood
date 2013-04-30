@@ -4,7 +4,7 @@ class SittersController < ApplicationController
 
 	def index
 		@user = User.find(params[:user_id]) #change to current_user
-		@sitters = @user.sat_for_owners
+		@sitters = @user.sittersofOccurredSitting
 		render json: @sitters
 	end
 end
