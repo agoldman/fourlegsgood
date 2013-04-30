@@ -36,37 +36,32 @@ FLG.Routers.ReviewsRouter = Backbone.Router.extend({
 			window.$(".reviewsofmysitting").addClass('activelist');
 			window.$(".reviewsofmysitting").html(ReviewsOfMySittingView.render().$el);
 
-	}
-	// },
+	}, 
 
-	// 	mysitting: function(){
-	// 	var that = this;
-	// 	var SentMessagesView = new FLG.Views.SentMessagesView({
-	// 		model: that.user
-	// 	});
-	// 	that.detailEl.html(SentMessagesView.render().$el);
-	// 	window.$(".selectedmsgs").addClass("msglink").removeClass("selectedmsgs");
-	// 	window.$(".sentlist").removeClass("msglink").addClass("selectedmsgs");
-	// 	},
+		otherdogs: function() {
+			var that = this;
+			var ReviewsOfOtherDogsView = new FLG.Views.ReviewsOfOtherDogsView({
+				model: that.user
+			});
+			window.$(".activereviewlist").addClass("reviewnameholder").removeClass("activereviewlist");
+			window.$(".otherdogsreview").removeClass("reviewnameholder").addClass("activereviewlist");
+			window.$(".activelist").empty();
+			window.$(".reviewsofotherdogs").addClass('activelist');
+			window.$(".reviewsofotherdogs").html(ReviewsOfOtherDogsView.render().$el);
+		},
 
-	// 	otherdogs: function(){
-	// 	var that = this;
-	// 	var MessagesHistoryView = new FLG.Views.MessagesHistoryView({
-	// 		model: that.user
-	// 	});
-	// 	that.detailEl.html(MessagesHistoryView.render().$el);
-	// 	window.$(".selectedmsgs").addClass("msglink").removeClass("selectedmsgs");
-	// 	window.$(".historylist").removeClass("msglink").addClass("selectedmsgs");
-	// 	},
 
-	// 	othersitters: function(){
-	// 	var that = this;
-	// 	var MessagesHistoryView = new FLG.Views.MessagesHistoryView({
-	// 		model: that.user
-	// 	});
-	// 	that.detailEl.html(MessagesHistoryView.render().$el);
-	// 	window.$(".selectedmsgs").addClass("msglink").removeClass("selectedmsgs");
-	// 	window.$(".historylist").removeClass("msglink").addClass("selectedmsgs");
-	// 	}
+		othersitters: function() {
+			var that = this;
+			var ReviewsOfOtherSittersView = new FLG.Views.ReviewsOfOtherSittersView({
+				model: that.user
+			});
+			window.$(".activereviewlist").addClass("reviewnameholder").removeClass("activereviewlist");
+			window.$(".othersittersreview").removeClass("reviewnameholder").addClass("activereviewlist");
+			window.$(".activelist").empty();
+			window.$(".reviewsofothersitters").addClass('activelist');
+			window.$(".reviewsofothersitters").html(ReviewsOfOtherSittersView.render().$el);
+		}
+
 
 })

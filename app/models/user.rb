@@ -64,5 +64,28 @@ class User < ActiveRecord::Base
     ActiveRecord::Base.connection.execute(query);
   end
 
+  def reviewsOfOtherDogs
+    query = "SELECT uu.user_name, pr.score, pr.comment, pr.created_at, pets.name
+            FROM users u JOIN pet_reviews pr
+            ON u.id = pr.pet_reviewer_id
+            JOIN users uu 
+            ON uu.id = pr.pet_reviewee_id
+            JOIN pets
+            ON uu.id = pets.owner_id
+            WHERE u.id = #{self.id}
+            ORDER BY pr.created_at DESC"
+    ActiveRecord::Base.connection.execute(query);
+  end
+
+  def reviewsOfOtherSitters
+    query = "SELECT uu.user_name, sr.score, sr.comment, sr.created_at
+            FROM users u JOIN sitter_reviews sr
+            ON u.id = sr.sitter_reviewer_id
+            JOIN users uu 
+            ON uu.id = sr.sitter_reviewee_id
+            WHERE u.id = #{self.id}
+            ORDER BY sr.created_at DESC"
+    ActiveRecord::Base.connection.execute(query);
+  end
 
 end
