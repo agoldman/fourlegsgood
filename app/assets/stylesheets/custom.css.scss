@@ -1075,10 +1075,27 @@ textarea {
   font-family: 'Ovo', serif;
 }
 
+.container {
+  margin-left: 175px;
+  margin-top: 50px;
+}
+
 #masthead-subtitle{
   color: WhiteSmoke; 
   font-weight: 200;
   letter-spacing: .75px;
+}
+
+.background3 {
+  background-image:url("dog3.jpg");
+  background-size: cover;
+  min-height: 550px;
+}
+
+.background2 {
+  background-image:url("dog2.jpg");
+  background-size: cover;
+  min-height: 550px;
 }
 
 .masthead {
