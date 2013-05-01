@@ -50,13 +50,14 @@
 
       console.log(addresses);
 
-     //  _.each(addresses, function(address) {
-     //    var marker = new google.maps.Marker({
-     //      map: map,
-     //      position: LatLng(address[0], address[1])
-     //  });
+      _.each(addresses, function(address) {
+        var ll = new google.maps.LatLng(address[0], address[1]);
+        var marker = new google.maps.Marker({
+          map: map,
+          position: ll
+      });
 
-     // });
+     });
    });
   }
 
