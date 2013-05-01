@@ -85,12 +85,13 @@
   </div> -->
 
 
-<form action="/current_requests/"<%=@zip%> class="request-dates">
+<form action="/current_requests/"<%=@zip%> class="request-dates" method="get">
   Start date
-  <input type="text" value=<%=Time.now.strftime("%m-%d-%Y")%> id="date-start"><br>
+  <input type="text" value=<%=Time.now.strftime("%m-%d-%Y")%> id="date-start" name="start"><br>
   End date
-  <input type="text" id="date-end">
-  <input name="commit" type="submit" id="mapbutton" value="Party On"/>
+  <input type="text" id="date-end" name="end">
+  <input type="hidden" name="address" value="<%=@zip%>">
+  <input name="commit" type="submit" id="mapbutton" value="Dog!"/>
 </form>
 
 
