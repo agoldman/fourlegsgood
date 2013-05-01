@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130501010857) do
+ActiveRecord::Schema.define(:version => 20130426062156) do
 
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
@@ -110,13 +110,11 @@ ActiveRecord::Schema.define(:version => 20130501010857) do
     t.integer  "sitter_karma"
     t.integer  "swaps_earned", :default => 1
     t.integer  "swap_price"
-    t.decimal  "lat"
-    t.decimal  "lng"
     t.text     "description"
+    t.float    "longitude"
+    t.float    "latitude"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
-    t.float    "latitude"
-    t.float    "longitude"
   end
 
 end

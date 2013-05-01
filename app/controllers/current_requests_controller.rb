@@ -5,7 +5,7 @@ class CurrentRequestsController < ApplicationController
 	def index
 		# @user = User.find(params[:user_id]) #will change to current user when I have login
 		@address = (params[:address])
-		@near_by_users = User.near(@address, 20)
+		@near_by_users = User.near(@address, 50)
 		@near_by_ids = []
 		@near_by_addresses = []
 		@near_by_users.each do |user|

@@ -12,9 +12,9 @@ class CreateUsers < ActiveRecord::Migration
     	t.integer :sitter_karma, default: nil
     	t.integer :swaps_earned, default: 1
     	t.integer :swap_price, default: nil
-        t.decimal :lat, default: nil
-        t.decimal :lng, default: nil
         t.text :description
+        t.float :longitude
+        t.float :latitude
 
       t.timestamps
     end
