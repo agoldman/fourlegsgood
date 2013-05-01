@@ -48,10 +48,10 @@
 
     function setRequesters(bounds) { 
 
-      var addresses = <%=@addresses.to_json.html_safe %>;
-
-      new google.maps.LatLng(<%=@addresses[0][0]%>, <%=@addresses[0][1]%>);
-        //console.log(bounds.contains(ll));
+    $.get("/current_requests.json", {'latlng[]': bounds}, function(data) {
+      console.log(data);
+    });
+      
     }
 
       google.maps.event.addDomListener(window, 'load', initialize);

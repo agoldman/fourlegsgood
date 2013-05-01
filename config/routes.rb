@@ -15,5 +15,6 @@ Fourlegsgood::Application.routes.draw do
     resources :sitters, only: [:index]
   end
   resources :sessions
-  resources :sitting_requests
+  resources :sitting_requests, only: [:index]
+  resources :current_requests
 end

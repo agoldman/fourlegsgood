@@ -8,17 +8,17 @@ class SittingRequest < ActiveRecord::Base
 
   belongs_to :owner, class_name: "User"
 
+  def self.usersOfRequested
 
-  def self.Requested
-  	SittingRequest.where(status: "requested")
+    query = "SELECT *
+	    	 FROM users 
+	   		 JOIN sitting_requests 
+	   		 ON users.id = sitting_requests.owner_id
+			 WHERE sitting_requests.status = 'requested'"
+
+    ActiveRecord::Base.connection.execute(query);
   end
 
-  def self.addressesOfRequested
-	  User.find_by_sql("SELECT address FROM users
-		  INNER JOIN sitting_requests ON users.id = sitting_requests.owner_id
-		  WHERE sitting_requests.status = 'requested'"
-	    )
-  end
 
   def self.geocodedAddresses
   queries = (self.addressesOfRequested).map do |address|
@@ -39,7 +39,22 @@ class SittingRequest < ActiveRecord::Base
 		lat = gc_response["results"][0]["geometry"]["location"]["lat"]
 		lng = gc_response["results"][0]["geometry"]["location"]["lng"]
 		[lat, lng]
+		end
 	end
-  end
+
+
+	def self.addressesofRequested
+		usersToGeocode = []
+		usersAlreadyGeocoded = []
+		self.usersOfRequested.each do |user|
+			if (user["lat"]== nil || user["lng"]== nil) 
+			 	usersToGeocode<<user
+			else
+				usersAlreadyGeocoded<<user
+			end
+		end
+		usersToGeocode;
+	end
+
 
 end

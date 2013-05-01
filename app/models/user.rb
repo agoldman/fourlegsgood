@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :id, :user_name, :email, :password, :remember_key, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :description
+  attr_accessible :id, :user_name, :email, :password, :remember_key, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :description, :lat, :lng
 
   validates :user_name, :email, :password, presence: true 
 

@@ -110,6 +110,8 @@ ActiveRecord::Schema.define(:version => 20130426062156) do
     t.integer  "sitter_karma"
     t.integer  "swaps_earned", :default => 1
     t.integer  "swap_price"
+    t.decimal  "lat"
+    t.decimal  "lng"
     t.text     "description"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
