@@ -80,19 +80,19 @@
     <div id="map-search">
       <div id="date-heading">Narrow Seach By Date</div>
 
-<div class="alert alert-error" id="alert">
-    <strong>Oh snap!</strong>
-</div>
+<!-- <div class="alert alert-error" id="alert">
+    <strong>Doh! End Date is Before Start</strong>
+  </div> -->
 
 
-<form>
+<form action="/current_requests/"<%=@zip%> class="request-dates">
   Start date
-  <input type="text" value="02-16-2012" id="date-start"><br>
-
+  <input type="text" value=<%=Time.now.strftime("%m-%d-%Y")%> id="date-start"><br>
   End date
-  <input type="text" value="02-16-2012" id="date-end">
+  <input type="text" id="date-end">
+  <input name="commit" type="submit" id="mapbutton" value="Party On"/>
 </form>
-</div>
+
 
 </body>
 
@@ -104,29 +104,29 @@
 var startDate = new Date(2012,1,20);
 var endDate = new Date(2012,1,25);
 $('#date-start')
-    .datepicker({format: 'mm-dd-yyyy'})
-    .on('changeDate', function(ev){
-        if (ev.date.valueOf() > endDate.valueOf()){
-            $('#alert').show().find('strong').text('The start date must be before the end date.');
-        } else {
-            $('#alert').hide();
-            startDate = new Date(ev.date);
-            $('#date-start-display').text($('#date-start').data('date'));
-        }
-        $('#date-start').datepicker('hide');
-    });
+    .datepicker({format: 'mm-dd-yyyy'});
+    // .on('changeDate', function(ev){
+    //     if (ev.date.valueOf() > endDate.valueOf()){
+    //         $('#alert').show().find('strong').text('The start date must be before the end date.');
+    //     } else {
+    //         $('#alert').hide();
+    //         startDate = new Date(ev.date);
+    //         $('#date-start-display').text($('#date-start').data('date'));
+    //     }
+    //     $('#date-start').datepicker('hide');
+    // });
 $('#date-end')
-    .datepicker({format: 'mm-dd-yyyy'})
-    .on('changeDate', function(ev){
-        if (ev.date.valueOf() < startDate.valueOf()){
-            $('#alert').show().find('strong').text('The end date must be after the start date.');
-        } else {
-            $('#alert').hide();
-            endDate = new Date(ev.date);
-            $('#date-end-display').text($('#date-end').data('date'));
-        }
-        $('#date-end').datepicker('hide');
-    });
+    .datepicker({format: 'mm-dd-yyyy'});
+  //   .on('changeDate', function(ev){
+  //       if (ev.date.valueOf() < startDate.valueOf()){
+  //           $('#alert').show().find('strong').text('The end date must be after the start date.');
+  //       } else {
+  //           $('#alert').hide();
+  //           endDate = new Date(ev.date);
+  //           $('#date-end-display').text($('#date-end').data('date'));
+  //       }
+  //       $('#date-end').datepicker('hide');
+  //   });
 
 
   });
