@@ -17,6 +17,7 @@
 //= require backbone-relational
 //= require date
 //= require moment
+//= require bootstrap-datepicker
 //= require flg
 //= require_tree ./models
 //= require_tree ./collections

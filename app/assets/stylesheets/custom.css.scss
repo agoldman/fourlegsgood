@@ -2,9 +2,41 @@
 
 
 /* maps */
+#table {
+  float: left;
+  width: 0;
+}
+
+.table {
+  width: 0;
+}
+
+
+#map-canvas {
+  width: 900px;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: auto;
+  float: left;
+  margin-right: 0px;
+}
+
 #map-canvas img{
   max-width: none;
 }
+
+#map-search img{
+  float: left;
+}
+#date-heading {
+  font-family: 'Helvetica';
+  font-size: 20px;
+  margin-top: 30px;
+  text-align: center;
+  color: rgb(57, 60, 61);
+}
+
 
 /*slideshow*/
 #slideshow {
