@@ -41,21 +41,28 @@ class SittingRequest < ActiveRecord::Base
 		lat = gc_response["results"][0]["geometry"]["location"]["lat"]
 		lng = gc_response["results"][0]["geometry"]["location"]["lng"]
 		[lat, lng]
-		end
 	end
+
+	latlongs.each_with_index do |latlng, index|
+		u = users[index]
+		u.lat = latlng[0]
+		u.lng = latlng[1]
+		u.save
+	end
+end
 
 
 	def self.addressesofRequested
 		usersToGeocode = []
-		usersAlreadyGeocoded = []
+		addressesAlreadyGeocoded = []
 		self.usersOfRequested.each do |user|
 			if (user["lat"]== nil || user["lng"]== nil) 
 			 	usersToGeocode<<user
 			else
-				usersAlreadyGeocoded<<user
+				addressesAlreadyGeocoded<<[user["lat"], user["lng"]]
 			end
 		end
-		self.geocodeAddresses(usersToGeocode)
+		self.geocodedAddresses(usersToGeocode) + addressesAlreadyGeocoded
 	end
 
 
