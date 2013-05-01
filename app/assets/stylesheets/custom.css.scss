@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+
+/* maps */
+#map-canvas img{
+  max-width: none;
+}
+
 /*slideshow*/
 #slideshow {
 color: rgb(57, 60, 61);
