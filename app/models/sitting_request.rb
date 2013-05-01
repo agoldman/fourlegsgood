@@ -20,13 +20,15 @@ class SittingRequest < ActiveRecord::Base
   end
 
 
-  def self.geocodedAddresses
-  queries = (self.addressesOfRequested).map do |address|
-				geocode = Addressable::URI.new(
+  def self.geocodedAddresses(users)
+  queries = []
+
+  users.each do |user|
+				queries << Addressable::URI.new(
 				  :scheme => "http",
 				  :host => "maps.googleapis.com",
 				  :path => "/maps/api/geocode/json",
-				  :query_values => {:address => "160 Folsom Street, San Francisco, CA",
+				  :query_values => {:address => "#{user.address}",
 				                     :sensor => "false"
 				                    }
 				  ).to_s
@@ -53,7 +55,7 @@ class SittingRequest < ActiveRecord::Base
 				usersAlreadyGeocoded<<user
 			end
 		end
-		usersToGeocode;
+		self.geocodeAddresses(usersToGeocode)
 	end
 
 
