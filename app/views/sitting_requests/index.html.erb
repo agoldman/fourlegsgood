@@ -14,7 +14,7 @@
 
     var map;
     var geocoder;
-    var bounds;
+    var address;
       function initialize() {
       	geocoder = new google.maps.Geocoder()
         var mapOptions = {
@@ -28,27 +28,25 @@
 
 
 		function codeAddress() {
-		  var address = "<%=@zip%>";
+		  address = "<%=@zip%>";
 		  geocoder.geocode( { 'address': address}, function(results, status) {
 		    if (status == google.maps.GeocoderStatus.OK) {
-		    	bounds = map.getBounds();
-          bounds = [bounds.getNorthEast(), bounds.getSouthWest()];
-          bounds = [[bounds[0].lat(), bounds[0].lng()], [bounds[0].lat(), bounds[1].lng()]];
+		    	center = [map.getCenter().lat(), map.getCenter().lng()];
 		      map.setCenter(results[0].geometry.location);
-		      var marker = new google.maps.Marker({
-		          map: map,
-		          position: results[0].geometry.location
-		      });
-          setRequesters(bounds);
+		      // var marker = new google.maps.Marker({
+		      //     map: map,
+		      //     position: results[0].geometry.location
+		      // });
+          setRequesters();
 		    } else {
 		      alert('Geocode was not successful for the following reason: ' + status);
 		    }
 		  });
 		}
 
-    function setRequesters(bounds) { 
+    function setRequesters() { 
 
-    $.get("/current_requests.json", {'latlng[]': bounds}, function(data) {
+    $.get("/current_requests.json", {'address': address}, function(data) {
       console.log(data);
     });
       

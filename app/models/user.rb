@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :id, :user_name, :email, :password, :remember_key, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :description, :lat, :lng
+  attr_accessible :id, :user_name, :email, :password, :remember_key, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :description, :latitude, :longitude
 
   validates :user_name, :email, :password, presence: true 
 
@@ -26,6 +26,9 @@ class User < ActiveRecord::Base
   has_many :received_sitter_reviews, class_name: "SitterReview", foreign_key: :sitter_reviewee_id
   has_many :sitter_reviewees, through: :written_sitter_reviews
   has_many :sitter_reviewers, through: :received_sitter_reviews
+
+  geocoded_by :address
+  after_validation :geocode
 
   # has_many :sent_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_requester_id
   # has_many :received_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_possessor_id

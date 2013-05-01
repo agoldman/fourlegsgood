@@ -8,6 +8,22 @@ class SittingRequest < ActiveRecord::Base
 
   belongs_to :owner, class_name: "User"
 
+
+
+  def self.getNearby(near_by_ids)
+  	query = "SELECT users.address
+            FROM sitting_requests
+            JOIN users
+            ON users.id = sitting_requests.owner_id
+            WHERE sitting_requests.status = 'requested'
+           	AND sitting_requests.owner_id IN #{near_by_ids}"
+            
+
+     ActiveRecord::Base.connection.execute(query);
+
+  end
+
+
   def self.usersOfRequested
 
     query = "SELECT *
@@ -49,21 +65,29 @@ class SittingRequest < ActiveRecord::Base
 		u.lng = latlng[1]
 		u.save
 	end
+
+	return latlongs
 end
 
 
-	def self.addressesofRequested
-		usersToGeocode = []
-		addressesAlreadyGeocoded = []
-		self.usersOfRequested.each do |user|
-			if (user["lat"]== nil || user["lng"]== nil) 
-			 	usersToGeocode<<user
-			else
-				addressesAlreadyGeocoded<<[user["lat"], user["lng"]]
-			end
-		end
-		self.geocodedAddresses(usersToGeocode) + addressesAlreadyGeocoded
-	end
-
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
