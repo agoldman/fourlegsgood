@@ -46,11 +46,19 @@
 
     function setRequesters() { 
 
-    $.get("/current_requests.json", {'address': address}, function(data) {
-      console.log(data);
-    });
-      
-    }
+    $.get("/current_requests.json", {'address': address}, function(addresses) {
+
+      console.log(addresses);
+
+     //  _.each(addresses, function(address) {
+     //    var marker = new google.maps.Marker({
+     //      map: map,
+     //      position: LatLng(address[0], address[1])
+     //  });
+
+     // });
+   });
+  }
 
       google.maps.event.addDomListener(window, 'load', initialize);
       google.maps.event.addDomListener(window, 'load', codeAddress);
