@@ -7,7 +7,8 @@ class CurrentRequestsController < ApplicationController
 		@address = (params[:address])
 		@near_by_users = User.near(@address, 50)
 		@near_by_ids = []
-		@near_by_addresses = []
+		@near_by_request_info = []
+		@current_dogs = []
 		@near_by_users.each do |user|
 			@near_by_ids << user.id 
 		end
@@ -18,11 +19,13 @@ class CurrentRequestsController < ApplicationController
 		end
 
 		@current_request_users = User.where(id: @near_by_ids)
+		@current_dogs = Pet.where(owner_id: @near_by_ids)
 		@current_request_users.each do |user|
-			@near_by_addresses << [user.latitude, user.longitude]
+			@near_by_request_info << [user.latitude, user.longitude, user.id, user.address, user.user_name]
 		end
 
-		render json: @near_by_addresses
+
+		render json: @near_by_request_info
 	end
 
 end

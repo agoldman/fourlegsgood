@@ -47,12 +47,12 @@
 
     function setRequesters() { 
 
-    $.get("/current_requests.json", {'address': address}, function(addresses) {
+    $.get("/current_requests.json", {'address': address}, function(requests) {
 
-      console.log(addresses);
+      console.log(requests);
 
-      _.each(addresses, function(address) {
-        var ll = new google.maps.LatLng(address[0], address[1]);
+      _.each(requests, function(request) {
+        var ll = new google.maps.LatLng(request[0], request[1]);
         var marker = new google.maps.Marker({
           map: map,
           position: ll
@@ -60,11 +60,17 @@
 
       google.maps.event.addListener(marker, 'click', function() {
         var infowindow = new google.maps.InfoWindow();
-        infowindow.setContent("test");
+
+        $.get("/pets.json", {'owner_id': request[2]}, function(current_dog) {
+          console.log(current_dog);
+
+        infowindow.setContent("<div class='popup'>" + current_dog.name + "<br>Pet Picture Here: <br><a href=''>View Full Request</a><br>" + request[3] + "<div>");
         infowindow.open(map, marker);
       });
+
         
    });
+  });
   });
   }
 

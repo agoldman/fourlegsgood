@@ -16,5 +16,6 @@ Fourlegsgood::Application.routes.draw do
   end
   resources :sessions
   resources :sitting_requests, only: [:index]
+  resources :pets
   resources :current_requests
 end
