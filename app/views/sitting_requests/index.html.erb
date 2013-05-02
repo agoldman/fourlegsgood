@@ -85,21 +85,19 @@
   <body>
     <div id="map-canvas"></div>
     <div id="map-search">
-      <div id="date-heading">Narrow Seach By Date</div>
+      <div id="date-heading">Narrow Seach By Dates</div>
 
 <!-- <div class="alert alert-error" id="alert">
     <strong>Doh! End Date is Before Start</strong>
   </div> -->
-
-
-<form action="/current_requests/"<%=@zip%> class="request-dates" method="get">
+<div class="request-dates">
   Start date
   <input type="text" value=<%=Time.now.strftime("%m-%d-%Y")%> id="date-start" name="start"><br>
   End date
   <input type="text" id="date-end" name="end">
   <input type="hidden" name="address" value="<%=@zip%>">
-  <input name="commit" type="submit" id="mapbutton" value="Dog!"/>
-</form>
+  <button id="mapbutton">Dog!</button>
+</div>
 
 
 </body>
@@ -109,8 +107,8 @@
   $(function() {
     
 
-var startDate = new Date(2012,1,20);
-var endDate = new Date(2012,1,25);
+// var startDate = new Date(2012,1,20);
+// var endDate = new Date(2012,1,25);
 $('#date-start')
     .datepicker({format: 'mm-dd-yyyy'});
     // .on('changeDate', function(ev){
@@ -136,8 +134,41 @@ $('#date-end')
   //       $('#date-end').datepicker('hide');
   //   });
 
+  $('#mapbutton').click(function() {
+    clearOverlays();
+
+      var start = $('#date-start').val()
+      var end = $('#date-end').val()
+      $.get("/current_requests.json", {'address': address, 'start': start, 'end': end}, function(requests) {
+
+      _.each(requests, function(request) {
+        var ll = new google.maps.LatLng(request[0], request[1]);
+        var marker = new google.maps.Marker({
+          map: map,
+          position: ll
+      });
+
+      markersArray.push(marker);
+      google.maps.event.addListener(marker, 'click', function() {
+        var infowindow = new google.maps.InfoWindow();
+
+        $.get("/pets.json", {'owner_id': request[2]}, function(current_dog) {
+          console.log(current_dog);
+
+        infowindow.setContent("<div class='popup'>" + current_dog.name + "<br>Pet Picture Here: <br><a href=''>View Full Request</a><br>" + request[3] + "<div>");
+        infowindow.open(map, marker);
+      });
+
+        
+   });
+  });
+  });
+  });
 
   });
+
+
+
 </script>
 
 </html>

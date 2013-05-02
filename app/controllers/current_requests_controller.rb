@@ -4,7 +4,6 @@ class CurrentRequestsController < ApplicationController
 	respond_to :html
 
 	def index
-
 		if (params[:start] && params[:end]) 
 			@address = params[:address]
 			@start = Date.parse(params[:start]).to_s
