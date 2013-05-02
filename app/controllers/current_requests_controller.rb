@@ -4,11 +4,13 @@ class CurrentRequestsController < ApplicationController
 	respond_to :html
 
 	def index
-		if (params[:start] && params[:end]) 
+		if (params[:start] && params[:end])
 			@address = params[:address]
-			@start = Date.parse(params[:start]).to_s
-			@end = Date.parse(params[:end]).to_s
-			@near_by_users = User.near(@address, 50)
+			@start = params[:start]
+			@end =params[:end]
+			p "start" + @start
+			p "end" + @end
+			@near_by_users = User.near(@address, 100)
 			@near_by_ids_any_status = []
 			@near_by_request_info = []
 			@near_by_users.each do |user|
@@ -34,7 +36,7 @@ class CurrentRequestsController < ApplicationController
 		else
 			# @user = User.find(params[:user_id]) #will change to current user when I have login
 			@address = (params[:address])
-			@near_by_users = User.near(@address, 50)
+			@near_by_users = User.near(@address, 100)
 			@near_by_ids_any_status = []
 			@near_by_request_info = []
 			@near_by_users.each do |user|

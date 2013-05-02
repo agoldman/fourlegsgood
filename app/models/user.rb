@@ -30,6 +30,9 @@ class User < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
+  attr_accessible :avatar
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+
   # has_many :sent_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_requester_id
   # has_many :received_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_possessor_id
   # has_many :swap_possessors, through: :sent_swap_exchange_requests #users who had swaps this user requested to buy
