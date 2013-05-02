@@ -1,6 +1,7 @@
 @import "bootstrap";
 
 
+
 /* maps */
 
 #alert{
@@ -866,7 +867,7 @@ width: 657px;
   background-size: auto;
   color: rgb(57, 60, 61);
   display: block;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica';
   font-size: 13px;
   height: 307px;
   line-height: 18px;
@@ -875,19 +876,36 @@ width: 657px;
 }
 
 #left-user-box {
-  float:left;
+  font-family: 'Helvetica';
+  float: left;
+  font-size: 20px;
+  color: IndianRed;
+  font-weight: bold;
   height: 615px;
   width: 250px;
   -webkit-background-clip: border-box;
 }
 
+#updatephoto{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+#photo-box-lower{
+  text-align: center;
+  position: absolute;
+  bottom:0;
+  margin-left: 65px;
+}
+
 .user-photo {
   color: rgb(57, 60, 61);
   display: block;
-  float: left;
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica';
   font-size: 13px;
-  height: 217px;
+  height: auto;
   left: -4px;
   line-height: 18px;
   margin-bottom: 5px;
@@ -955,10 +973,11 @@ border-top-left-radius: 7px;
 border-top-right-radius: 7px;
 box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
 clear: both;
-color: rgb(57, 60, 61);
+font-size: 20px;
+color: IndianRed;
+font-weight: bold;
 display: block;
-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-font-size: 13px;
+font-family: 'Helvetica';
 height: 279px;
 line-height: 18px;
 margin-bottom: 10px;
@@ -969,6 +988,7 @@ padding-bottom: 15px;
 padding-left: 15px;
 padding-right: 15px;
 padding-top: 15px;
+position: relative;
 text-align: center;
 width: 209px;
 }
@@ -1088,7 +1108,7 @@ html {
 
 body {
   background: WhiteSmoke;
-  font-family: Helvetica;
+  font-family: 'Helvetica';
 }
 
 section {
@@ -1491,6 +1511,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
+  font-family: 'Helvetica';
 }
 
 h3 {

@@ -1,6 +1,9 @@
 
-<br/>
+<%if(mypets.length==0) { %>
+	<a>Add A Dog</a>
+<% } %>
 <%mypets.each(function(pet) { %>
+	HERE
 	<div class="span3 dogphoto"> <p> photo </p> </div>
 	<div class="dogabout"> <%= pet.escape('name') %> </div> 
 	<br>

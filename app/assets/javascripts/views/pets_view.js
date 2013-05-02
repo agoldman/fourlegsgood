@@ -7,6 +7,7 @@ render: function() {
 	pets.url = that.model.escape("id") + "/pets"
 	pets.fetch({
 		success: function() {
+			console.log(pets);
 			var renderedContent = JST["pets/index"]({
 				mypets: pets
 			});

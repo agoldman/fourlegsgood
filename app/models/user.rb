@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :id, :user_name, :email, :password, :remember_key, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :description, :latitude, :longitude
+  attr_accessible :avatar, :avatar_file_name, :id, :user_name, :email, :password, :remember_key, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :description, :latitude, :longitude
 
   validates :user_name, :email, :password, presence: true 
 
@@ -30,14 +30,21 @@ class User < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
-  attr_accessible :avatar
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+ 
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing.jpg"
 
   # has_many :sent_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_requester_id
   # has_many :received_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_possessor_id
   # has_many :swap_possessors, through: :sent_swap_exchange_requests #users who had swaps this user requested to buy
   # has_many :swap_requesters, through: :received_swap_exchange_requests #users who requested to buy swaps from this user
 
+  def as_json(options={})
+    super(options.merge(methods: :avatar_url))
+  end
+
+  def avatar_url
+    self.avatar.url
+  end
 
   def inbox
     params = { id: @id }

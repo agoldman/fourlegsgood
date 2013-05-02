@@ -3,7 +3,7 @@
 	<%=review.escape("score")%>/5
 	<% if(review.escape("comment")) { %>
 	<%= review.escape("comment") %>
-	-- <%= moment(review.escape("created_at")).format("dddd, MMMM Do YYYY, h:mm:ss a") %>
+	-- <%= moment(review.escape("created_at")).format("dddd, MMMM Do YYYY, h:mm:ss a") %> <br>
 	<% } %>
 	
 <% }) %>
