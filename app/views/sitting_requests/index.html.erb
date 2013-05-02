@@ -16,6 +16,7 @@
     var geocoder;
     var address;
     var center;
+    var markersArray = [];
       function initialize() {
       	geocoder = new google.maps.Geocoder()
         var mapOptions = {
@@ -27,6 +28,11 @@
             mapOptions);
       }
 
+      function clearOverlays() {
+        for (var i = 0; i < markersArray.length; i++ ) {
+          markersArray[i].setMap(null);
+          }
+        }
 
 		function codeAddress() {
 		  address = "<%=@zip%>";
@@ -54,6 +60,7 @@
           position: ll
       });
 
+      markersArray.push(marker);
       google.maps.event.addListener(marker, 'click', function() {
         var infowindow = new google.maps.InfoWindow();
 
