@@ -10,42 +10,63 @@
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnvbLDQSjjhrvu3HO5XZJ1dtl4MMJuoME&sensor=false">
     </script>
-    <script type="text/javascript">
+  </head>
+  <body>
 
+    <div id="map-canvas"></div>
+    <div id="map-search">
+    <div id="date-heading">Narrow Seach By Dates</div>
+
+<!-- <div class="alert alert-error" id="alert">
+    <strong>Doh! End Date is Before Start</strong>
+      </div> -->
+    <div class="request-dates">
+      Start date
+      <input type="text" value=<%=Time.now.strftime("%m-%d-%Y")%> id="date-start" name="start"><br>
+      End date
+      <input type="text" id="date-end" name="end">
+      <input type="hidden" name="address" value="<%=@zip%>">
+      <button id="mapbutton">Dog!</button>
+    </div>
+  </body>
+
+
+<script type="text/javascript">
+  $(function() {
     var map;
     var geocoder;
     var address;
     var center;
     var markersArray = [];
-      function initialize() {
-      	geocoder = new google.maps.Geocoder()
-        var mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 11,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
+    function initialize() {
+      geocoder = new google.maps.Geocoder()
+      var mapOptions = {
+        center: new google.maps.LatLng(-34.397, 150.644),
+        zoom: 11,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      map = new google.maps.Map(document.getElementById("map-canvas"),
+          mapOptions);
+    }
+
+    function clearOverlays() {
+      for (var i = 0; i < markersArray.length; i++ ) {
+        markersArray[i].setMap(null);
+        }
       }
 
-      function clearOverlays() {
-        for (var i = 0; i < markersArray.length; i++ ) {
-          markersArray[i].setMap(null);
-          }
-        }
-
-		function codeAddress() {
-		  address = "<%=@zip%>";
-		  geocoder.geocode( { 'address': address}, function(results, status) {
-		    if (status == google.maps.GeocoderStatus.OK) {
-		    	center = [map.getCenter().lat(), map.getCenter().lng()];
-		      map.setCenter(results[0].geometry.location);
+    function codeAddress() {
+      address = "<%=@zip%>";
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          center = [map.getCenter().lat(), map.getCenter().lng()];
+          map.setCenter(results[0].geometry.location);
           setRequesters();
-		    } else {
-		      alert('Geocode was not successful for the following reason: ' + status);
-		    }
-		  });
-		}
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
 
     function setRequesters() { 
 
@@ -77,98 +98,66 @@
   });
   }
 
-      google.maps.event.addDomListener(window, 'load', initialize);
-      google.maps.event.addDomListener(window, 'load', codeAddress);
-      
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
-    <div id="map-search">
-      <div id="date-heading">Narrow Seach By Dates</div>
-
-<!-- <div class="alert alert-error" id="alert">
-    <strong>Doh! End Date is Before Start</strong>
-  </div> -->
-<div class="request-dates">
-  Start date
-  <input type="text" value=<%=Time.now.strftime("%m-%d-%Y")%> id="date-start" name="start"><br>
-  End date
-  <input type="text" id="date-end" name="end">
-  <input type="hidden" name="address" value="<%=@zip%>">
-  <button id="mapbutton">Dog!</button>
-</div>
-
-
-</body>
-
-
-<script type="text/javascript">
-  $(function() {
-    
+  google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, 'load', codeAddress);
 
 // var startDate = new Date(2012,1,20);
 // var endDate = new Date(2012,1,25);
-$('#date-start')
-    .datepicker({format: 'mm-dd-yyyy'});
-    // .on('changeDate', function(ev){
-    //     if (ev.date.valueOf() > endDate.valueOf()){
-    //         $('#alert').show().find('strong').text('The start date must be before the end date.');
-    //     } else {
-    //         $('#alert').hide();
-    //         startDate = new Date(ev.date);
-    //         $('#date-start-display').text($('#date-start').data('date'));
-    //     }
-    //     $('#date-start').datepicker('hide');
-    // });
-$('#date-end')
-    .datepicker({format: 'mm-dd-yyyy'});
-  //   .on('changeDate', function(ev){
-  //       if (ev.date.valueOf() < startDate.valueOf()){
-  //           $('#alert').show().find('strong').text('The end date must be after the start date.');
-  //       } else {
-  //           $('#alert').hide();
-  //           endDate = new Date(ev.date);
-  //           $('#date-end-display').text($('#date-end').data('date'));
-  //       }
-  //       $('#date-end').datepicker('hide');
-  //   });
+  $('#date-start')
+      .datepicker({format: 'mm-dd-yyyy'});
+      // .on('changeDate', function(ev){
+      //     if (ev.date.valueOf() > endDate.valueOf()){
+      //         $('#alert').show().find('strong').text('The start date must be before the end date.');
+      //     } else {
+      //         $('#alert').hide();
+      //         startDate = new Date(ev.date);
+      //         $('#date-start-display').text($('#date-start').data('date'));
+      //     }
+      //     $('#date-start').datepicker('hide');
+      // });
+  $('#date-end')
+      .datepicker({format: 'mm-dd-yyyy'});
+    //   .on('changeDate', function(ev){
+    //       if (ev.date.valueOf() < startDate.valueOf()){
+    //           $('#alert').show().find('strong').text('The end date must be after the start date.');
+    //       } else {
+    //           $('#alert').hide();
+    //           endDate = new Date(ev.date);
+    //           $('#date-end-display').text($('#date-end').data('date'));
+    //       }
+    //       $('#date-end').datepicker('hide');
+    //   });
 
-  $('#mapbutton').click(function() {
-    clearOverlays();
+    $('#mapbutton').click(function() {
+      clearOverlays();
+        var start = $('#date-start').val()
+        var end = $('#date-end').val()
 
-      var start = $('#date-start').val()
-      var end = $('#date-end').val()
-      $.get("/current_requests.json", {'address': address, 'start': start, 'end': end}, function(requests) {
+        $.get("/current_requests.json", {'address': address, 'start': start, 'end': end}, function(requests) {
+          console.log(requests);
+        _.each(requests, function(request) {  
+              var ll = new google.maps.LatLng(request[0], request[1]);
+              var marker = new google.maps.Marker({
+                map: map,
+                position: ll
+              });
 
-      _.each(requests, function(request) {
-        var ll = new google.maps.LatLng(request[0], request[1]);
-        var marker = new google.maps.Marker({
-          map: map,
-          position: ll
-      });
+               markersArray.push(marker);
 
-      markersArray.push(marker);
-      google.maps.event.addListener(marker, 'click', function() {
-        var infowindow = new google.maps.InfoWindow();
+              google.maps.event.addListener(marker, 'click', function() {
+                var infowindow = new google.maps.InfoWindow();
 
-        $.get("/pets.json", {'owner_id': request[2]}, function(current_dog) {
-          console.log(current_dog);
+                $.get("/pets.json", {'owner_id': request[2]}, function(current_dog) {
+                  
 
-        infowindow.setContent("<div class='popup'>" + current_dog.name + "<br>Pet Picture Here: <br><a href=''>View Full Request</a><br>" + request[3] + "<div>");
-        infowindow.open(map, marker);
-      });
-
-        
-   });
-  });
-  });
-  });
-
-  });
-
-
+                  infowindow.setContent("<div class='popup'>" + current_dog.name + "<br>Pet Picture Here: <br><a href=''>View Full Request</a><br>" + request[3] + "<div>");
+                  infowindow.open(map, marker);
+                });
+              });
+          });
+        });
+    });
+});
 
 </script>
-
 </html>

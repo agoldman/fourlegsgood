@@ -15,7 +15,7 @@ class CurrentRequestsController < ApplicationController
 				@near_by_ids_any_status << user.id 
 			end
 
-			@current_requests = SittingRequest.where(owner_id: @near_by_ids_any_status, status: 'requested').where("start_date >= date('" + @start + "')").where("start_date <= date('" + @end + "')")
+			@current_requests = SittingRequest.where(owner_id: @near_by_ids_any_status, status: 'requested').where("start_date >= date('" + @start + "')").where("end_date <= date('" + @end + "')")
 
 			@near_by_ids_requested_status = [];
 			@current_requests.each do |request|
@@ -51,7 +51,6 @@ class CurrentRequestsController < ApplicationController
 			@current_request_users.each do |user|
 				@near_by_request_info << [user.latitude, user.longitude, user.id, user.address, user.user_name]
 			end
-
 
 			render json: @near_by_request_info
 		end
