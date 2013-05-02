@@ -337,12 +337,36 @@ margin-bottom: 18px;
 margin-right: 10px;
 margin-top: 10px;
 min-height: 40px;
-padding-bottom: 15px;
 padding-left: 15px;
 padding-right: 15px;
 padding-top: 15px;
 width: 603px;
-min-height: 279px;;
+min-height: 345px;;
+}
+
+.add-dog{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+#dogphotoupdate{
+
+}
+
+.dogphotoinner{
+  height: 279px;
+  margin-bottom: 15px;
+}
+
+#dogphotoupdate{
+  margin-top: 5px;
+}
+
+.dog-photo-box-lower{
+  font-size: 18px;
+  margin-top: 30px;
+  padding-top: 10px;
 }
 
 .dogphoto {
@@ -361,24 +385,21 @@ border-bottom-right-radius: 7px;
 border-top-left-radius: 7px;
 border-top-right-radius: 7px;
 box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
-clear: both;
 color: rgb(57, 60, 61);
-display: block;
 font-family: 'Helvetica';
-font-size: 13px;
-height: 279px;
+font-size: 18px;
+height: auto;
 line-height: 18px;
 margin-bottom: 10px;
 margin-right: 25px;
 margin-top: 10px;
 min-height: 40px;
-padding-bottom: 15px;
 padding-left: 15px;
 padding-right: 15px;
 padding-top: 15px;
+position: relative;
 text-align: center;
 width: 209px;
-
 }
 
 /* messages template */
