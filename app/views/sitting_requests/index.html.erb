@@ -150,7 +150,7 @@
                 $.get("/pets.json", {'owner_id': request[2]}, function(current_dog) {
                   
 
-                  infowindow.setContent("<div class='popup'>" + current_dog.name + "<br>Pet Picture Here: <br><a href=''>View Full Request</a><br>" + request[3] + "<div>");
+                  infowindow.setContent("<div class='popup'>" + current_dog.name + "<br><div class='mapdogpic'><img src='" + current_dog.avatar_url + "' height='300px' width='200px'></div> <br><a href=''>View Full Request</a><br>" + request[3] + "<div>");
                   infowindow.open(map, marker);
                 });
               });
