@@ -27,7 +27,9 @@ class CurrentRequestsController < ApplicationController
 				@near_by_ids_any_status << user.id 
 			end
 
-			@current_requests = SittingRequest.where(owner_id: @near_by_ids_any_status, status: 'requested').where("start_date >= datetime('" + @start + "')").where("end_date <= datetime('" + @end + "')")
+			@current_requests = SittingRequest.where(owner_id: @near_by_ids_any_status, status: 'requested')
+											  .where("start_date >= ?", @start)
+											  .where("end_date <= ?", @end)
 
 			p "current_requests"
 			p @current_requests
