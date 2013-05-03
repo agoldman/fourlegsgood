@@ -5,8 +5,8 @@ class CreateSittings < ActiveRecord::Migration
     	t.integer :sitter_id
     	t.integer :sat_for_owner_id
     	t.string :status
-    	t.date :start_date
-    	t.date :end_date
+    	t.datetime :start_date
+    	t.datetime :end_date
     	t.decimal :cash_price
     	t.integer :swap_price
 

@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(:version => 20130503022417) do
 
   create_table "sitting_requests", :force => true do |t|
     t.integer  "owner_id"
-    t.date     "start_date"
-    t.date     "end_date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.string   "status",     :default => "requested"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
@@ -80,8 +80,8 @@ ActiveRecord::Schema.define(:version => 20130503022417) do
     t.integer  "sitter_id"
     t.integer  "sat_for_owner_id"
     t.string   "status"
-    t.date     "start_date"
-    t.date     "end_date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.decimal  "cash_price"
     t.integer  "swap_price"
     t.datetime "created_at",       :null => false
