@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :avatar, :avatar_file_name, :id, :user_name, :email, :password, :remember_key, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :description, :latitude, :longitude
+  attr_accessible :about_me, :avatar, :id, :user_name, :email, :password, :remember_key, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :description, :latitude, :longitude
 
   validates :user_name, :email, :password, presence: true 
 
@@ -102,7 +102,7 @@ class User < ActiveRecord::Base
   end
 
   def satForDogs
-    query = "SELECT d.name
+    query = "SELECT d.id
             FROM users u JOIN sittings s 
             ON u.id = s.sitter_id
             JOIN users uu
@@ -117,7 +117,7 @@ class User < ActiveRecord::Base
 
 
   def sittersofOccurredSitting
-    query = "SELECT uu.user_name
+    query = "SELECT uu.id
             FROM users u JOIN sittings s 
             ON u.id = s.sat_for_owner_id
             JOIN users uu

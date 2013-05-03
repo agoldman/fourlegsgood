@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130502173456) do
+ActiveRecord::Schema.define(:version => 20130502214548) do
 
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
@@ -45,8 +45,12 @@ ActiveRecord::Schema.define(:version => 20130502173456) do
     t.integer  "age"
     t.integer  "owner_id"
     t.text     "care_instructions"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "sitter_reviews", :force => true do |t|
@@ -101,6 +105,7 @@ ActiveRecord::Schema.define(:version => 20130502173456) do
 
   create_table "users", :force => true do |t|
     t.string   "user_name"
+    t.text     "about_me"
     t.string   "email"
     t.string   "password"
     t.string   "remember_key"

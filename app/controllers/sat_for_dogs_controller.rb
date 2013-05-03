@@ -4,7 +4,12 @@ class SatForDogsController < ApplicationController
 
 	def index
 		@user = User.find(params[:user_id]) #change to current_user
-		@sat_for_dogs = @user.satForDogs
-		render json: @sat_for_dogs
+		@sat_for_dog_ids_hash = @user.satForDogs
+		@dog_ids = []
+		@sat_for_dog_ids_hash.each do |el|
+			@dog_ids<<el["id"]
+		end
+		@dogs = Pet.where(id: @dog_ids)
+		render json: @dogs
 	end
 end

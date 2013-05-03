@@ -24,42 +24,48 @@
 	<div class="profile-box">
 		<div id="profile-info">
 			
-				<div class="p-info-left"
-					<li><h4>Swaps Ready to Use</h4><h6> <%=user.escape('swaps_earned')%> </h6></li><br>
+				<table class="p-info-left">
+					<tbody>
+					<tr>
+						<td class="profstat"> Swaps Ready to Use </td>
+						<td class="profentry"> <%=user.escape('swaps_earned')%></td>
+					</tr>
 
-					<li><h4>Email</h4> <h6><%=user.escape('email')%></h6></li><br>
+					<tr>
+						<td class="profstat"> Email </td>
+						<td class="profentry"> <%=user.escape('email')%></td>
+					</tr>
 
-					<li>
-						<%if(user.escape('address')) { %>
-							<h4> Address </h4><h6><%= user.escape('address') %></h6>
-						<% } %>
-					</li>
-
-					<li>
-					<%if(user.escape('sitter_rate')) { %>
-						My Sitter Rate:  <%=user.escape('sitter_rate') %>
+					<%if(user.escape('address')) { %>
+					<tr>
+						<td class="profstat"> Address </td>
+						<td class="profentry"><%= user.escape('address') %></td>
+					</tr>
 					<% } %>
-					</li>
 
-					<li>
+					<tr>
+						<td class="profstat"> About Me </td>
+						<td class="profentry"> <%=user.escape('about_me')%></td>
+					</tr>
+					
+					<tr>
+						<td class="profstat"> My Sitter Rate </td>
+						<td class="profentry"><%= user.escape('sitter_rate') %></td>
+					</tr>
+					
+
 					<%if(user.escape('dog_karma')) { %>
-						My Dog Karma:  <%=user.escape('dog_karma') %>
+					<tr>
+						<td class="profstat"> My Dog Karma </td>
+						<td class="profentry"><%= user.escape('dog_karma') %></td>
+					</tr>
 					<% } %>
-					</li>
 
-					<li>
-					<%if(user.escape('dog_karma')) { %>
-						My Sitter Karma:  <%=user.escape('dog_karma') %>
-					<% } %>
-					</li>
+					</tbody>
+				</table>
 
 					<br><br>
-						<h4><a href=""> Update Profile </a></h4>
-				</div>
-
-				
-				<div class="about-me-box">
-					About Me
+						<a id="updatefullphotolink" href=""> Update Profile </a>
 				</div>
 				
 			

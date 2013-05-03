@@ -14,7 +14,9 @@ render: function() {
 			sitters.fetch({
 
 			success: function() {
+					console.log(sat_for_dogs);
 				var renderedContent = JST["sittings/index"]({
+
 					mysittings: sat_for_dogs,
 					mysitters: sitters
 				});

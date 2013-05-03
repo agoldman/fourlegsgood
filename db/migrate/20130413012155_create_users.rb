@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
 
     	t.string :user_name
+        t.text :about_me
         t.string :email
     	t.string :password
     	t.string :remember_key

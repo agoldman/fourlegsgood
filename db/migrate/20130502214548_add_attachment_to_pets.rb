@@ -1,5 +1,5 @@
 class AddAttachmentToPets < ActiveRecord::Migration
   def change
-    add_attachment :users, :avatar
+    add_attachment :pets, :avatar
   end
 end

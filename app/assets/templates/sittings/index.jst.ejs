@@ -1,8 +1,11 @@
-<div class="sittingbox dogs">
+<div class="sittingbox dogsbox">
 	Dogs
 	<div class="dogpics">
-		<%mysittings.each(function(sitting){ %>
-			<%= sitting.escape("name") %>
+		<%mysittings.each(function(dog){ %>
+			<div class="sittingthumbnail">
+				<img class="histthumb" src=<%= dog.escape("avatar_url") %> alt="Profile">
+				<%=dog.escape("name") %> 
+			</div><br>
 		<% }); %>
 	</div>
  </div> 
@@ -11,7 +14,10 @@
  	Sitters
  	<div class="sitterpics">
 	 	<%mysitters.each(function(sitter) { %>
-	 		<%=sitter.escape("user_name") %>
+	 		<div class="sittingthumbnail">
+	 		<img class="histthumb" src=<%= sitter.escape("avatar_url") %> alt="Profile">
+	 		<%=sitter.escape("user_name") %> 
+	 		</div><br>
 	 	<% }); %>
 	</div>
  </div>

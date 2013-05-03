@@ -8,15 +8,24 @@
 		<div class="dogphotoinner">
 			<img id="dogphotoupdate" src= <%=pet.escape('avatar_url')%> alt="PetPic">
 		</div>
+
 		<div id="dog-photo-box-lower">
 				<%=pet.escape('name')%><br>
 				<div id="updatephoto">
 					<a id="updatephotolink">Update Photo</a>
 				</div>
 		</div>
+
 	</div>
 
 				
-	<div class="dogabout"> <%= pet.escape('name') %> </div> 
-	<br>
+	<div class="dogabout"> 
+		Age <div class="dogstat"> <%=pet.escape('age')%> </div><br/>
+		Sex <br/><br/>
+		About <br/><br/>
+		<%if(pet.escape('care_instructions')) { %>
+			Special instructions: <%= pet.escape('care_instructions') %>
+		<% } %> 
+	</div> 
+
 <% }); %>
