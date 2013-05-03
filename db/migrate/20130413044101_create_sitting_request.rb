@@ -3,8 +3,8 @@ class CreateSittingRequest < ActiveRecord::Migration
     create_table :sitting_requests do |t|
 
     	t.integer :owner_id
-    	t.string :start_date
-    	t.string :end_date
+    	t.date :start_date
+    	t.date :end_date
     	t.string :status, default: "requested"
 
       t.timestamps

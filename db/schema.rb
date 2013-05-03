@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(:version => 20130503022417) do
 
   create_table "sitting_requests", :force => true do |t|
     t.integer  "owner_id"
-    t.string   "start_date"
-    t.string   "end_date"
+    t.date     "start_date"
+    t.date     "end_date"
     t.string   "status",     :default => "requested"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false

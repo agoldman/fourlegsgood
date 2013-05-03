@@ -2,7 +2,7 @@
 .welcomebox{
   text-align:center;
   margin-top: 200px;
-  margin-left: 550px;
+  margin-left: 600px;
   position: absolute;
 }
 
@@ -1250,15 +1250,14 @@ textarea {
 }
 
 
-#login, #signup {
+#signup {
   color: black;
   font-family: 'Helvetica';
   font-size: 15px;
   font-weight: lighter;
+  
 }
 
-#signup {
-}
 
 .navbar {
   margin-bottom: 0;
@@ -1469,11 +1468,6 @@ width: 200px;
 label {
   color: WhiteSmoke;
   font-size: 20px;
-}
-
-#signup {
-  padding-top: 40px;
-  font-family: 'Ovo', serif;
 }
 
 .submit_button {
