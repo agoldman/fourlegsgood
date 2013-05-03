@@ -24,49 +24,13 @@
 	<div class="profile-box">
 		<div id="profile-info">
 			
-				<table class="p-info-left">
-					<tbody>
-					<tr>
-						<td class="profstat"> Swaps Ready to Use </td>
-						<td class="profentry"> <%=user.escape('swaps_earned')%></td>
-					</tr>
+		 Swaps Ready to Use 
+			<%=user.escape('swaps_earned')%> <br>
 
-					<tr>
-						<td class="profstat"> Email </td>
-						<td class="profentry"> <%=user.escape('email')%></td>
-					</tr>
-
-					<%if(user.escape('address')) { %>
-					<tr>
-						<td class="profstat"> Address </td>
-						<td class="profentry"><%= user.escape('address') %></td>
-					</tr>
-					<% } %>
-
-					<tr>
-						<td class="profstat"> About Me </td>
-						<td class="profentry"> <%=user.escape('about_me')%></td>
-					</tr>
-					
-					<tr>
-						<td class="profstat"> My Sitter Rate </td>
-						<td class="profentry"><%= user.escape('sitter_rate') %></td>
-					</tr>
-					
-
-					<%if(user.escape('dog_karma')) { %>
-					<tr>
-						<td class="profstat"> My Dog Karma </td>
-						<td class="profentry"><%= user.escape('dog_karma') %></td>
-					</tr>
-					<% } %>
-
-					</tbody>
-				</table>
-
-					<br><br>
-						<a id="updatefullphotolink" href=""> Update Profile </a>
-				</div>
+			 About Me <%=user.escape('about_me')%>
+		<br><br>
+		<a id="updatefullphotolink" href=""> Update Profile </a>
+		</div>
 				
 			
 		</div>
