@@ -10,7 +10,17 @@ class CurrentRequestsController < ApplicationController
 			@end =params[:end]
 			p "start" + @start
 			p "end" + @end
+
+			@all = User.all
+
+			p p"all users"
+			p @all
+
 			@near_by_users = User.near(@address, 100)
+
+			p "near_by_users"
+			p @near_by_users
+
 			@near_by_ids_any_status = []
 			@near_by_request_info = []
 			@near_by_users.each do |user|
@@ -19,12 +29,19 @@ class CurrentRequestsController < ApplicationController
 
 			@current_requests = SittingRequest.where(owner_id: @near_by_ids_any_status, status: 'requested').where("start_date >= date('" + @start + "')").where("end_date <= date('" + @end + "')")
 
+			p "current_requests"
+			p @current_requests
+
 			@near_by_ids_requested_status = [];
 			@current_requests.each do |request|
 				@near_by_ids_requested_status << request.owner_id 
 			end
 
 			@current_request_users = User.where(id: @near_by_ids_requested_status)
+
+			p "current_request_users"
+			p @current_request_users
+
 			@current_request_users.each do |user|
 				@near_by_request_info << [user.latitude, user.longitude, user.id, user.address, user.user_name]
 			end
