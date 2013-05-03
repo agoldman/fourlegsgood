@@ -23,6 +23,10 @@
   margin-top: 10px;
 }
 
+.formmap{
+  display: block;
+}
+
 #mapbutton {
 padding: 0.4em 1.2em;
 -webkit-box-sizing: border-box;
@@ -1214,6 +1218,7 @@ html {
 body {
   background: WhiteSmoke;
   font-family: 'Helvetica';
+  min-width: 1200px;
 }
 
 section {
