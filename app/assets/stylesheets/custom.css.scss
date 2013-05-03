@@ -1,4 +1,14 @@
 
+.welcomebox{
+  text-align:center;
+  margin-top: 200px;
+  margin-left: 500px;
+  position: absolute;
+}
+
+.masthead {
+  position: relative;
+}
 
 
 /* maps */
@@ -1234,7 +1244,6 @@ textarea {
 }
 
 #signup {
-  padding-top: 40px;
 }
 
 .navbar {
@@ -1254,7 +1263,7 @@ textarea {
 
 .container {
   margin-left: 175px;
-  margin-top: 50px;
+
 }
 
 #masthead-subtitle{
@@ -1318,12 +1327,7 @@ textarea {
   text-decoration: none;
 }
 
-form.signup_form {
-	text-align: center;
-	padding: 75px;
-	height: 600px;
-	background: IndianRed;
-}
+
 
 .second_welcome{
   font-family: 'Ovo', serif;
