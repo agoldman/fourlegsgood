@@ -6,10 +6,8 @@ class CurrentRequestsController < ApplicationController
 	def index
 		if (params[:start] && params[:end])
 			@address = params[:address]
-			@start = params[:start]
-			@end =params[:end]
-			p "start" + @start
-			p "end" + @end
+			@start = DateTime.parse(params[:start])
+			@end = DateTime.parse(params[:end])
 
 			@all = User.all
 
