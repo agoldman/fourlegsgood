@@ -1,7 +1,13 @@
 class User < ActiveRecord::Base
-  attr_accessible :about_me, :avatar, :id, :user_name, :email, :password, :remember_key, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :description, :latitude, :longitude
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
-  validates :user_name, :email, :password, presence: true 
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :about_me, :avatar, :id, :user_name, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :latitude, :longitude
+  # attr_accessible :title, :body
 
   has_many :pets, foreign_key: :owner_id
 
@@ -26,6 +32,10 @@ class User < ActiveRecord::Base
   has_many :received_sitter_reviews, class_name: "SitterReview", foreign_key: :sitter_reviewee_id
   has_many :sitter_reviewees, through: :written_sitter_reviews
   has_many :sitter_reviewers, through: :received_sitter_reviews
+  # has_many :sent_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_requester_id
+  # has_many :received_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_possessor_id
+  # has_many :swap_possessors, through: :sent_swap_exchange_requests #users who had swaps this user requested to buy
+  # has_many :swap_requesters, through: :received_swap_exchange_requests #users who requested to buy swaps from this user
 
   geocoded_by :address
   after_validation :geocode
@@ -33,12 +43,14 @@ class User < ActiveRecord::Base
  
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing.jpg"
 
-  # has_many :sent_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_requester_id
-  # has_many :received_swap_exchange_requests, class_name: "SwapExchange", foreign_key: :swap_possessor_id
-  # has_many :swap_possessors, through: :sent_swap_exchange_requests #users who had swaps this user requested to buy
-  # has_many :swap_requesters, through: :received_swap_exchange_requests #users who requested to buy swaps from this user
+  def update_swaps
+    #check if user is a sitter on any pending sittings that have past end dates and "confirmed" statuses. if so, change statuses
+    #to "past" and for each night add swaps to this user and subtract swaps from the owner user
+    #check if user is an owner on any pending sittings and do the inverse as the above
 
-  def as_json(options={})
+  end
+
+   def as_json(options={})
     super(options.merge(methods: :avatar_url))
   end
 

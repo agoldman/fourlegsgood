@@ -20,12 +20,16 @@
 
 				
 	<div class="dogabout"> 
-		Age <div class="dogstat"> <%=pet.escape('age')%> </div><br/>
-		Sex <br/><br/>
-		About <br/><br/>
+		 <div class="dogstat"><div class="dstatlabel">Age</div> <%=pet.escape('age')%> <br/><br/>
+
+		 Sex <br/><br/>
+		About <br/><br/></div><br/>
+		
+		
 		<%if(pet.escape('care_instructions')) { %>
 			Special instructions: <%= pet.escape('care_instructions') %>
 		<% } %> 
+		<a id="updatedogproflink">Update Profile</a>
 	</div> 
 
 <% }); %>

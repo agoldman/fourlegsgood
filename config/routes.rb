@@ -1,5 +1,7 @@
 Fourlegsgood::Application.routes.draw do
 
+  devise_for :users
+
   root to: "statics#index"
   resources :statics
   resources :users do

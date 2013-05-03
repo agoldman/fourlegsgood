@@ -59,4 +59,14 @@ class CurrentRequestsController < ApplicationController
 
 	end
 
+	def new
+		#check for current_user
+		#calls current_user.updateMySwaps
+		@request = SittingRequest.new
+
+	end
+
+	def create
+	end
+
 end

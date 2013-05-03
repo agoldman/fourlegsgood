@@ -1,10 +1,10 @@
 ActiveRecord::Base.transaction do
 
-user_1 = User.create!(user_name: "April", email: "aprileliza@gmail.com", password: "p", address: "160 Randall Street, San Francisco, CA, 94131")
-user_2 = User.create!(user_name: "Laura", email: "laurapalmer.gmail.com", password: "l", address: "3976 23rd Street, San Francisco, CA 94114")
-user_3 = User.create!(user_name: "James", email: "laurapalmer.gmail.com", password: "l", address: "924 Mason St, San Francisco, CA 94129")
-user_4 = User.create!(user_name: "Tess", email: "lookatmyshit@gmail.com", password: "p", address: "598 23rd Street, Oakland, CA")
-user_5 = User.create!(user_name: "Joshua", email: "joshua@joshua.come", password: "j", address: "400 MLK Junior Way, Oakland, CA")
+user_1 = User.create!(user_name: "April", email: "aprileliza@gmail.com", password: "password", address: "160 Randall Street, San Francisco, CA, 94131")
+user_2 = User.create!(user_name: "Laura", email: "aprileliza1@gmail.com", password: "password", address: "3976 23rd Street, San Francisco, CA 94114")
+user_3 = User.create!(user_name: "James", email: "aprileliza2@gmail.com", password: "password", address: "924 Mason St, San Francisco, CA 94129")
+user_4 = User.create!(user_name: "Tess", email: "aprileliza3@gmail.com", password: "password", address: "598 23rd Street, Oakland, CA")
+user_5 = User.create!(user_name: "Joshua", email: "aprileliza4@gmail.com", password: "password", address: "400 MLK Junior Way, Oakland, CA")
 
 pet_1 = Pet.create!(name: "blixa", age: 8, owner_id: 1)
 pet_2 = Pet.create!(name: "dandy", age: 7, owner_id: 1)

@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])  #with login this will change to current_user
+		#call updateSwaps method before showing user profile. maybe call updateSwaps as soon as user logs in
 
 		respond_to do |format|
 			format.html { render :show }
