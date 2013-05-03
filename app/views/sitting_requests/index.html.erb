@@ -11,23 +11,27 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnvbLDQSjjhrvu3HO5XZJ1dtl4MMJuoME&sensor=false">
     </script>
   </head>
+
   <body>
+
 
     <div id="map-canvas"></div>
     <div id="map-search">
-    <div id="date-heading">Narrow Seach By Dates</div>
+     <div id="date-heading">Narrow Seach By Dates</div>
 
 <!-- <div class="alert alert-error" id="alert">
     <strong>Doh! End Date is Before Start</strong>
       </div> -->
-    <div class="request-dates">
-      Start date
-      <input type="text" id="date-start" name="start"><br>
-      End date
-      <input type="text" id="date-end" name="end">
-      <input type="hidden" name="address" value="<%=@zip%>">
-      <button id="mapbutton">Dog!</button>
+      <div class="request-dates">
+        Start date
+        <input type="text" id="date-start" name="start"><br>
+        End date
+        <input type="text" id="date-end" name="end">
+        <input type="hidden" name="address" value="<%=@zip%>">
+        <button id="mapbutton">Dog!</button>
+      </div>
     </div>
+
   </body>
 
 

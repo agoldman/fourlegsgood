@@ -24,9 +24,14 @@
     </ul>
   </div>
 </div>
+  
+    <% if notice %>
        <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <% end %>
 
+    <% if alert %>
+       <p class="alert"><%= alert %></p>
+    <% end %>
 
       <%= yield %>
 

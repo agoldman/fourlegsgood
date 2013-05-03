@@ -2,12 +2,18 @@
 .welcomebox{
   text-align:center;
   margin-top: 200px;
-  margin-left: 500px;
+  margin-left: 550px;
   position: absolute;
 }
 
 .masthead {
   position: relative;
+}
+
+.wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width:960px;
 }
 
 
@@ -46,13 +52,20 @@ color: WhiteSmoke;
 text-shadow: 0 -1px 0px rgba(0,0,0,0.2);
 width: 100px;
 text-align: center;
+clear: both;
 }
+
+#date-end {
+  clear:both;
+  }
 
 .request-dates {
   margin-top: 30px;
   text-align: right;
   margin-right: 50px;
+  position: relative;
 }
+
 .date-start {
   margin-left: 10px;
 }
@@ -76,6 +89,7 @@ text-align: center;
 #map-search img{
   float: right;
   width: 300px;
+  position: absolute;
 }
 #date-heading {
   font-family: 'Helvetica';
