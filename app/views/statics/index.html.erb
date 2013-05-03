@@ -2,7 +2,8 @@
   $(function () {
 
   	$('.signupbutton').click(function(event) {
- 	  $(".welcomebox").html(
+  		$(".welcomebox").hide();
+ 	  $(".signupholder").html(
  	  	"<form accept-charset='UTF-8' action='/users' id='signup' method='post'><label for='user_name'>Username</label><input id='user_name' name='user[user_name]' type='text'><br><br><label for='user_email'>Email</label><input id='user_email' name='user[email]' type='text'><br><br><label for='user_password'>Password</label><input id='user_password' name='user[password]' type='password'><br><br><input class='submit_button' name='commit' type='submit' value='Sign Up'></form>"
 		);
 	});
@@ -35,10 +36,15 @@
 <div class="masthead background2" >
 
 <div class="container">
+
+		<div class="signupholder">
+		</div>
 		
 			<div class="welcomebox">
 				<%= render partial: "signup" %>
 			</div>
+
+
 	
 </div>
 </div>

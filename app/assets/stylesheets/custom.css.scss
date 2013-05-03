@@ -1,8 +1,8 @@
 
 .welcomebox{
   text-align:center;
-  margin-top: 200px;
-  margin-left: 700px;
+  margin-top: 225px;
+ margin-left: 600px;
   position: absolute;
 }
 
@@ -16,6 +16,14 @@
     width:960px;
 }
 
+.signupholder{
+  max-width: 400px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}
+
 
 /* maps */
 
@@ -27,10 +35,6 @@
   display: block;
 }
 
-.request-dates{
-    width: 300px;
-    overflow: auto;
-}
 
 #mapbutton {
 padding: 0.4em 1.2em;
@@ -73,6 +77,8 @@ clear: both;
   text-align: right;
   margin-right: 50px;
   position: relative;
+      width: 300px;
+    overflow: auto;
 }
 
 .date-start {
@@ -98,7 +104,8 @@ clear: both;
 #map-search img{
   float: right;
   width: 300px;
-  position: absolute;
+
+    overflow: auto;
 }
 #date-heading {
   font-family: 'Helvetica';
@@ -1261,11 +1268,15 @@ textarea {
 
 
 #signup {
-  color: black;
-  font-family: 'Helvetica';
-  font-size: 15px;
-  font-weight: lighter;
-  
+background: IndianRed;
+color: black;
+font-family: 'Helvetica';
+font-size: 15px;
+font-weight: lighter;
+padding-right: 30px;
+padding-left: 30px;
+padding-top: 30px;
+padding-bottom: 30px;
 }
 
 
@@ -1326,7 +1337,7 @@ textarea {
   margin-bottom: 10px;
 }
 
-.masthead-content {
+.nav-content {
 	text-align: center;
 	margin-top:  120px;
 	padding: 20px;
@@ -1350,6 +1361,12 @@ textarea {
   text-decoration: none;
 }
 
+#login{
+  color: black;
+  font-size: 16px;
+  font-family: 'Helvetica';
+  font-weight: lighter;
+}
 
 
 .second_welcome{
