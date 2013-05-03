@@ -14,7 +14,13 @@ group :development do
 end
 
 gem 'better_errors'
-gem 'bootstrap-sass', '2.1'
+#gem 'bootstrap-sass', '2.1'
+
+#gem 'sass-rails'
+gem "compass-rails"
+gem 'bootstrap-sass'
+
+
 gem 'mail'
 gem 'addressable'
 gem 'rest-client'
