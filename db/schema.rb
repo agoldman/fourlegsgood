@@ -105,8 +105,8 @@ ActiveRecord::Schema.define(:version => 20130503022417) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "password"
-    t.string   "user_name"
+    t.string   "password_digest"
+    t.string   "name"
     t.text     "about_me"
     t.string   "address"
     t.decimal  "sitter_rate"

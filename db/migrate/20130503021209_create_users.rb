@@ -3,8 +3,8 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       ## Database authenticatable
       t.string :email
-      t.string :password
-      t.string :user_name
+      t.string :password_digest
+      t.string :name
       t.text :about_me
       t.string :address
       t.decimal :sitter_rate, default: nil
