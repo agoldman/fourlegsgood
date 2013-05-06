@@ -1,10 +1,10 @@
 ActiveRecord::Base.transaction do
 
-user_1 = User.create!(name: "April", email: "aprileliza@gmail.com", password: "123456", password_confirmation: "123456", address: "160 Randall Street, San Francisco, CA, 94131")
-user_2 = User.create!(name: "Laura", email: "aprileliza1@gmail.com", password: "123456", password_confirmation: "123456", address: "3976 23rd Street, San Francisco, CA 94114")
-user_3 = User.create!(name: "James", email: "aprileliza2@gmail.com", password: "123456", password_confirmation: "123456", address: "924 Mason St, San Francisco, CA 94129")
-user_4 = User.create!(name: "Tess", email: "aprileliza3@gmail.com", password: "123456", password_confirmation: "123456", address: "598 23rd Street, Oakland, CA")
-user_5 = User.create!(name: "Joshua", email: "aprileliza4@gmail.com", password: "123456", password_confirmation: "123456", address: "400 MLK Junior Way, Oakland, CA")
+user_1 = User.create!(name: "April", email: "aprileliza@gmail.com", password: "12345678", address: "160 Randall Street, San Francisco, CA, 94131")
+user_2 = User.create!(name: "Laura", email: "aprileliza1@gmail.com", password: "12345678", address: "3976 23rd Street, San Francisco, CA 94114")
+user_3 = User.create!(name: "James", email: "aprileliza2@gmail.com", password: "12345678", address: "924 Mason St, San Francisco, CA 94129")
+user_4 = User.create!(name: "Tess", email: "aprileliza3@gmail.com", password: "12345678", address: "598 23rd Street, Oakland, CA")
+user_5 = User.create!(name: "Joshua", email: "aprileliza4@gmail.com", password: "12345678", address: "400 MLK Junior Way, Oakland, CA")
 
 user_1.pets.create!(name: "blixa", age: 8, owner_id: 1)
 user_1.pets.create!(name: "dandy", age: 7, owner_id: 1)
