@@ -1,19 +1,19 @@
 ActiveRecord::Base.transaction do
 
-user_1 = User.create!(name: "April", email: "aprileliza@gmail.com", address: "160 Randall Street, San Francisco, CA, 94131")
-user_2 = User.create!(name: "Laura", email: "aprileliza1@gmail.com", address: "3976 23rd Street, San Francisco, CA 94114")
-user_3 = User.create!(name: "James", email: "aprileliza2@gmail.com", address: "924 Mason St, San Francisco, CA 94129")
-user_4 = User.create!(name: "Tess", email: "aprileliza3@gmail.com", address: "598 23rd Street, Oakland, CA")
-user_5 = User.create!(name: "Joshua", email: "aprileliza4@gmail.com", address: "400 MLK Junior Way, Oakland, CA")
+user_1 = User.create!(name: "April", email: "aprileliza@gmail.com", password: "123456", password_confirmation: "123456", address: "160 Randall Street, San Francisco, CA, 94131")
+user_2 = User.create!(name: "Laura", email: "aprileliza1@gmail.com", password: "123456", password_confirmation: "123456", address: "3976 23rd Street, San Francisco, CA 94114")
+user_3 = User.create!(name: "James", email: "aprileliza2@gmail.com", password: "123456", password_confirmation: "123456", address: "924 Mason St, San Francisco, CA 94129")
+user_4 = User.create!(name: "Tess", email: "aprileliza3@gmail.com", password: "123456", password_confirmation: "123456", address: "598 23rd Street, Oakland, CA")
+user_5 = User.create!(name: "Joshua", email: "aprileliza4@gmail.com", password: "123456", password_confirmation: "123456", address: "400 MLK Junior Way, Oakland, CA")
 
-pet_1 = Pet.create!(name: "blixa", age: 8, owner_id: 1)
-pet_2 = Pet.create!(name: "dandy", age: 7, owner_id: 1)
-pet_3 = Pet.create!(name: "Maggie", age: 7, owner_id: 3)
-pet_4 = Pet.create!(name: "mr. dog", age: 1, owner_id:4)
-pet_5 = Pet.create!(name: "the woofster", age: 3, owner_id: 5)
-pet_6 = Pet.create!(name: "captian evil", age: 6, owner_id: 2)
+user_1.pets.create!(name: "blixa", age: 8, owner_id: 1)
+user_1.pets.create!(name: "dandy", age: 7, owner_id: 1)
+user_3.pets.create!(name: "Maggie", age: 7, owner_id: 3)
+user_4.pets.create!(name: "mr. dog", age: 1, owner_id:4)
+user_5.pets.create!(name: "the woofster", age: 3, owner_id: 5)
+user_2.pets.create!(name: "captian evil", age: 6, owner_id: 2)
 
-pet_2 = Pet.create!(name: "Sable", age:3, owner_id: 2)
+user_2.pets.create!(name: "Sable", age:3, owner_id: 2)
 
 Message_1 = Message.create!(sender_id: 1, receiver_id: 2, title: "hi", content: "watch my dog!")
 user_2.sent_messages.create(receiver_id: 1, title: "oh hello", content: "maybe!", read: false, parent_id: 1)
