@@ -1,7 +1,7 @@
 <script type="text/javascript">
   $(function () {
     // start me up!
-
+    if (window.location.hash == '#_=_')window.location.hash = '';
     // Preload, or *bootstrap* initial task data.
     var userData = <%= @user.to_json.html_safe %>;
 
