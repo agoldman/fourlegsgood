@@ -15,10 +15,18 @@ FLG.Views.UserDashBoardView = Backbone.View.extend({
 			});
 			that.$el.html(renderedContent);
 			$('#verify-phone').click(function(){
-				$("#phonevar").html("<form><input id='phonenumfield' type='text' placeholder='Enter Phone Number'><input id='phone-button' type='submit' value='Send SMS'></form>")
+				$("#phonevar").html("<input id='phonenumfield' type='text' placeholder='Ex: 123-456-7890'><button id='phone-button'>Send SMS</button>");
+		
+				$('#phone-button').click(function(){
+					var num = $('#phonenumfield').val()
+					$.post('/users/' + that.model.escape('id') + '/verify', { "phone": num }, function(data) {
+						console.log("post return");
+						console.log(data);
+					}, "json");
+				});
 			});
-			}
-		});
+		}
+	});
 		return that;
 		}
 })

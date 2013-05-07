@@ -7,6 +7,9 @@ Fourlegsgood::Application.routes.draw do
   root to: "statics#index"
   resources :statics
   resources :users do
+    member do 
+      post 'verify' => 'users#verify'
+    end
   	resources :received_messages, only: [:index]
   	resources :sent_messages, only: [:index]
     resources :messages, only: [:index]

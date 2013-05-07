@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
  
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing.jpg"
 
+
    def self.find_or_create_by_facebook_oauth(auth)
      user = User.where(:provider => auth.provider, :uid => auth.uid).first
 

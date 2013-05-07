@@ -38,4 +38,13 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def verify
+		@verification = rand(10).to_s 
+    	5.times do
+        	@verification += rand(10).to_s 
+     	end
+     	p @verification
+     	p "HERE"
+		render json: @verification
+	end
 end
