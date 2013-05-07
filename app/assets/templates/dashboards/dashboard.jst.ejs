@@ -17,7 +17,19 @@
 			</div>
 		</div>
 		<div id="profstuff">
-			Verifications
+			Verifications <br/><br/>
+			<div id="phonevar">
+
+				<% if(phone) %>
+				 <% { %>
+				 <img src="/assets/phone-icon.jpg" alt="phone-icon" width="25" height="25"> <%= user.escape('phone_number') %>
+				<% } %>
+				<% if(!phone) { %>
+				<a id="verify-phone">verify phone number</a>
+				<% } %>
+
+
+			</div>
 		</div>
 	</div>
 

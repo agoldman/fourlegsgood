@@ -1,3 +1,66 @@
+/* phone varification */
+#phonevar {
+  text-align: center;
+}
+
+#phone-button{
+-webkit-appearance: none;
+-webkit-border-image: none;
+-webkit-box-align: center;
+-webkit-rtl-ordering: logical;
+-webkit-user-select: text;
+-webkit-writing-mode: horizontal-tb;
+background-color: rgb(85, 185, 72);
+background-repeat: repeat-x;
+border-bottom-color: rgb(86, 148, 35);
+border-bottom-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: rgb(86, 148, 35);
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: rgb(86, 148, 35);
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: rgb(86, 148, 35);
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+border-top-style: solid;
+border-top-width: 1px;
+box-sizing: border-box;
+color: rgb(255, 255, 255);
+cursor: pointer;
+display: inline-block;
+font-family: 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+font-size: 15px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: 34px;
+letter-spacing: normal;
+line-height: normal;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+padding-bottom: 8px;
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 7px;
+text-align: center;
+text-indent: 0px;
+text-shadow: none;
+text-transform: none;
+vertical-align: top;
+white-space: pre;
+width: 100px;
+word-spacing: 0px;
+}
+
+#phonenumfield{
+  width: 150px; 
+}
 /* new request form */
 
 
@@ -220,6 +283,8 @@ text-align: center;
 .formmap{
   display: block;
 }
+
+
 
 
 #mapbutton {
