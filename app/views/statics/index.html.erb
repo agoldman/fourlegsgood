@@ -1,12 +1,20 @@
 <script type="text/javascript">
   $(function () {
 
-  	$('.signupbutton').click(function(event) {
-  		$(".welcomebox").hide();
- 	  $(".signupholder").html(
- 	  	"<form accept-charset='UTF-8' action='/users' id='signup' method='post'><label for='user_name'>Username</label><input id='user_name' name='user[user_name]' type='text'><br><br><label for='user_email'>Email</label><input id='user_email' name='user[email]' type='text'><br><br><label for='user_password'>Password</label><input id='user_password' name='user[password]' type='password'><br><br><input class='submit_button' name='commit' type='submit' value='Sign Up'></form>"
-		);
-	});
+ //  	$('.signupbutton').click(function(event) {
+ //  		$(".welcomebox").hide();
+ // 	  $(".signupholder").html(
+ // 	  	"<form accept-charset='UTF-8' action='/users' id='signup' method='post'><label for='user_name'>Username</label><input id='user_name' name='user[name]' type='text'><br><br><label for='user_email'>Email</label><input id='user_email' name='user[email]' type='text'><br><br><label for='user_password'>Password</label><input id='user_password' name='user[password]' type='password'><br><br><label for='user_password_confirmation'>Password Confirmation</label><input id='user_password_confirmation' name='user[password_confirmation]' type='password'><br><br><input class='submit_button' name='commit' type='submit' value='Sign Up'></form>"
+	// 	);
+	// });
+
+	// var failed = <%=@failed%>;
+	// if (failed){
+	// 	$(".welcomebox").hide();
+	// 	 $(".signupholder").html(
+ // 	  	"<form accept-charset='UTF-8' action='/users' id='signup' method='post'><label for='user_name'>Username</label><input id='user_name' name='user[name]' type='text' value='<%=@name%>'><br><br><label for='user_email'>Email</label><input id='user_email' name='user[email]' type='text' value='<%=@email%>'><br><br><label for='user_password'>Password</label><input id='user_password' name='user[password]' type='password'><br><br><label for='user_password_confirmation'>Password Confirmation</label><input id='user_password_confirmation' name='user[password_confirmation]' type='password'><br><br><input class='submit_button' name='commit' type='submit' value='Sign Up'></form>"
+ // 	  	);
+	// }
 
   	var gallery = ["url('/assets/dog3.jpeg')", "url('assets/dog2.jpg')", "url('/assets/dog.jpg')"];
   	counter = 2;

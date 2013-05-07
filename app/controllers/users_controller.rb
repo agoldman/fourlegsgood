@@ -7,31 +7,19 @@ class UsersController < ApplicationController
 		@users = User.all
 	end
 
-	def show
-		@user = User.find(params[:id])  #with login this will change to current_user
-		#call updateSwaps method before showing user profile. maybe call updateSwaps as soon as user logs in
-
-		respond_to do |format|
-			format.html { render :show }
-			format.json { render json: @user }
-		end
-	end
-
 	def new 
 		@user = User.first
 	end
 
-	def create
-		@user = User.new(params[:user])
-		if @user.save
-		#	login
-			UserMailer.welcome_email(@user).deliver
-			flash[:succes] = "Thank you for signing up!"
-			redirect_to user_url(@user)
+	def show
+		@user = User.find(params[:id])  #user profile's are private!
+		if(current_user.id == @user.id)
+			respond_to do |format|
+				format.html { render :show }
+				format.json { render json: @user }
+			end
 		else
-			flash[:error] = "Try Again, Please"
-			p "no"
-			render :new
+			redirect_to user_url(current_user)
 		end
 	end
 

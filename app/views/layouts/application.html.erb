@@ -12,15 +12,22 @@
   <div class="navbar-inner">
     <a class="brand" href="#"></a>
     <ul class="nav">
-      <li class="active"> <a href="/statics">Four Legs Good</a></li>
+      <li class="active"> <a class="logo" href="/statics">Four Legs Good</a></li>
       <form id="navsearch" class="navbar-search pull-left" action="/sitting_requests" method="get">
-  		<input type="text" name="zip" class="search-query" placeholder="Earn Swaps! Search Dogs by Zip">
+  		<input type="text" name="zip" class="search-query" placeholder="Earn Swaps! Search Dogs by Address">
 	  </form>
     </ul>
     <ul class="nav pull-right">
-    	<li><a href="/users/new" id="login">Sign Up</a></li>
-      	<li><a href="#" id="login">Log In</a></li>
-      	<li><button class="btn" id="navbutton">Request a Dog Sitter</button></li>
+      <% if user_signed_in? %>
+        <li> <%=link_to current_user.email, user_url(current_user), class: "login" %></li>
+        <li> <%=link_to "Log Out", destroy_user_session_url, method: "delete", class: "login" %></li>
+      <% else %>
+      	<li><a href="/users/sign_up" class="login">Sign Up</a></li>
+        <li><a href="/users/sign_in" class="login">Log In</a></li>
+      <% end %>
+        	<li>
+
+            <form action="/current_requests/new" method="get"><input class="btn" id="navbutton" type="submit" value="Request a Dog Sitter"></form>
     </ul>
   </div>
 </div>

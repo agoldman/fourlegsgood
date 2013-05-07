@@ -43,7 +43,7 @@ class CurrentRequestsController < ApplicationController
 			p @current_request_users
 
 			@current_request_users.each do |user|
-				@near_by_request_info << [user.latitude, user.longitude, user.id, user.address, user.user_name]
+				@near_by_request_info << [user.latitude, user.longitude, user.id, user.address, user.name]
 			end
 
 
@@ -85,7 +85,7 @@ class CurrentRequestsController < ApplicationController
 
 
 			@current_request_users.each do |user|
-				@near_by_request_info << [user.latitude, user.longitude, user.id, user.address, user.user_name]
+				@near_by_request_info << [user.latitude, user.longitude, user.id, user.address, user.name]
 			end
 			#debugger
 			render json: @near_by_request_info
@@ -93,14 +93,34 @@ class CurrentRequestsController < ApplicationController
 
 	end
 
-	def new
-		#check for current_user
-		#calls current_user.updateMySwaps
-		@request = SittingRequest.new
 
+	def new
+		unless user_signed_in?
+			redirect_to new_user_session_url
+		end
+		@request = SittingRequest.new
+		@user = current_user
 	end
 
 	def create
+		@request = SittingRequest.new
+		@request.owner_id = current_user.id
+		@start = params[:start]
+		@end = DateTime.parse(@start) + params[:nights].to_i
+		@request.start_date = @start
+		@request.end_date = @end
+		@status = 'requested'  
+		if @request.save  #add errors flash
+			redirect_to user_url(current_user)
+			current_user.swaps_earned = current_user.swaps_earned - params[:nights].to_i
+			current_user.save
+		else
+			render :new
+		end
+	end
+
+	def show
+		@active_requests = current_user.current_requests
 	end
 
 end

@@ -3,7 +3,7 @@ class SatForDogsController < ApplicationController
 	respond_to :json
 
 	def index
-		@user = User.find(params[:user_id]) #change to current_user
+		@user = current_user
 		@sat_for_dog_ids_hash = @user.satForDogs
 		@dog_ids = []
 		@sat_for_dog_ids_hash.each do |el|

@@ -20,6 +20,7 @@ gem 'better_errors'
 #gem 'sass-rails'
 gem "compass-rails"
 gem 'bootstrap-sass'
+gem 'bcrypt-ruby', '3.0.1'
 
 
 gem 'mail'
@@ -29,6 +30,9 @@ gem 'ejs'
 gem 'geocoder'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "figaro"
 
 
 

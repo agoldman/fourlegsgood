@@ -1,13 +1,12 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
+
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :about_me, :avatar, :id, :user_name, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :latitude, :longitude
-  # attr_accessible :title, :body
+  attr_accessible :name, :email, :password, :password_confirmation, 
+  :remember_me, :about_me, :avatar, :id, :name, :address, :sitter_rate, 
+  :swaps_earned, :dog_karma, :sitter_karma, :latitude, :longitude, :provider, :uid
 
   has_many :pets, foreign_key: :owner_id
 
@@ -43,6 +42,11 @@ class User < ActiveRecord::Base
  
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing.jpg"
 
+  def current_requests
+    SittingRequest.where("owner_id= ? AND status='requested'", self.id)
+  end
+
+
   def update_swaps
     #check if user is a sitter on any pending sittings that have past end dates and "confirmed" statuses. if so, change statuses
     #to "past" and for each night add swaps to this user and subtract swaps from the owner user
@@ -68,7 +72,7 @@ class User < ActiveRecord::Base
   end
 
   def reviewsOfMyDogs
-    query = "SELECT uu.user_name, pr.score, pr.comment, pr.created_at
+    query = "SELECT uu.name, pr.score, pr.comment, pr.created_at
             FROM users u JOIN pet_reviews pr
             ON u.id = pr.pet_reviewee_id
             JOIN users uu 
@@ -79,7 +83,7 @@ class User < ActiveRecord::Base
   end
 
   def reviewsOfMySitting
-    query = "SELECT uu.user_name, sr.score, sr.comment, sr.created_at
+    query = "SELECT uu.name, sr.score, sr.comment, sr.created_at
             FROM users u JOIN sitter_reviews sr
             ON u.id = sr.sitter_reviewee_id
             JOIN users uu 
@@ -90,7 +94,7 @@ class User < ActiveRecord::Base
   end
 
   def reviewsOfOtherDogs
-    query = "SELECT uu.user_name, pr.score, pr.comment, pr.created_at, pets.name
+    query = "SELECT uu.name, pr.score, pr.comment, pr.created_at, pets.name
             FROM users u JOIN pet_reviews pr
             ON u.id = pr.pet_reviewer_id
             JOIN users uu 
@@ -103,7 +107,7 @@ class User < ActiveRecord::Base
   end
 
   def reviewsOfOtherSitters
-    query = "SELECT uu.user_name, sr.score, sr.comment, sr.created_at
+    query = "SELECT uu.name, sr.score, sr.comment, sr.created_at
             FROM users u JOIN sitter_reviews sr
             ON u.id = sr.sitter_reviewer_id
             JOIN users uu 

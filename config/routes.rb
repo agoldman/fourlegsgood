@@ -16,8 +16,8 @@ Fourlegsgood::Application.routes.draw do
     resources :sat_for_dogs, only: [:index]
     resources :sitters, only: [:index]
   end
-  resources :sessions
   resources :sitting_requests, only: [:index]
   resources :pets
   resources :current_requests
+
 end

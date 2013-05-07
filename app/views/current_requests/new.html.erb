@@ -1,4 +1,56 @@
-<h1> Username, You have #pluralized free credits </h1>
-<h3> Ask Someone to Watch your dog for up to #pluralized nights </h3>
-#when user visits this page, the controller calls a method to update the user's available swaps based on their recent sitting history
-<form
+
+<% if(@user.swaps_earned > 0) %>
+
+	<div id="swapformintro">
+		<div id="swapformtitle"> <h1> Hi there, <%=@user.name%>.</h1></div>
+
+		<h2> You have <%=pluralize(@user.swaps_earned, 'swap')%> to use </h2>
+
+		<div id="newuserbox">
+			<%= form_tag("/current_requests", :method => "post", id:"newrequestform") do %>
+			 
+     		 <div class="new_request-dates">
+       		 	Start date <br>
+	       		 <input type="text" id="date-start" class="formmap" name="start"><br> <br>
+	       		 For How Many Nights? <br><br>
+	       		 <select id="select-nights" form="newrequestform" name="nights">
+	       		 	<% counter = 1 %>
+	       		 	<%=@user.swaps_earned.times do %>
+	       		 		<option value=<%=counter%>><%=counter%></option>
+	       		 		<% counter+=1 %>
+	       		 	<% end %>
+	       		 </select><br>
+			</div>
+
+			<div class="new-request-button-holder">
+       			<input type="submit" class="new-request-button" value="Yeah!"> </form>
+       		</div>
+       		<% end %>
+		
+		</div>
+	</div>
+
+<% else %>
+
+	<div id="swapformintro">
+		<div id="swapformtitle"> <h1> Hi there, <%=@user.name%>.</h1></div>
+
+		<h2> You have no swaps to use. </h2>
+		<form action="/sitting_requests"><input type="submit" class="earn_swaps_button" value ="Watch Someone's Dog. Earn Swaps."> </form>
+	</div>
+
+<% end %>
+
+<script type="text/javascript">
+  $(function() {
+
+  	 $('#date-start')
+      .datepicker({format: 'yyyy-mm-dd'});
+
+      $('.new-request-button').click(function(){
+
+      });
+  });
+
+ </script>
+</html>

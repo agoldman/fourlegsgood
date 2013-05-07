@@ -23,9 +23,9 @@
     <strong>Doh! End Date is Before Start</strong>
       </div> -->
       <div class="request-dates">
-        Start date
+        Start Date<br>
         <input type="text" id="date-start" class="formmap" name="start"><br>
-        End date
+        Dog Return Date<br>
         <input type="text" id="date-end"  class="formmap"name="end">
         <input type="hidden" name="address" value="<%=@zip%>">
         <button id="mapbutton">Dog!</button>
@@ -60,7 +60,12 @@
       }
 
     function codeAddress() {
-      address = "<%=@zip%>";
+      <% if @zip %>
+          address = "<%=@zip %>"
+      <% else %>
+         address = "<%=current_user.address %>"
+      <% end %>  
+      
       geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
           center = [map.getCenter().lat(), map.getCenter().lng()];
@@ -84,6 +89,8 @@
           map: map,
           position: ll
       });
+        console.log(request[2]);
+
 
       markersArray.push(marker);
       google.maps.event.addListener(marker, 'click', function() {

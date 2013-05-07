@@ -1,9 +1,195 @@
+/* new request form */
+
+
+.earn_swaps_button{
+  padding: 0.4em 1.2em;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+text-align: center;
+font-family: "Helvetica";
+letter-spacing: 1px;
+vertical-align: middle;
+margin-top: 10px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+-webkit-box-shadow: inset 0 0 0.2em rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.2),0 0 0 #000;
+box-shadow: inset 0 0 0.2em rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.2),0 0 0 #000;
+background-color: #018fe1;
+background-image: -webkit-linear-gradient(top, #00aeff 0%,#018fe1 100%);
+background-image: -moz-linear-gradient(top, #00aeff 0%,#018fe1 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00aeff', endColorstr='#ff018fe1', GradientType=0);
+border: 1px solid rgba(0,0,0,0.2);
+border-color: #0195eb #0083c7 #0175b8 #0083c7;
+font-size: 14px;
+line-height: 30px;
+color: WhiteSmoke;
+text-shadow: 0 -1px 0px rgba(0,0,0,0.2);
+width: 100px;
+text-align: center;
+clear: both;
+
+}
+
+.new-request-button{
+ 
+padding: 0.4em 1.2em;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+text-align: center;
+font-family: "Helvetica";
+letter-spacing: 1px;
+vertical-align: middle;
+margin-bottom: 0;
+margin-left: 40px;
+margin-top: 10px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+-webkit-box-shadow: inset 0 0 0.2em rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.2),0 0 0 #000;
+box-shadow: inset 0 0 0.2em rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.2),0 0 0 #000;
+background-color: #018fe1;
+background-image: -webkit-linear-gradient(top, #00aeff 0%,#018fe1 100%);
+background-image: -moz-linear-gradient(top, #00aeff 0%,#018fe1 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00aeff', endColorstr='#ff018fe1', GradientType=0);
+border: 1px solid rgba(0,0,0,0.2);
+border-color: #0195eb #0083c7 #0175b8 #0083c7;
+font-size: 14px;
+line-height: 30px;
+color: WhiteSmoke;
+text-shadow: 0 -1px 0px rgba(0,0,0,0.2);
+width: 100px;
+text-align: center;
+clear: both;
+margin-left: 250px;
+}
+
+#select-nights{
+  width: 60px;
+}
+
+#swapfromdirectios{
+  margin-left: 300px;
+}
+
+#swapformintro {
+margin-top: 50px;
+-webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+-webkit-border-image: none;
+-webkit-box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 1px 0px;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgb(255, 255, 255);
+background-origin: padding-box;
+background-size: auto;
+border-bottom-color: rgb(224, 224, 224);
+border-bottom-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: rgb(224, 224, 224);
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: rgb(224, 224, 224);
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: rgb(224, 224, 224);
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+border-top-style: solid;
+border-top-width: 1px;
+box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 1px 0px;
+color: rgb(0, 0, 0);
+display: block;
+font-family: 'Helvetica';
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: auto;
+line-height: 19px;
+margin-bottom: 20px;
+margin-right: auto;
+margin-left: auto;
+padding-bottom: 20px;
+padding-left: 2px;
+padding-right: 2px;
+padding-top: 20px;
+vertical-align: top;
+width: 614px;
+zoom: 1;
+text-align: center;
+}
+
+
+
 
 .welcomebox{
   text-align:center;
   margin-top: 225px;
  margin-left: 600px;
-  
+
+}
+
+.notice {
+  font-family: 'Helvetica';
+  background: black;
+  color: WhiteSmoke;
+  width: 300px;
+  height:auto;
+  float:right;
+}
+
+.alert {
+  font-family: 'Helvetica';
+  background: black;
+  color: WhiteSmoke;
+  width: 300px;
+  height:auto;
+  float:right;
+}
+
+#newuserbox{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  text-align: center;
+  color: black;
+}
+
+.check_box {
+  color:black;
+}
+
+#center-col{
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.new_user{
+background: WhiteSmoke;
+color: black;
+font-family: 'Helvetica';
+font-size: 15px;
+font-weight: lighter;
+padding-right: 30px;
+padding-left: 30px;
+padding-bottom: 30px;
+text-align: center;
+}
+
+#signuptitle{
+  margin-top: 70px;
+  width: 300px;
+  font-family: 'Ovo', serif;
+  font-size: 40px;
+  font-weight: bolder;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .masthead {
@@ -21,7 +207,7 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 
@@ -75,10 +261,20 @@ clear: both;
 .request-dates {
   margin-top: 30px;
   text-align: right;
-  margin-right: 50px;
+  margin-right: auto;
+  margin-left: auto;
   position: relative;
-      width: 300px;
-    overflow: auto;
+  width: 300px;
+  overflow: auto;
+}
+
+.new_request-dates {
+  margin-top: 30px;
+  text-align: left;
+  margin-left: 60px;
+  position: relative;
+  width: 300px;
+  overflow: auto;
 }
 
 .date-start {
@@ -194,7 +390,7 @@ width: 1260px;
 /* reviews tempalte */
 
 .activereviewlist {
-  color: IndianRed;
+  color: #781800;
   font-size: 16px;
 }
 
@@ -246,7 +442,7 @@ width: 500px;
 }
 
 .reviewnameholder:hover{
-  color: IndianRed;
+  color: #781800;
   height: auto;
 }
 
@@ -519,12 +715,12 @@ width: 648px;
 }
 
 .selectedmsgs {
-  color: IndianRed;
+  color: #781800;
   letter-spacing: 1px;
 }
 
 .msglink:hover {
-  color: IndianRed;
+  color: #781800;
 }
 
 .selectedmsgs:hover{
@@ -564,7 +760,7 @@ border-top-right-radius: 7px;
 
 .msglink:hover {
   text-decoration: none;
-  color: IndianRed;
+  color: #781800;
 }
 
 .inbox-nav-tabs {
@@ -981,7 +1177,7 @@ width: 657px;
   font-family: 'Helvetica';
   float: left;
   font-size: 20px;
-  color: IndianRed;
+  color: #781800;
   font-weight: bold;
   height: 615px;
   width: 250px;
@@ -1252,7 +1448,7 @@ textarea {
 
   background: WhiteSmoke;
   text-align: center;
-  color: Maroon;
+  color: 4878A8;
   border-radius: 0;
 
 }
@@ -1268,7 +1464,7 @@ textarea {
 
 
 #signup {
-background: IndianRed;
+background: #781800;
 color: black;
 font-family: 'Helvetica';
 font-size: 15px;
@@ -1331,7 +1527,7 @@ padding-bottom: 30px;
 
 #About_us {
   line-height: 1;
-  color: Maroon;
+  color: 4878A8;
 }
 
 .center h1 {
@@ -1342,13 +1538,13 @@ padding-bottom: 30px;
 	text-align: center;
 	margin-top:  120px;
 	padding: 20px;
-	background: IndianRed;
+	background: #781800;
 }
 
 .button {
 	font-size: 20px;
 	border: 2px solid WhiteSmoke;
-	background: IndianRed;
+	background: #781800;
 	padding: 10px;
 	color: white;
 	display: inline-block;
@@ -1358,15 +1554,15 @@ padding-bottom: 30px;
 
 .button:hover {
   background: WhiteSmoke;
-  color: IndianRed;
+  color: #781800;
   text-decoration: none;
 }
 
-#login{
+.login{
   color: black;
   font-size: 16px;
   font-family: 'Helvetica';
-  font-weight: lighter;
+
 }
 
 
@@ -1374,13 +1570,13 @@ padding-bottom: 30px;
   font-family: 'Ovo', serif;
 }
 
-.navbar .navbar-inner .nav a {
+.logo{
   font-size: 1.7em;
   font-weight: bolder;
   letter-spacing: -1px;
   text-align: center;
   font-family: 'Ovo', serif;
-  color: IndianRed;
+  color: #781800;
 
 }
 /* typography */
@@ -1398,7 +1594,7 @@ padding-bottom: 30px;
 .secondary-headers {
   margin-top: 15px;
   text-align: center;
-  color: Maroon;
+  color: 4878A8;
   font-size: 30px;
 }
 
@@ -1498,18 +1694,27 @@ label {
   font-size: 20px;
 }
 
-.submit_button {
+.user_submit_button{
 
-    font-family: 'Ovo', serif;
-    background: WhiteSmoke; 
-    color: IndianRed;
+    font-family: 'Helvetica';
+    background: #F07830; 
+    color: WhiteSmoke;
     font-size: 20px;
     padding:10px;
     border-width: 0;
+    width: 250px;
+}
+
+.user_submit_button:hover{
+
+    background: #d86c2b; 
+}
+
+.submit_button {
 }
 
 .submit_button:hover {
-  background: Maroon;
+  background: 4878A8;
   color: white;
   text-decoration: none;
   border-width: 0;
@@ -1531,7 +1736,7 @@ label {
 }
 
 .profile_title:hover {
-  color: IndianRed;
+  color: #781800;
   text-decoration: none;
 }
 
@@ -1541,7 +1746,7 @@ label {
 }
 
 .profile-title-search {
-  color: IndianRed;
+  color: #781800;
 }
 
 .profile-title-search:hover {
@@ -1558,7 +1763,7 @@ label {
 
 .profile-logout:hover {
   text-decoration: none;
-  color: IndianRed;
+  color: #781800;
 }
 
 .profheader {
@@ -1594,7 +1799,7 @@ label {
 .totals {
   font-size: 150%;
   font-weight: bold;
-  color: IndianRed;
+  color: #781800;
   
 }
 
