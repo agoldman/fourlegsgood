@@ -43,8 +43,8 @@ class UsersController < ApplicationController
     	5.times do
         	@verification += rand(10).to_s 
      	end
-     	p @verification
-     	p "HERE"
+     	@phone = params[:phone]
+     	current_user.verify(@phone, @verification)
 		render json: @verification
 	end
 end

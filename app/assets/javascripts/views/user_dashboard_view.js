@@ -22,6 +22,10 @@ FLG.Views.UserDashBoardView = Backbone.View.extend({
 					$.post('/users/' + that.model.escape('id') + '/verify', { "phone": num }, function(data) {
 						console.log("post return");
 						console.log(data);
+						$("#phonevar").html("<input id='phonecodefield' type='text' placeholder='Ex: 000000'><button id='phone-code-button'>Submit</button>");
+						$('#phone-code-button').click(function() {
+							console.log("clicked confirmaton");
+						});
 					}, "json");
 				});
 			});

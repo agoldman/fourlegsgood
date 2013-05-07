@@ -42,6 +42,17 @@ class User < ActiveRecord::Base
  
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing.jpg"
 
+  def verify(phone, rand)
+    p ENV["TWILIO_AUTH_TOKE"]
+    p "Here"
+    @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+    @client.account.sms.messages.create(
+      :from => '+18325393020',
+      :to => '+1' + phone,
+      :body => "Hey from FourLegsGood. Your code is " + rand
+    )
+
+  end
 
    def self.find_or_create_by_facebook_oauth(auth)
      user = User.where(:provider => auth.provider, :uid => auth.uid).first
