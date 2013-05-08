@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+  include BCrypt
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -43,7 +44,8 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing.jpg"
 
   def confirm(code)
-    BCrypt::Password.create(code) == @phone_code_hash
+    @user_hash = BCrypt::Password.new(self.phone_code_hash)
+    @user_hash == code
   end
 
   def verify(phone, rand)
