@@ -10,6 +10,9 @@ Fourlegsgood::Application.routes.draw do
     member do 
       post 'verify' => 'users#verify'
     end
+    member do 
+      post 'confirm' => 'users#confirm'
+    end
   	resources :received_messages, only: [:index]
   	resources :sent_messages, only: [:index]
     resources :messages, only: [:index]

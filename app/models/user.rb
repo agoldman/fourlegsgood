@@ -42,17 +42,24 @@ class User < ActiveRecord::Base
  
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing.jpg"
 
+  def confirm(code)
+    BCrypt::Password.create(code) == @phone_code_hash
+  end
+
   def verify(phone, rand)
 
     self.phone_code_hash = BCrypt::Password.create(rand)
-    self.save!
-    @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
-    @client.account.sms.messages.create(
-      :from => '+18325393020',
-      :to => '+1' + phone,
-      :body => "Hey from FourLegsGood. Your code is " + rand
-    )
-
+    if (self.save!)
+      @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
+      @client.account.sms.messages.create(
+        :from => '+18325393020',
+        :to => '+1' + phone,
+        :body => "Hey from FourLegsGood. Your code is " + rand
+      )
+      return true
+    else
+      return false
+    end
   end
 
    def self.find_or_create_by_facebook_oauth(auth)

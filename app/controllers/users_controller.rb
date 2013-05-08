@@ -44,8 +44,18 @@ class UsersController < ApplicationController
         	@verification += rand(10).to_s 
      	end
      	@phone = params[:phone]
-     	current_user.verify(@phone, @verification)
-     	p "here"
-		render json: @phone
+     	if (current_user.verify(@phone, @verification))
+     		p "HERE I AM"
+     		render json: @phone
+     	else
+     		render status: 422
+     	end
 	end
+
+	def confirm
+		@user_code = params[:code]
+		@confirmation = current_user.confirm(@user_code)
+		render json: @confirmation
+	end
+
 end
