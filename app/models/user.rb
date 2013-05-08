@@ -45,6 +45,10 @@ class User < ActiveRecord::Base
  
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing.jpg"
 
+  def after_database_authentication
+    update_swaps_earned
+  end 
+
   def confirm(code)
     @user_hash = BCrypt::Password.new(self.phone_code_hash)
     @user_hash == code
@@ -85,12 +89,23 @@ class User < ActiveRecord::Base
     SittingRequest.where("owner_id= ? AND status='requested'", self.id)
   end
 
-
-  def update_swaps
-    #check if user is a sitter on any pending sittings that have past end dates and "confirmed" statuses. if so, change statuses
-    #to "past" and for each night add swaps to this user and subtract swaps from the owner user
-    #check if user is an owner on any pending sittings and do the inverse as the above
-
+  def update_swaps_earned
+    nights_earned = 0
+    query = "SELECT s.id
+             FROM users u JOIN sittings s
+             ON u.id = s.sitter_id
+             WHERE s.status = 'confirmed' 
+             AND s.end_date < '#{DateTime.now}'"
+    sitting_ids = ActiveRecord::Base.connection.execute(query);
+    sitting_ids.each do |hash|
+        s = Sitting.find(hash["id"])
+        s.status = "occurred"
+        s.save
+        nights_earned = (DateTime.parse(s.end_date.to_s) - DateTime.parse(s.start_date.to_s)).ceil
+      end
+     swaps = self.swaps_earned + nights_earned
+     self.swaps_earned = swaps
+     self.save
   end
 
    def as_json(options={})
