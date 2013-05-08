@@ -34,6 +34,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem "figaro"
 gem 'twilio-ruby'
+gem "actionmailer", "~> 3.2.13"
 
 # Gems used only for assets and not required
 # in production environments by default.

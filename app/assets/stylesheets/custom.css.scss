@@ -515,7 +515,7 @@ width: 1260px;
 /* reviews tempalte */
 
 .activereviewlist {
-  color: #781800;
+  color: #cc0066;
   font-size: 16px;
 }
 
@@ -567,7 +567,7 @@ width: 500px;
 }
 
 .reviewnameholder:hover{
-  color: #781800;
+  color: #cc0066;
   height: auto;
 }
 
@@ -840,12 +840,12 @@ width: 648px;
 }
 
 .selectedmsgs {
-  color: #781800;
+  color: #cc0066;
   letter-spacing: 1px;
 }
 
 .msglink:hover {
-  color: #781800;
+  color: #cc0066;
 }
 
 .selectedmsgs:hover{
@@ -885,7 +885,7 @@ border-top-right-radius: 7px;
 
 .msglink:hover {
   text-decoration: none;
-  color: #781800;
+  color: #cc0066;
 }
 
 .inbox-nav-tabs {
@@ -1302,7 +1302,7 @@ width: 657px;
   font-family: 'Helvetica';
   float: left;
   font-size: 20px;
-  color: #781800;
+  color: #cc0066;
   font-weight: bold;
   height: 615px;
   width: 250px;
@@ -1589,7 +1589,7 @@ textarea {
 
 
 #signup {
-background: #781800;
+background: #cc0066;
 color: black;
 font-family: 'Helvetica';
 font-size: 15px;
@@ -1664,13 +1664,14 @@ padding-bottom: 30px;
 	text-align: center;
 	margin-top:  120px;
 	padding: 20px;
-	background: #781800;
+	background: #cc0066;
 }
+
 
 .button {
 	font-size: 20px;
 	border: 2px solid WhiteSmoke;
-	background: #781800;
+	background: #cc0066;
 	padding: 10px;
 	color: white;
 	display: inline-block;
@@ -1680,7 +1681,7 @@ padding-bottom: 30px;
 
 .button:hover {
   background: WhiteSmoke;
-  color: #781800;
+  color: #cc0066;
   text-decoration: none;
 }
 
@@ -1707,7 +1708,7 @@ padding-bottom: 30px;
   letter-spacing: -1px;
   text-align: center;
   font-family: 'Ovo', serif;
-  color: #781800;
+  color: #cc0066;
 
 }
 /* typography */
@@ -1722,11 +1723,24 @@ padding-bottom: 30px;
   font-size: 15px;
 }
 
+.featured-container{
+  width: 1050px;
+}
+
 .secondary-headers {
   margin-top: 15px;
   text-align: center;
   color: 4878A8;
   font-size: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 940px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-bottom-color: rgb(49, 50, 51);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.0980392);
 }
 
 .second-subheader {
@@ -1743,6 +1757,21 @@ padding-bottom: 30px;
   text-align: center;
 }
 
+.middlesitter{
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.welcome-quotes{
+margin-bottom: 60px;
+margin-top: 60px;
+font-family: 'Helvetica';
+font-size: 16px;
+letter-spacing: 1px;
+opacity: 0.6;
+text-align: center;
+}
+
 .welcomedeets-map {
   height: 400px;
   margin: 20px;
@@ -1751,8 +1780,18 @@ padding-bottom: 30px;
 }
 
 .welcomedeets-sitters{
-  border-radius: 10px;
   margin: 20px;
+  width: 1100px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  border-bottom-color: rgb(49, 50, 51);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.0980392);
+
 }
 
 .welcomesubbox {
@@ -1766,10 +1805,6 @@ background-color: rgb(255, 255, 255);
 background-image: none;
 background-origin: padding-box;
 background-size: auto;
-border-bottom-left-radius: 7px;
-border-bottom-right-radius: 7px;
-border-top-left-radius: 7px;
-border-top-right-radius: 7px;
 box-shadow: rgba(0, 0, 0, 0.14902) 0px 3px 3px 0px;
 color: rgb(57, 60, 61);
 font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -1784,11 +1819,10 @@ padding-left: 5px;
 padding-right: 5px;
 padding-top: 15px;
 text-align: center;
-width: 200px;
+width: auto;
 }
 
 .sitterphoto {
-  border-radius: 7px;
 }
 
 .span4.first {
@@ -1867,7 +1901,7 @@ label {
 }
 
 .profile_title:hover {
-  color: #781800;
+  color: #cc0066;
   text-decoration: none;
 }
 
@@ -1877,7 +1911,7 @@ label {
 }
 
 .profile-title-search {
-  color: #781800;
+  color: #cc0066;
 }
 
 .profile-title-search:hover {
@@ -1894,7 +1928,7 @@ label {
 
 .profile-logout:hover {
   text-decoration: none;
-  color: #781800;
+  color: #cc0066;
 }
 
 .profheader {
@@ -1930,7 +1964,7 @@ label {
 .totals {
   font-size: 150%;
   font-weight: bold;
-  color: #781800;
+  color: #cc0066;
   
 }
 

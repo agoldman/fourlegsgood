@@ -182,6 +182,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionmailer (~> 3.2.13)
   addressable
   bcrypt-ruby (= 3.0.1)
   better_errors
