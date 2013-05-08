@@ -54,7 +54,12 @@ class UsersController < ApplicationController
 
 	def confirm
 		@user_code = params[:code]
+		@phone = params[:phone]
 		@confirmation = current_user.confirm(@user_code)
+		if (@confirmation)
+			current_user.phone_number = @phone
+			current_user.save
+		end
 		render json: @confirmation
 	end
 

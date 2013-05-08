@@ -27,10 +27,18 @@ FLG.Views.UserDashBoardView = Backbone.View.extend({
 						$('#phone-code-button').click(function() {
 							console.log("clicked code button");
 							var usercode = $('#phonecodefield').val()
-							$.post('/users/' + that.model.escape('id') + '/confirm', { "code": usercode }, function(data) {
+							$.post('/users/' + that.model.escape('id') + '/confirm', { "code": usercode, "phone": num }, function(data) {
 						
 							console.log("passwords compared")
 							console.log(data);
+							if(data) {
+								$("#phonevar").html("<img src='/assets/checkmark.png' width='25' height='25' alt='success>"+that.model.escape('phone-number'));
+
+							}
+							else {
+								$("#profstuff").append("<p>Please Try Again</p>");
+							}
+
 						}, "json");
 
 
