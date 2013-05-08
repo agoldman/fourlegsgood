@@ -45,7 +45,6 @@ class UsersController < ApplicationController
      	end
      	@phone = params[:phone]
      	if (current_user.verify(@phone, @verification))
-     		p "HERE I AM"
      		render json: @phone
      	else
      		render status: 422
@@ -58,9 +57,11 @@ class UsersController < ApplicationController
 		@confirmation = current_user.confirm(@user_code)
 		if (@confirmation)
 			current_user.phone_number = @phone
-			current_user.save
+			if(current_user.save!)
+				render json: @confirmation
+			end
 		end
-		render json: @confirmation
+		
 	end
 
 end

@@ -32,7 +32,9 @@ FLG.Views.UserDashBoardView = Backbone.View.extend({
 							console.log("passwords compared")
 							console.log(data);
 							if(data) {
-								$("#phonevar").html("<img src='/assets/checkmark.png' width='25' height='25' alt='success>"+that.model.escape('phone-number'));
+								
+								console.log(num);
+								$("#phonevar").html("<img src='/assets/phone-icon.jpg' alt='phone-icon' width='25' height='25'>" + "  " + num);
 
 							}
 							else {
