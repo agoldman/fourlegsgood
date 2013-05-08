@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [:facebook]
 
-  attr_accessible :name, :email, :phone_number, :password, :password_confirmation, :remember_me, :about_me, :avatar, :id, :name, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :latitude, :longitude, :provider, :uid
+  attr_accessible :phone_code_hash, :name, :email, :phone_number, :password, :password_confirmation, :remember_me, :about_me, :avatar, :id, :name, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :latitude, :longitude, :provider, :uid
 
   has_many :pets, foreign_key: :owner_id
 
@@ -43,8 +43,9 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing.jpg"
 
   def verify(phone, rand)
-    p ENV["TWILIO_AUTH_TOKE"]
-    p "Here"
+
+    self.phone_code_hash = BCrypt::Password.create(rand)
+    self.save!
     @client = Twilio::REST::Client.new ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]
     @client.account.sms.messages.create(
       :from => '+18325393020',

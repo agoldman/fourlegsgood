@@ -45,6 +45,7 @@ class UsersController < ApplicationController
      	end
      	@phone = params[:phone]
      	current_user.verify(@phone, @verification)
-		render json: @verification
+     	p "here"
+		render json: @phone
 	end
 end
