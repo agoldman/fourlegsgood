@@ -43,7 +43,8 @@ class CurrentRequestsController < ApplicationController
 			p @current_request_users
 
 			@current_request_users.each do |user|
-				@near_by_request_info << [user.latitude, user.longitude, user.id, user.address, user.name]
+				s = SittingRequest.where("owner_id = ?", user.id)
+				@near_by_request_info << [user.latitude, user.longitude, user.id, user.address, user.name, s[0].id]
 			end
 
 
