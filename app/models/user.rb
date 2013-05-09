@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
         :to => '+1' + phone,
         :body => "Hey from FourLegsGood. Your code is " + rand
       )
-      return truev
+      return true
     else
       return false
     end
