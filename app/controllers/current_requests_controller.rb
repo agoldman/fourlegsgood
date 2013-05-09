@@ -122,6 +122,8 @@ class CurrentRequestsController < ApplicationController
 
 	def show
 		@request = SittingRequest.find(params[:id])
+		@user = User.where("id = ?", @request.owner_id)[0]
+		@pets = Pet.where("owner_id = ?", @user.id)
 	end
 
 	def active
