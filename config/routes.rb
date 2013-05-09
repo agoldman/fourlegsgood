@@ -26,6 +26,10 @@ Fourlegsgood::Application.routes.draw do
   end
   resources :sitting_requests, only: [:index]
   resources :pets
-  resources :current_requests
+  resources :current_requests do
+    collection do
+      get 'active' => 'current_requests#active'
+    end
+  end
 
 end

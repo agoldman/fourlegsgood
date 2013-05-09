@@ -85,7 +85,8 @@ class CurrentRequestsController < ApplicationController
 
 
 			@current_request_users.each do |user|
-				@near_by_request_info << [user.latitude, user.longitude, user.id, user.address, user.name]
+				s = SittingRequest.where("owner_id = ?", user.id)
+				@near_by_request_info << [user.latitude, user.longitude, user.id, user.address, user.name, s[0].id]
 			end
 			#debugger
 			render json: @near_by_request_info
@@ -120,6 +121,10 @@ class CurrentRequestsController < ApplicationController
 	end
 
 	def show
+		@request = SittingRequest.find(params[:id])
+	end
+
+	def active
 		@active_requests = current_user.current_requests
 	end
 

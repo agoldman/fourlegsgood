@@ -99,7 +99,7 @@
         $.get("/pets.json", {'owner_id': request[2]}, function(current_dog) {
           console.log(current_dog);
 
-        infowindow.setContent("<div class='popup'>" + current_dog.name + "<br><div class='mapdogpic'><img src='" + current_dog.avatar_url + "' height='300px' width='200px'></div> <br><a href=''>View Full Request</a><br>" + request[3] + "<div>");
+        infowindow.setContent("<div class='popup'>" + current_dog.name + "<br><div class='mapdogpic'><img src='" + current_dog.avatar_url + "' height='300px' width='200px'></div> <br><a href='/current_requests/" + request[5] + "'>View Full Request</a><br>" + request[3] + "<div>");
         infowindow.open(map, marker);
       });
 
@@ -145,8 +145,10 @@
         var end = $('#date-end').val()
 
         $.get("/current_requests.json", {'address': address, 'start': start, 'end': end}, function(requests) {
-         console.log(requests);
-        _.each(requests, function(request) {  
+         
+        _.each(requests, function(request) {
+              console.log("request data");
+              console.log(request);  
               var ll = new google.maps.LatLng(request[0], request[1]);
               var marker = new google.maps.Marker({
                 map: map,
@@ -161,7 +163,7 @@
                 $.get("/pets.json", {'owner_id': request[2]}, function(current_dog) {
                   
 
-                  infowindow.setContent("<div class='popup'>" + current_dog.name + "<br><div class='mapdogpic'><img src='" + current_dog.avatar_url + "' height='300px' width='200px'></div> <br><a href=''>View Full Request</a><br>" + request[3] + "<div>");
+                  infowindow.setContent("<div class='popup'>" + current_dog.name + "<br><div class='mapdogpic'><img src='" + current_dog.avatar_url + "' height='300px' width='200px'></div> <br><a href='/current_requests/" + request[5] + "'>View Full Request</a><br>" + request[3] + "<div>");
                   infowindow.open(map, marker);
                 });
               });
