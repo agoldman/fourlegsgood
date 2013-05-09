@@ -14,11 +14,24 @@
   font-size: 35px;
 }
 
+.request-name {
+  font-family: 'Ovo', serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
 #center-col-request{
   width: 600px;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+}
+
+.request-left-panel{
+  width: 300px;
+  margin-right: 0px;
+  float: left;
+  height: auto;
 }
 
 #request-details-box{
@@ -539,6 +552,37 @@ clear: both;
   float: left;
   margin-right: 0px;
 }
+
+#map-canvas-request {
+  width: 300px;
+  margin-left: 30px;
+  top: 0;
+  left: 0;
+  height: auto;
+  float: left;
+  margin-right: 0px;
+  padding-right: 0px;
+}
+
+#request-map {
+border-bottom-color: rgb(224, 224, 224);
+border-bottom-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: rgb(224, 224, 224);
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: rgb(224, 224, 224);
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: rgb(224, 224, 224);
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+border-top-style: solid;
+border-top-width: 1px;
+}
+
 
 #map-canvas img{
   max-width: none;

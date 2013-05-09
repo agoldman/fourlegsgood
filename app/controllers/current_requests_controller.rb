@@ -123,6 +123,8 @@ class CurrentRequestsController < ApplicationController
 	def show
 		@request = SittingRequest.find(params[:id])
 		@user = User.where("id = ?", @request.owner_id)[0]
+		@latitude = @user.latitude
+		@longitude = @user.longitude
 		@pets = Pet.where("owner_id = ?", @user.id)
 	end
 

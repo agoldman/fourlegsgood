@@ -1,13 +1,19 @@
 
 
-	<div id="request-dates-box">
-		<div class="dates">
-			<h1 class="request-dates-head"> <%=DateTime.parse(@request.start_date.to_s).strftime("%B %d, %Y") %>  
-				 <div class= "request-btwn"> - </div> <%=DateTime.parse(@request.end_date.to_s).strftime("%B %d, %Y") %> </h1>
+	<div class="request-left-panel">
+		<div id="request-dates-box">
+			<div class="dates">
+				<h1 class="request-dates-head"> <%=DateTime.parse(@request.start_date.to_s).strftime("%B %d, %Y") %>  
+					 <div class= "request-btwn"> - </div> <%=DateTime.parse(@request.end_date.to_s).strftime("%B %d, %Y") %> </h1>
+			</div>
 		</div>
+	    <div id="map-canvas-request">
+		    <img id="request-map" alt="requester-address" src="http://maps.googleapis.com/maps/api/staticmap?center=<%=@latitude%>,<%=@longitude%>&zoom=14&size=250x260&sensor=false">
+	    </div>
 	</div>
 
 	<div id="request-details-box">
-		<%=@pets[0].name%>
-		<img src=<%=@pets[0].avatar.url%> alt="dogpicture">
+		<div class="request-name"> <%=@pets[0].name%></div>
+		<%= image_tag @pets[0].avatar.url(:medium) %>
 	</div>
+
