@@ -1,5 +1,5 @@
 
-
+<div class="request-holder">
 	<div class="request-left-panel">
 		<div id="request-dates-box">
 			<div class="dates">
@@ -8,12 +8,28 @@
 			</div>
 		</div>
 	    <div id="map-canvas-request">
-		    <img id="request-map" alt="requester-address" src="http://maps.googleapis.com/maps/api/staticmap?center=<%=@latitude%>,<%=@longitude%>&zoom=14&size=250x260&sensor=false">
+		    <img id="request-map" alt="requester-address" src="http://maps.googleapis.com/maps/api/staticmap?center=<%=@latitude%>,<%=@longitude%>&markers=%7C<%=@latitude%>,<%=@longitude%>&zoom=13&size=250x260&sensor=false">
 	    </div>
 	</div>
 
-	<div id="request-details-box">
-		<div class="request-name"> <%=@pets[0].name%></div>
+	<div id="request-photo-box">
+		<div class="request-name"> <%=@pets[0].name%> - <%=pluralize(@pets[0].age, 'year')%> old</div>
 		<%= image_tag @pets[0].avatar.url(:medium) %>
 	</div>
 
+	<div id="request-details-box">
+		<div class="care-instructions"> 
+			<button id="requestbutton">Offer To Watch This Dog</button> <br><br/>
+			<center><div id="request-q"> Got questions? <a>Message the owner</a></div><br></center>
+			Care Instructions: 
+			<% instructions = "None" %>
+			<% if @pets[0].care_instructions != nil %> 
+			<% instructions = @pets[0].care_instructions %>
+			<% end %>
+			<%= instructions %> <br/><br/>
+			Address: <%=@user.address%> <br><br/>
+			Owner: <%=@user.name %> <br><br/>
+			<center> <%= image_tag @user.avatar.url(:small) %> </center>
+		</div>	
+	</div>
+</div>

@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
   after_validation :geocode
 
  
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing.jpg"
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing_:style.jpg"
 
   def after_database_authentication
     update_swaps_earned
@@ -113,7 +113,7 @@ class User < ActiveRecord::Base
   end
 
   def avatar_url
-    self.avatar.url
+    self.avatar.url(:large)
   end
 
   def inbox

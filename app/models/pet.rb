@@ -12,7 +12,7 @@ class Pet < ActiveRecord::Base
    end
 
    def avatar_url
-   		self.avatar.url
+   		self.avatar.url(:large)
    end
 
 end
