@@ -11,7 +11,8 @@ FLG.Views.UserDashBoardView = Backbone.View.extend({
 			active_sittings_requested.url = "current_requests" + that.model.escape("id");
 			var renderedContent = JST["dashboards/dashboard"]({
 				user: that.model,
-				phone: that.model.escape('phone_number')
+				phone: that.model.escape('phone_number'),
+				uid: that.model.escape('uid')
 			});
 			that.$el.html(renderedContent);
 			$('#verify-phone').click(function(){

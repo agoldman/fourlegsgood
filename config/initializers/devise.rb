@@ -240,7 +240,7 @@ Devise.setup do |config|
 
     require "omniauth-facebook"
 
-    config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"], :strategy_class => OmniAuth::Strategies::Facebook
+    config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"]
 
 
 end

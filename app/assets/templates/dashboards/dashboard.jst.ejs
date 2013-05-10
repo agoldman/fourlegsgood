@@ -28,6 +28,20 @@
 				<a id="verify-phone">verify phone number</a>
 				<% } %>
 
+				<br><br>
+				<% if(!uid) { %>
+				<a href="/users/auth/facebook"> 
+					<img alt="Facebook-connect" src="/assets/fbconnect.png">
+				</a>
+				<% } %>
+
+				<% if(uid) { %>
+				<img alt="facebook-icon" src="/assets/fbicon.jpg">
+				<% } %>
+		
+
+	<br><br>
+
 
 			</div>
 		</div>

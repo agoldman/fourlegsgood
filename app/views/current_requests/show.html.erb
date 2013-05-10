@@ -19,7 +19,11 @@
 
 	<div id="request-details-box">
 		<div class="care-instructions"> 
+			<% if @offered %>
+			<div class="already-offered"> You've already offered to watch this dog.</div>
+			<% else %>
 			<button id="requestbutton">Offer To Watch This Dog</button> <br><br/>
+			<% end %>
 			<center><div id="request-q"> Got questions? <a>Message the owner</a></div><br></center>
 			Care Instructions: 
 			<% instructions = "None" %>

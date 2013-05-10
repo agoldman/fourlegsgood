@@ -4,6 +4,13 @@
   padding-top: 20px;
 }
 
+.already-offered{
+  padding: 20px;
+  color: #cc0066;
+  font-family: 'Ovo', serif;
+  font-size: 20px;
+}
+
 #requestbutton {
   padding: 0.4em 1.2em;
 -webkit-box-sizing: border-box;
@@ -119,7 +126,7 @@ text-align: left;
 }
 
 .request-holder{
-  margin-top: 20px;
+  margin-top: 60px;
   min-width: 1300px;
   margin-right: auto;
   margin-left: 50px;
