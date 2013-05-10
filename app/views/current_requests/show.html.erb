@@ -22,9 +22,7 @@
 			<% if @offered %>
 				<div class="already-offered"> You've offered to watch this dog.</div>
 			<% else %>
-				<%= form_for @sitting do |f| %>
-					<center> <%= f.submit "Offer To Watch This Dog",:class => "requestbutton" %> </center>
-				<% end %>
+				<div id="offer-button"><center><button class="requestbutton">Offer To Watch This Dog</button> </center><br></div>
 			<% end %>
 			<center><div id="request-q"> Got questions? <a>Message the owner</a></div><br></center>
 			Care Instructions: 
