@@ -126,7 +126,7 @@ class CurrentRequestsController < ApplicationController
 		@user = User.where("id = ?", @request.owner_id)[0]
 		@offered = nil
 		if user_signed_in?
-			@offered = Sitting.where("sitter_id = ? AND status='offered'", current_user.id).first
+			@offered = Sitting.where("sitter_id = ? AND sat_for_owner_id = ? AND status='offered'", current_user.id, @user.id).first
 		end
 		@latitude = @user.latitude
 		@longitude = @user.longitude
