@@ -131,6 +131,7 @@ class CurrentRequestsController < ApplicationController
 		@latitude = @user.latitude
 		@longitude = @user.longitude
 		@pets = Pet.where("owner_id = ?", @user.id)
+		@sitting = Sitting.new
 	end
 
 	def active

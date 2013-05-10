@@ -25,6 +25,7 @@ Fourlegsgood::Application.routes.draw do
     resources :sitters, only: [:index]
   end
   resources :sitting_requests, only: [:index]
+  resources :sittings
   resources :pets
   resources :current_requests do
     collection do
