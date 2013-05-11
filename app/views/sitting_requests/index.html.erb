@@ -61,8 +61,10 @@
     function codeAddress() {
       <% if @zip %>
           address = "<%=@zip %>"
-      <% else %>
+      <% elsif (current_user.address) %>
          address = "<%=current_user.address %>"
+      <% else %>
+         address = "94114" 
       <% end %>  
       
       geocoder.geocode( { 'address': address}, function(results, status) {
