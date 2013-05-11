@@ -2,7 +2,12 @@
 <% if(@user.swaps_earned > 0) %>
 
 	<div id="swapformintro">
-		<div id="swapformtitle"> <h1> Hi there, <%=@user.name%>.</h1></div>
+		<div id="swapformtitle"> <h1> Hi there 
+										<% if (@user.name != nil) %>
+											 <%= @user.name %>.
+											<% end %>
+								</h1>
+		</div>
 
 		<h2> You have <%=pluralize(@user.swaps_earned, 'swap')%> to use </h2>
 
@@ -33,7 +38,9 @@
 <% else %>
 
 	<div id="swapformintro">
-		<div id="swapformtitle"> <h1> Hi there, <%=@user.name%>.</h1></div>
+		<div id="swapformtitle"> <h1> Hi there <% if (@user.name) %>
+											 <%=@user.name%>.
+											 <% end %> </h1></div>
 
 		<h2> You have no swaps to use. </h2>
 		<form action="/sitting_requests"><input type="submit" class="earn_swaps_button" value ="Watch Someone's Dog. Earn Swaps."> </form>

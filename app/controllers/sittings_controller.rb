@@ -1,6 +1,5 @@
 class SittingsController < ApplicationController
 
-	respond_to :json
 	respond_to :html
 
 	def create

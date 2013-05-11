@@ -123,6 +123,7 @@ class CurrentRequestsController < ApplicationController
 
 	def show
 		@request = SittingRequest.find(params[:id])
+		@owner_id
 		@user = User.where("id = ?", @request.owner_id)[0]
 		@offered = nil
 		if user_signed_in?
