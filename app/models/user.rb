@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [:facebook]
 
-  attr_accessible :phone_code_hash, :name, :email, :phone_number, :password, :password_confirmation, :remember_me, :about_me, :avatar, :id, :name, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :latitude, :longitude, :provider, :uid
+  attr_accessible :phone_code_hash, :name, :email, :phone_number, :password, :password_confirmation, :remember_me, :about_me, :avatar, :filepicker_url, :id, :name, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :latitude, :longitude, :provider, :uid
 
   has_many :pets, foreign_key: :owner_id
 

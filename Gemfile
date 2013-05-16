@@ -22,6 +22,8 @@ gem "compass-rails"
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby', '3.0.1'
 
+gem 'filepicker-rails'
+
 
 gem 'mail'
 gem 'addressable'

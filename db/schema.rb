@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507235903) do
+ActiveRecord::Schema.define(:version => 20130516023046) do
 
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(:version => 20130507235903) do
     t.string   "uid"
     t.string   "phone_number"
     t.string   "phone_code_hash"
+    t.string   "filepicker_url"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
