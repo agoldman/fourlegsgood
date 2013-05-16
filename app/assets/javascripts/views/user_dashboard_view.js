@@ -1,4 +1,35 @@
 FLG.Views.UserDashBoardView = Backbone.View.extend({
+	events: {
+		"click a#updatephotolink": "uploadForm"
+	},
+	
+	initialize: function() {
+		filepicker.setKey("AKt3Soe5QmC1Y5V74Scwrz");
+		this.renderCallback = this.render.bind(this);
+		
+	},
+	
+	uploadForm: function() {
+		var that = this;
+		filepicker.pick({
+		    mimetypes: ['image/*', 'text/plain'],
+		    container: 'modal',
+		    services:['COMPUTER', 'FACEBOOK', 'GMAIL'],
+		  },
+		  function(FPFile){
+			  console.log(that.model);
+			  console.log(JSON.stringify(FPFile));
+			  console.log(FPFile.url);
+			  
+		    that.model.save({ filepicker_url : FPFile.url }, {
+		    	success: that.renderCallback
+		    })
+		  },
+		  function(FPError){
+		    console.log(FPError.toString());
+		  }
+		);
+	},
 
 	render: function() {
 		var that = this;
@@ -49,8 +80,8 @@ FLG.Views.UserDashBoardView = Backbone.View.extend({
 					}, "json");
 				});
 			});
-		}
-	});
+			}
+		});
 		return that;
-		}
+	}
 })

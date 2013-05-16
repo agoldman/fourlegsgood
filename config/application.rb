@@ -38,6 +38,10 @@ module Fourlegsgood
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+      
+    #config filepicker api key  
+    #config.filepicker_rails.api_key = ENV["FILEPICKER_API_KEY"]
+    config.filepicker_rails.api_key = "AKt3Soe5QmC1Y5V74Scwrz"
 
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true

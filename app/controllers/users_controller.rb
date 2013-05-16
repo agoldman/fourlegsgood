@@ -29,12 +29,14 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		if @user.update_attributes
-			flash[:success] = "Thanks for updating your profile!"
-			redirect_to user_url(@user)
+		if @user.update_attributes(params[:user])
+      render json: @user
+			# flash[:success] = "Thanks for updating your profile!"
+#       redirect_to user_url(@user)
 		else
-			flash[:error] = "Please try again"
-			render :edit
+      render json: @user.errors, status: 422
+			# flash[:error] = "Please try again"
+#       render :edit
 		end
 	end
 
