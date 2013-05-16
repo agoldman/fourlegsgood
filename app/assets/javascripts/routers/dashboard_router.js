@@ -15,14 +15,21 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 		"history": "history"
 	},
 
+	removeActiveTab: function() {
+		window.$(".activedashtab").removeClass("activedashtab");
+	},
+
+	addActiveTab: function(el) {
+		window.$(el).addClass("activedashtab");
+	},
+
 	index: function() {
 		var that = this;
 		var UserDashBoardView = new FLG.Views.UserDashBoardView({
 			model: that.user
 		});
-
-		window.$(".activedashtab").removeClass("activedashtab");
-		window.$(".profilenavtabdash").addClass("activedashtab");
+		that.removeActiveTab();
+		that.addActiveTab(".profilenavtabdash");
 		that.$holder.html(UserDashBoardView.render().$el);
 	},
 
@@ -31,14 +38,12 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 		var UserMessagesView = new FLG.Views.UserMessagesView({
 			model: that.user
 		});
-		window.$(".activedashtab").removeClass("activedashtab");
-		window.$(".profilenavtabmsg").addClass("activedashtab");
+		that.removeActiveTab();
+		that.addActiveTab(".profilenavtabmsg");
 		that.$holder.html(UserMessagesView.render().$el);
-
 		var MessagesInboxView = new FLG.Views.MessagesInboxView({
 			model: that.model
 		});
-
 		that.MSGSrouter.addEl($(".messages-list-box"));
 		that.MSGSrouter.inbox();
 	},
@@ -48,8 +53,8 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 		var PetView = new FLG.Views.PetView({
 			model: that.user
 		});
-		window.$(".activedashtab").removeClass("activedashtab");
-		window.$(".profilenavtabpets").addClass("activedashtab");
+		that.removeActiveTab();
+		that.addActiveTab(".profilenavtabpets");
 		that.$holder.html(PetView.render().$el);
 	},
 
@@ -58,8 +63,8 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 		var ReviewsView = new FLG.Views.ReviewsView({
 			model: that.user
 		});
-		window.$(".activedashtab").removeClass("activedashtab");
-		window.$(".profilenavtabrev").addClass("activedashtab");
+		that.removeActiveTab();
+		that.addActiveTab(".profilenavtabrev")
 		that.$holder.html(ReviewsView.render().$el);
 	}, 
 
@@ -69,13 +74,9 @@ FLG.Routers.DashboardRouter = Backbone.Router.extend({
 			model: that.user
 		});
 		
-		window.$(".activedashtab").removeClass("activedashtab");
-		window.$(".profilenavtabhist").addClass("activedashtab");
+		that.removeActiveTab();
+		that.addActiveTab(".profilenavtabhist");
 		that.$holder.html(HistoryView.render().$el);
 	}
-
-
-
-
 
 });

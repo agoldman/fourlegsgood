@@ -1,5 +1,5 @@
 <% reviews.each(function(review) { %>
-	<%=review.escape("user_name") %> --
+	<%=review.escape("name") %> --
 	<%=review.escape("score")%>/5
 	<% if(review.escape("comment")) { %>
 	<%= review.escape("comment") %>
