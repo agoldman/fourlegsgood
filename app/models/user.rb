@@ -49,6 +49,10 @@ class User < ActiveRecord::Base
     update_swaps_earned
   end 
 
+  def upcoming
+    Sitting.where("status='confirmed' AND (sitter_id = ? OR sat_for_owner_id = ?)", self.id, self.id).count
+  end
+
   def confirm(code)
     @user_hash = BCrypt::Password.new(self.phone_code_hash)
     @user_hash == code

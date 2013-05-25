@@ -355,6 +355,113 @@ word-spacing: 0px;
 #phonecodefield{
   width: 150px; 
 }
+
+/* user profile redesign */
+
+.profile-text{
+  font-family: 'Ovo', serif;
+}
+
+.profile-image{
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left-profile-panel{
+  float: left;
+}
+
+.display-user-info{
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 20px;
+  text-align: center;
+  height: auto;
+  width: auto;
+  font-family: 'Helvetica';
+  font-size: 22px;
+  clear: both;
+}
+
+.about-me{
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: LightGray;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-bottom: 10px;
+}
+
+.profile-alert {
+  display: inline;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 20px;
+  font-family: 'Ovo', serif;
+}
+
+.profile-alert-center{
+  display: inline;
+  border-left-style: solid;
+  border-left-color: LightGray;
+  border-right-style: solid;
+  border-right-color: LightGray;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 20px;
+  font-family: 'Ovo', serif;
+}
+
+.user-profile-form {
+margin-top: 20px;
+-webkit-background-clip: border-box;
+-webkit-background-origin: padding-box;
+-webkit-background-size: auto;
+-webkit-border-image: none;
+-webkit-box-shadow: rgba(0, 0, 0, 0.04706) 0px 1px 1px 0px;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: white;
+background-origin: padding-box;
+background-size: auto;
+border-bottom-color: #e0e0e0;
+border-bottom-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: #e0e0e0;
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: #e0e0e0;
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: #e0e0e0;
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+border-top-style: solid;
+border-top-width: 1px;
+box-shadow: rgba(0, 0, 0, 0.04706) 0px 1px 1px 0px;
+color: black;
+display: block;
+font-family: 'Helvetica';
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: auto;
+line-height: 19px;
+margin-bottom: 20px;
+margin-right: auto;
+margin-left: auto;
+padding-bottom: 20px;
+padding-left: 2px;
+padding-right: 2px;
+padding-top: 20px;
+vertical-align: top;
+width: 614px;
+text-align: center;
+}
+
 /* new request form */
 
 
@@ -482,13 +589,10 @@ text-align: center;
 }
 
 
-
-
 .welcomebox{
-  text-align:center;
-
-  margin-top: 225px;
- margin-left: 100px;
+text-align:center;
+margin-top: 225px;
+margin-left: 100px;
 
 }
 

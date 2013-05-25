@@ -1,45 +1,21 @@
-<script type="text/javascript">
-  $(function () {
-    // start me up!
-    if (window.location.hash == '#_=_')window.location.hash = '';
-    // Preload, or *bootstrap* initial task data.
-    var userData = <%= @user.to_json.html_safe %>;
-
-    window.FLG.initialize(
-      $(".holder"),
-      userData
-    );
-  });
-</script>
-
-
-<body class="profile">
 <div class="container">
-	<div class="row profilebackground">
-		<div class="span12 profile-nav">
-			<ul id="profilenav">
-				<li class="profilenavtabdash activedashtab">
-					<a href="#" class="profilenavlink"> Dashboard</a>
-				</li>
-				<li class="profilenavtabmsg">
-					<a href="#/msgs" class="profilenavlink"> Inbox</a>
-				</li>
-				<li class="profilenavtabpets">
-					<a href="#/pets" class="profilenavlink">My Pets</a>
-				</li>
-				<li class="profilenavtabrev">
-					<a href="#/reviews" class="profilenavlink">Reviews</a>
-				</li>
-				<li class="profilenavtabhist">
-					<a href="#/history" class="profilenavlink">My History</a>
-				</li>
-			</ul>
-		</div>
 
-		<div class="holder span12">
+	<div class = "user-profile-form">
+		<div class="profile-alert">  <a href=""> Credits (<%=@user.swaps_earned%>) </a> </div>
+		<div class= "profile-alert-center">  <a href="">Upcoming (<%=@user.upcoming%>) </a> </div> 
+		<div class="profile-alert">  <a href="">Messages (<%=@user.inbox.count%>) </a></div>
+	</div>
+	<div class="user-profile-form">
+			<div class="display-user-info">
+				<div class="profile-text"> <%=@user.name%>  </div> 
+			</div>
+			<br>
+
+			<div class="about-me"> 
+				<%= @user.about_me %>
+			</div>
+			<br>
+		<a href="">edit my profile</a>
 		</div>
 	
-	</div>
-
 </div>
-</body>

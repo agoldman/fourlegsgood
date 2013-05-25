@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 				format.json { render json: @user }
 			end
 		else
-			redirect_to user_url(current_user)
+			redirect_to user_url(current_user) #sending you to your own site for now. want to show the "other-user" view eventually
 		end
 	end
 
