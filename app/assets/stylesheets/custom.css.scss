@@ -393,6 +393,16 @@ word-spacing: 0px;
   padding-bottom: 10px;
 }
 
+.profile-pic {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 20px;
+  font-family: 'Ovo', serif;
+  }
+
 .profile-alert {
   display: inline;
   padding-left: 40px;
@@ -497,17 +507,14 @@ clear: both;
 }
 
 .new-request-button{
- 
-padding: 0.4em 1.2em;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
-text-align: center;
 font-family: "Helvetica";
 letter-spacing: 1px;
 vertical-align: middle;
 margin-bottom: 0;
-margin-left: 40px;
+margin-left: 0px;
 margin-top: 10px;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
@@ -523,11 +530,23 @@ border-color: #0195eb #0083c7 #0175b8 #0083c7;
 font-size: 14px;
 line-height: 30px;
 color: WhiteSmoke;
+padding: 0.4em 1.2em;
 text-shadow: 0 -1px 0px rgba(0,0,0,0.2);
 width: 100px;
-text-align: center;
+text-align: left;
 clear: both;
-margin-left: 250px;
+}
+
+.cash-out-option {
+  border-top-style: solid;
+  border-top-color: LightGray;
+  border-top-width: 1px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  width: 500px;
+  font-size: 18px;
 }
 
 #select-nights{
@@ -539,7 +558,7 @@ margin-left: 250px;
 }
 
 #swapformintro {
-margin-top: 50px;
+margin-top: 30px;
 -webkit-background-clip: border-box;
 -webkit-background-origin: padding-box;
 -webkit-background-size: auto;
@@ -1565,10 +1584,79 @@ margin-left: 7px;
 width: 670px;
 }
 
+/* update profile */
+
+.profile-label{
+  font-size: 13px;
+  font-family: 'Helvetica';
+  font-weight: bold;
+  color: #333;
+}
+
+#user_address{
+  width: 392px;
+  border-radius: 3px;
+  border-width: 1px;
+  border-color: rgb(204, 204, 204);
+  color: rgb(85, 85, 85);
+  border-style: solid;
+  box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+}
+
+#user_about_me {
+  width: 405px;
+  color:  rgb(85, 85, 85);
+}
+
+.update-title{
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 20px;
+  font-family: 'Helvetica';
+  text-align: left;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dog-update-form{
+  border-top-color: LightGray;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.update-title-dog{
+  font-family: 'Helvetica';
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding-top: 30px;
+  text-align: left;
+  width: 400px;
+}
+
+#user_avatar {
+  width: 380px;
+}
+
+.update-form {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.update-profile {
+  font-size: 20px;
+  font-family: 'Ovo', serif;
+}
+
 /* profile page */
 
 .invite-button {
-float:left;
 padding: 0.4em 1.2em;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
@@ -1578,7 +1666,6 @@ font-family: "Helvetica";
 letter-spacing: 1px;
 vertical-align: middle;
 margin-bottom: 0;
-margin-left: 40px;
 -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
 border-radius: 5px;

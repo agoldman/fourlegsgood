@@ -9,7 +9,7 @@
 								</h1>
 		</div>
 
-		<h2> You have <%=pluralize(@user.swaps_earned, 'swap')%> to use </h2>
+		<h2> You have <%=pluralize(@user.swaps_earned, 'credit')%> to use </h2>
 
 		<div id="newuserbox">
 			<%= form_tag("/current_requests", :method => "post", id:"newrequestform") do %>
@@ -32,6 +32,12 @@
        		</div>
        		<% end %>
 		
+       		<br>
+		</div>
+
+		<div class="cash-out-option">
+			<h4> Or </h4> <br>
+			<a href=""> Sell my credits! ($3/each) </a>
 		</div>
 	</div>
 

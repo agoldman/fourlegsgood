@@ -1,0 +1,38 @@
+<div class="container"> 
+	<div class="user-profile-form">
+		<div class="update-profile">
+			<div class="update-title"> <%=@user.name%> </div>
+			<br>
+			<br>
+				<div class="update-form">
+					<%=form_tag(user_url(@user), :method=>'post', :multipart => true) do %>
+		
+					<label class='profile-label' for="user_address"> Address </label>
+					<input id="user_address" type="textfield" name="user[address]" placeholder= "<%=@user.address%>" >
+					<br>
+					<br>
+					<label class='profile-label' for="user_about_me"> About Me </label>
+					<textarea rows="5" id="user_about_me" name="user[about_me]" placeholder="<%=@user.about_me%>"></textarea>
+					<br>
+					<br>
+					<label class='profile-label' for="user_avatar"> Human Photo </label>
+					<input class="well" type="file" id="user_avatar" name="user[avatar]">
+					
+				</div>
+
+				<div class="dog-update-form">
+					<div class="update-title-dog"> Love On Your Dog<div>
+				</div>
+				<br><br>
+				<label class="profile-label" for="user_pet_number">Number of Dogs</label>
+
+				<select id="user_pet_number" name="user[pet][number]">
+ 					<option>1</option>
+  					<option>2</option>
+  					<option>3+</option>
+				</select>
+				<% end %>
+			
+		</div>
+	</div>
+</div>
