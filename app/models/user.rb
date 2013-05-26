@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :phone_code_hash, :name, :email, :phone_number, :password, :password_confirmation, :remember_me, :about_me, :avatar, :id, :name, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :latitude, :longitude, :provider, :uid
 
-  has_many :pets, foreign_key: :owner_id
+  has_one :pet, foreign_key: :owner_id
 
   has_many :sent_messages, class_name: "Message", foreign_key: :sender_id
   has_many :received_messages, class_name: "Message", foreign_key: :receiver_id

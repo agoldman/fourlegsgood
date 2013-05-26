@@ -21,16 +21,20 @@
 				</div>
 
 				<div class="dog-update-form">
-					<div class="update-title-dog"> Love On Your Dog<div>
+					<div class="update-title-dog"> Dog Profile<div>
 				</div>
 				<br><br>
-				<label class="profile-label" for="user_pet_number">Number of Dogs</label>
+				<label class="profile-label" for="user_pet_age">Age (yrs)</label>
 
-				<select id="user_pet_number" name="user[pet][number]">
- 					<option>1</option>
-  					<option>2</option>
-  					<option>3+</option>
+				<select id="user_pet_age" name="user[pet][age]">
+					<option value="0">0</option>
+					<option value="1">1-10</option>
+  					<option value="11">11+</option>
 				</select>
+				<br>
+				<br>
+				<label class="profile-label" for="user_pet_about">About My Dog (include care instructions here)</label>
+<textarea rows="5" id="user_pet_about" name="user[pet][care_instructions]" placeholder="<%=@user.pets[0].care_instructions%>"></textarea>
 				<% end %>
 			
 		</div>
