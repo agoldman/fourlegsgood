@@ -64,3 +64,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'rails_12factor', group: :production
+
+ruby "2.0.0"

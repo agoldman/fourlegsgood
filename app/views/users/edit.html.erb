@@ -1,42 +1,54 @@
 <div class="container"> 
-	<div class="user-profile-form">
+				<div class="human-profile">
+	
+
 		<div class="update-profile">
-			<div class="update-title"> <%=@user.name%> </div>
-			<br>
-			<br>
-				<div class="update-form">
-					<%=form_tag(user_url(@user), :method=>'post', :multipart => true) do %>
-		
-					<label class='profile-label' for="user_address"> Address </label>
-					<input id="user_address" type="textfield" name="user[address]" placeholder= "<%=@user.address%>" >
-					<br>
-					<br>
-					<label class='profile-label' for="user_about_me"> About Me </label>
-					<textarea rows="5" id="user_about_me" name="user[about_me]" placeholder="<%=@user.about_me%>"></textarea>
-					<br>
-					<br>
-					<label class='profile-label' for="user_avatar"> Human Photo </label>
-					<input class="well" type="file" id="user_avatar" name="user[avatar]">
-					
-				</div>
-
-				<div class="dog-update-form">
-					<div class="update-title-dog"> Dog Profile<div>
-				</div>
-				<br><br>
-				<label class="profile-label" for="user_pet_age">Age (yrs)</label>
-
-				<select id="user_pet_age" name="user[pet][age]">
-					<option value="0">0</option>
-					<option value="1">1-10</option>
-  					<option value="11">11+</option>
-				</select>
+				<div class="update-title"> <%=@user.name%> </div>
 				<br>
 				<br>
-				<label class="profile-label" for="user_pet_about">About My Dog (include care instructions here)</label>
-<textarea rows="5" id="user_pet_about" name="user[pet][care_instructions]" placeholder="<%=@user.pets[0].care_instructions%>"></textarea>
-				<% end %>
+					<div class="update-form">
+						<%=form_tag(user_url(@user), :method=>'post', :multipart => true) do %>
 			
-		</div>
-	</div>
+						<label class='profile-label' for="user_address"> Address </label>
+						<input id="user_address" type="textfield" name="user[address]" placeholder= "<%=@user.address%>" >
+						<br>
+						<br>
+						<label class='profile-label' for="user_about_me"> About Me </label>
+						<textarea rows="5" id="user_about_me" name="user[about_me]" placeholder="<%=@user.about_me%>"></textarea>
+						<br>
+						<br>
+						<label class='profile-label' for="user_avatar"> Human Photo </label>
+						<input class="well" type="file" id="user_avatar" name="user[avatar]">
+						
+					</div>
+			</div>
+
+
+			<div class="dog-profile">
+						<br><br>
+
+						<label class="profile-label" for="user_pet_name">Name</label>
+					    <input id="user_pet_name" type="textfield" name="user[pet][name" placeholder= "<%=@user.pet.name%>" >
+						<br>
+						<br>
+						<label class="profile-label" for="user_pet_age">Age (yrs)</label>
+
+						<select id="user_pet_age" name="user[pet][age]">
+							<option value="0">0</option>
+							<option value="1">1-10</option>
+		  					<option value="11">11+</option>
+						</select>
+						<br>
+						<br>
+						<label class="profile-label" for="user_pet_about">About My Dog (include care instructions here)</label>
+		<textarea rows="5" id="user_pet_about" name="user[pet][care_instructions]" placeholder="<%=@user.pet.care_instructions%>"></textarea>
+						<br>
+						<br>
+						<label class='profile-label' for="user_pet_avatar"> Dog Photo </label>
+						<input class="well" type="file" id="user_pet_avatar" name="user[pet][avatar]">
+						<% end %>
+			
+					</div>
+				</div>
+			
 </div>
