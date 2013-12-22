@@ -4,12 +4,12 @@ class User < ActiveRecord::Base
 
   include BCrypt
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  #devise :database_authenticatable, :registerable,
+     #    :recoverable, :rememberable, :trackable, :validatable
 
-  devise :omniauthable, :omniauth_providers => [:facebook]
+  #devise :omniauthable, :omniauth_providers => [:facebook]
 
-  attr_accessible :phone_code_hash, :name, :email, :phone_number, :password, :password_confirmation, :remember_me, :about_me, :avatar, :id, :name, :address, :sitter_rate, :swaps_earned, :dog_karma, :sitter_karma, :latitude, :longitude, :provider, :uid
+  attr_accessible :name, :email, :about_me, :avatar, :id, :address, :swaps_earned, :dog_karma, :sitter_karma, :provider, :uid
 
   has_one :pet, foreign_key: :owner_id
 
@@ -49,6 +49,19 @@ class User < ActiveRecord::Base
     update_swaps_earned
   end 
 
+  ## Update user in db from facebook login via omni-auth
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.name
+      #user.avatar = auth.info.image
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
+    end
+  end
+
   def upcoming
     Sitting.where("status='confirmed' AND (sitter_id = ? OR sat_for_owner_id = ?)", self.id, self.id).count
   end
@@ -72,21 +85,6 @@ class User < ActiveRecord::Base
     else
       return false
     end
-  end
-
-   def self.find_or_create_by_facebook_oauth(auth)
-     user = User.where(:provider => auth.provider, :uid => auth.uid).first
-
-     unless user
-       user = User.create!(
-       provider: auth.provider,
-       uid: auth.uid,
-       email: auth.info.email,
-       password: Devise.friendly_token[0,20]
-     )
-     end
-
-    user
   end
 
   def current_requests

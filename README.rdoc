@@ -2,7 +2,6 @@
 
 A web app developed in Ruby on Rails with Javascript. Features 
 
-- Secure login with Devise
 - Facebook login with Omniauth
 - Photo storage with Paperclip
 - Geocoding with Google Geocoder API

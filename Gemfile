@@ -12,7 +12,12 @@ end
 group :development do
   gem 'sqlite3'
   gem 'debugger'
+  gem 'binding_of_caller'
 end
+
+### Login
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
 
 gem 'better_errors'
 #gem 'bootstrap-sass', '2.1'
@@ -28,10 +33,7 @@ gem 'addressable'
 gem 'rest-client'
 gem 'ejs'
 gem 'geocoder'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"		
 gem "figaro"
 gem 'twilio-ruby'
 gem "actionmailer", "~> 3.2.13"

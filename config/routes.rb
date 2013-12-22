@@ -1,8 +1,8 @@
 Fourlegsgood::Application.routes.draw do
 
-  devise_for :users, :controllers => {
-    :omniauth_callbacks => 'omniauth_callbacks'
-  }
+  # devise_for :users, :controllers => {
+  #   :omniauth_callbacks => 'omniauth_callbacks'
+  # }
 
   root to: "statics#index"
   resources :statics
@@ -24,6 +24,12 @@ Fourlegsgood::Application.routes.draw do
     resources :sat_for_dogs, only: [:index]
     resources :sitters, only: [:index]
   end
+
+  ## Omni-auth / Facebook login
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+
   resources :sitting_requests, only: [:index]
   resources :sittings
   resources :messages, only: [:new]

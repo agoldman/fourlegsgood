@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130525213955) do
+ActiveRecord::Schema.define(:version => 20131220170204) do
 
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
@@ -104,27 +104,14 @@ ActiveRecord::Schema.define(:version => 20130525213955) do
   add_index "swap_exchanges", ["swap_requester_id"], :name => "index_swap_exchanges_on_swap_requester_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "",                                                                :null => false
-    t.string   "encrypted_password",     :default => "",                                                                :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "email",               :default => "",                                                                :null => false
     t.string   "name"
     t.string   "address"
-    t.decimal  "sitter_rate"
     t.integer  "dog_karma"
     t.integer  "sitter_karma"
-    t.integer  "swaps_earned",           :default => 1
-    t.integer  "swap_price"
-    t.float    "longitude"
-    t.float    "latitude"
-    t.datetime "created_at",                                                                                            :null => false
-    t.datetime "updated_at",                                                                                            :null => false
+    t.integer  "swaps_earned",        :default => 1
+    t.datetime "created_at",                                                                                         :null => false
+    t.datetime "updated_at",                                                                                         :null => false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -133,10 +120,11 @@ ActiveRecord::Schema.define(:version => 20130525213955) do
     t.string   "uid"
     t.string   "phone_number"
     t.string   "phone_code_hash"
-    t.text     "about_me",               :default => "I haven't said anything about myself yet, but I'm probably rad."
+    t.text     "about_me",            :default => "I haven't said anything about myself yet, but I'm probably rad."
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
