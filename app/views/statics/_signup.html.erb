@@ -6,7 +6,12 @@
 			Get free dog sitting from other owners. 
 		</ul>
 	</h2>
-	<a href="users/sign_up" class="button signupbutton">Sign Up</a>
+
+	<% if current_user %>
+      <a class= "button signupbutton">Welcome <strong><%= current_user.name %></strong>!</a>
+    <% else %>
+	  <a href="/auth/facebook" id="sign_in" class="button signupbutton">Sign in with Facebook</a>
+	<% end %>
 <div id="hellolinks">
 	<h4><%=link_to "Can I pay Cash instead? (yes)", statics_url%></h4> 
 </div>
