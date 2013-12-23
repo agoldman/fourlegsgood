@@ -104,14 +104,14 @@ ActiveRecord::Schema.define(:version => 20131220170204) do
   add_index "swap_exchanges", ["swap_requester_id"], :name => "index_swap_exchanges_on_swap_requester_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email",               :default => ""
+    t.string   "email"
     t.string   "name"
     t.string   "address"
     t.integer  "dog_karma"
     t.integer  "sitter_karma"
     t.integer  "swaps_earned",        :default => 1
-    t.datetime "created_at",                                                                                         :null => false
-    t.datetime "updated_at",                                                                                         :null => false
+    t.datetime "created_at",                                                                   :null => false
+    t.datetime "updated_at",                                                                   :null => false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -120,11 +120,9 @@ ActiveRecord::Schema.define(:version => 20131220170204) do
     t.string   "uid"
     t.string   "phone_number"
     t.string   "phone_code_hash"
-    t.text     "about_me",            :default => "I haven't said anything about myself yet, but I'm probably rad."
+    t.text     "about_me",            :default => "I haven't said anything about myself yet."
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
   end
-
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end
