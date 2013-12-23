@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(:version => 20131220170204) do
   add_index "swap_exchanges", ["swap_requester_id"], :name => "index_swap_exchanges_on_swap_requester_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email",               :default => "",                                                                :null => false
+    t.string   "email",               :default => ""
     t.string   "name"
     t.string   "address"
     t.integer  "dog_karma"
