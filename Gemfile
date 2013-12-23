@@ -33,7 +33,11 @@ gem 'addressable'
 gem 'rest-client'
 gem 'ejs'
 gem 'geocoder'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"		
+
+#### Image storage
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk', '~> 1.5.7'
+		
 gem "figaro"
 gem 'twilio-ruby'
 gem "actionmailer", "~> 3.2.13"

@@ -3,9 +3,9 @@
 
 
 	<div class = "user-profile-form">
-		<div class="profile-alert">  <a href="/current_requests/new"> Credits (<%=@user.swaps_earned%>) </a> </div>
-		<div class= "profile-alert-center">  <a href="">Upcoming (<%=@user.upcoming%>) </a> </div> 
-		<div class="profile-alert">  <a href="">Messages (<%=@user.inbox.count%>) </a></div>
+		<div class="profile-alert">  <a href="/current_requests/new"> Credits (<%#=@user.swaps_earned%>) </a> </div>
+		<div class= "profile-alert-center">  <a href="">Upcoming (<%#=@user.upcoming%>) </a> </div> 
+		<div class="profile-alert">  <a href="">Messages (<%#=@user.inbox.count%>) </a></div>
 	</div>
 
 	<div class = "user-profile-form">
@@ -13,7 +13,7 @@
 			<img alt="human-profilepic" src=<%= @user.avatar.url(:medium) %>>
 		</div>
 		<div class="profile-pic"> 
-			<img alt="pet-profilepic" src=<%= @user.pet.avatar.url(:medium) %>>
+			<img alt="pet-profilepic" src=<%#= @user.pet.avatar.url(:medium) %>>
 		</div>
 	</div>
 	<div class="user-profile-form">
@@ -23,7 +23,7 @@
 			<br>
 
 			<div class="about-me"> 
-				<%= @user.about_me %>
+				<%#= @user.about_me %>
 			</div>
 			<br>
 		<%= link_to "edit my profile", edit_user_url(current_user)%>

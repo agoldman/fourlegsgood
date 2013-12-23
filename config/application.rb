@@ -32,6 +32,7 @@ module Fourlegsgood
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    #
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -62,5 +63,15 @@ module Fourlegsgood
     config.action_mailer.default_url_options = { host: 'localhost:3000'  }
     config.assets.paths << "app/assets/templates"
     config.assets.initialize_on_precompile = false
+
+    config.paperclip_defaults = {
+        :storage => :s3,
+        :s3_credentials => {
+            :bucket => "fourlegsgood",
+            :access_key_id => ENV["S3_ACCESS_KEY"],
+            :secret_access_key => ENV["S3_ACCESS_SECRET"],
+            :s3_host_name => 's3-us-west-1.amazonaws.com'
+        }
+    }
   end
 end

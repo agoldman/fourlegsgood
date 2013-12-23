@@ -9,8 +9,11 @@
 
 	<% if current_user %>
       <a class= "button signupbutton">Welcome <strong><%= current_user.name %></strong>!</a>
-      <%= form_for @user, :html => { :multipart => true } do |form| %>
+      <br>
+      <%= form_for current_user, :html => { :multipart => true } do |form| %>
+
   	    <%= form.file_field :avatar %>
+  	  <%= form.submit %>
       <% end %>
     <% else %>
 	  <a href="/auth/facebook" id="sign_in" class="button signupbutton">Sign in with Facebook</a>
