@@ -2,7 +2,7 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       ## Database authenticatable
-      t.string :email,               :default => ""
+      t.string :email               
       t.string :name
       t.text :about_me
       t.string :address
@@ -13,6 +13,5 @@ class CreateUsers < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :users, :email,                :unique => true
   end
 end
