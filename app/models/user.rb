@@ -3,12 +3,6 @@ require 'bcrypt'
 class User < ActiveRecord::Base
 
   include BCrypt
-
-  #devise :database_authenticatable, :registerable,
-     #    :recoverable, :rememberable, :trackable, :validatable
-
-  #devise :omniauthable, :omniauth_providers => [:facebook]
-
   attr_accessible :name, :email, :about_me, :avatar, :id, :address, :swaps_earned, :dog_karma, :sitter_karma, :provider, :uid
 
   has_one :pet, foreign_key: :owner_id

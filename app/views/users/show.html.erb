@@ -1,19 +1,21 @@
 <div class="container">
-
-
-
 	<div class = "user-profile-form">
 		<div class="profile-alert">  <a href="/current_requests/new"> Credits (<%#=@user.swaps_earned%>) </a> </div>
-		<div class= "profile-alert-center">  <a href="">Upcoming (<%#=@user.upcoming%>) </a> </div> 
+		<div class= "profile-alert-center">  <a href="">Appointments (<%#=@user.upcoming%>) </a> </div> 
 		<div class="profile-alert">  <a href="">Messages (<%#=@user.inbox.count%>) </a></div>
 	</div>
-
 	<div class = "user-profile-form">
-		<div class="profile-pic"> 
-			<img alt="human-profilepic" src=<%= @user.avatar.url(:medium) %>>
-		</div>
-		<div class="profile-pic"> 
-			<img alt="pet-profilepic" src=<%#= @user.pet.avatar.url(:medium) %>>
+		<div class="row-fluid">
+			<div class="profile-pic span6"> 
+				<img src="https://graph.facebook.com/<%=current_user.uid%>/picture?width=200&height=200">
+			</div>
+			<div class="profile-pic span6"> 	
+
+			  <%= form_for current_user, :html => { :multipart => true } do |form| %>
+				  <%= form.file_field :avatar %>
+				  <%= form.submit %>
+			  <% end %>
+			</div>
 		</div>
 	</div>
 	<div class="user-profile-form">
@@ -25,11 +27,7 @@
 			<div class="about-me"> 
 				<%#= @user.about_me %>
 			</div>
-			<br>
-		<%= link_to "edit my profile", edit_user_url(current_user)%>
 		</div>
-
-		<center> <div class = "invite-button"> Invite Friends to Party </div> </center>
-		 <br><br><br>
-	
+		<center> <div class = "invite-button"> Invite Your Buds With Dogs </div> </center>
+		 <br><br><br>	
 </div>

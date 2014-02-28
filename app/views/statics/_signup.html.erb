@@ -1,23 +1,12 @@
+<h2 id="masthead-subtitle">
+	<ul>
+		Watch someone's dog. <br/>
+		Earn swaps. <br/>
+		Get free dog sitting from other owners. 
+	</ul>
+</h2>
 
-	<h2 id="masthead-subtitle">
-		<ul>
-			Watch someone's dog. <br/>
-			Earn swaps. <br/>
-			Get free dog sitting from other owners. 
-		</ul>
-	</h2>
-
-	<% if current_user %>
-      <a class= "button signupbutton">Welcome <strong><%= current_user.name %></strong>!</a>
-      <br>
-      <%= form_for current_user, :html => { :multipart => true } do |form| %>
-
-  	    <%= form.file_field :avatar %>
-  	  <%= form.submit %>
-      <% end %>
-    <% else %>
-	  <a href="/auth/facebook" id="sign_in" class="button signupbutton">Sign in with Facebook</a>
-	<% end %>
+<a href="/auth/facebook" id="sign_in" class="button signupbutton">Sign in with Facebook</a>
 <div id="hellolinks">
 	<h4><%=link_to "Can I pay Cash instead? (yes)", statics_url%></h4> 
 </div>
