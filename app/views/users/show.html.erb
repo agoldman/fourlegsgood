@@ -4,30 +4,35 @@
 		<div class= "profile-alert-center">  <a href="">Appointments (<%#=@user.upcoming%>) </a> </div> 
 		<div class="profile-alert">  <a href="">Messages (<%#=@user.inbox.count%>) </a></div>
 	</div>
+	<div class="user-profile-form">
+		<div class="display-user-info">
+			<div class="profile-text"> <%=@user.name%>  </div> 
+		</div>
+		<br>
+		<div class="about-me"> 
+			<%#= @user.about_me %>
+		</div>
+	</div>
 	<div class = "user-profile-form">
 		<div class="row-fluid">
 			<div class="profile-pic span6"> 
 				<img src="https://graph.facebook.com/<%=current_user.uid%>/picture?width=200&height=200">
 			</div>
 			<div class="profile-pic span6"> 	
-
-			  <%= form_for current_user, :html => { :multipart => true } do |form| %>
-				  <%= form.file_field :avatar %>
-				  <%= form.submit %>
+				<% if !current_user.pet.avatar_url.include?('dogmissing') %>
+				  <img src="<%=current_user.pet.avatar%>" height='200' width='200'>
+				<% else %>
+				  <%= form_for @user, :html => { :multipart => true } do |form| %>
+				    <%= form.fields_for :pet do |pet_fields| %>
+				      
+					    <%= pet_fields.file_field(:avatar, class: "hidden") %>
+					  <% end %>
+					  <%= form.submit %>
+				  <% end %>
 			  <% end %>
 			</div>
 		</div>
 	</div>
-	<div class="user-profile-form">
-			<div class="display-user-info">
-				<div class="profile-text"> <%=@user.name%>  </div> 
-			</div>
-			<br>
-
-			<div class="about-me"> 
-				<%#= @user.about_me %>
-			</div>
-		</div>
-		<center> <div class = "invite-button"> Invite Your Buds With Dogs </div> </center>
-		 <br><br><br>	
+	<center> <div class = "invite-button"> Invite Your Buds With Dogs </div> </center>
+	 <br><br><br>	
 </div>

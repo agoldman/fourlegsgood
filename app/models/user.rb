@@ -3,9 +3,10 @@ require 'bcrypt'
 class User < ActiveRecord::Base
 
   include BCrypt
-  attr_accessible :name, :email, :about_me, :avatar, :id, :address, :swaps_earned, :dog_karma, :sitter_karma, :provider, :uid
+  attr_accessible :name, :email, :about_me, :avatar, :id, :address, :swaps_earned, :dog_karma, :sitter_karma, :provider, :uid, :pet_attributes
 
-  has_one :pet, foreign_key: :owner_id
+  has_one :pet, foreign_key: :owner_id, :dependent => :destroy
+  accepts_nested_attributes_for :pet
 
   has_many :sent_messages, class_name: "Message", foreign_key: :sender_id
   has_many :received_messages, class_name: "Message", foreign_key: :receiver_id
@@ -52,6 +53,7 @@ class User < ActiveRecord::Base
       #user.avatar = auth.info.image
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.pet ||= Pet.create(owner_id: user.id)
       user.save!
     end
   end
