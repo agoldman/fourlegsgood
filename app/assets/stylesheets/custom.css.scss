@@ -2493,14 +2493,15 @@ label {
   color: #A4FF00;
 }
 
-.invitebtn {
+
+.greenbtn {
   color: #333333;
   background: #A4FF00;
   height: 40px;
-  border-radius: 5px;
   border:1px solid #dcdcdc;
   font-weight:bold;
   font-family: 'Ovo', serif;
+  line-height: 3;
 }
 
 .roundbtn {
@@ -2687,6 +2688,20 @@ p {
 
 .italic {
   font-style: italic;
+}
+
+a.dark-link {
+  color: #B602D9;
+}
+
+a.dark-link:hover {
+  color: #A4FF00; 
+}
+
+.greenbtn:hover {
+  background: #FFF5FE;
+  color: #A4FF00; 
+  border:1px solid #A4FF00;
 }
 
 #footer {
