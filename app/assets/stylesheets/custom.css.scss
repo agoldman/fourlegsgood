@@ -35,7 +35,7 @@ border: 1px solid rgba(0,0,0,0.2);
 border-color: #0195eb #0083c7 #0175b8 #0083c7;
 font-size: 14px;
 line-height: 30px;
-color: WhiteSmoke;
+color: #FFF5FE;
 text-shadow: 0 -1px 0px rgba(0,0,0,0.2);
 width: 300px;
 text-align: center;
@@ -433,6 +433,14 @@ word-spacing: 0px;
   display: none;
 }
 
+.upload-button {
+  height: 200px;
+  width: 200px;
+  border-style: dashed;
+  border-width: 2px;
+  border-color: #e0e0e0;
+}
+
 .user-profile-form {
 margin-top: 20px;
 -webkit-background-clip: border-box;
@@ -508,7 +516,7 @@ border: 1px solid rgba(0,0,0,0.2);
 border-color: #0195eb #0083c7 #0175b8 #0083c7;
 font-size: 14px;
 line-height: 30px;
-color: WhiteSmoke;
+color: #FFF5FE;
 text-shadow: 0 -1px 0px rgba(0,0,0,0.2);
 width: 100px;
 text-align: center;
@@ -539,7 +547,7 @@ border: 1px solid rgba(0,0,0,0.2);
 border-color: #0195eb #0083c7 #0175b8 #0083c7;
 font-size: 14px;
 line-height: 30px;
-color: WhiteSmoke;
+color: #FFF5FE;
 padding: 0.4em 1.2em;
 text-shadow: 0 -1px 0px rgba(0,0,0,0.2);
 width: 100px;
@@ -628,7 +636,7 @@ margin-left: 100px;
 .notice {
   font-family: 'Helvetica';
   background: black;
-  color: WhiteSmoke;
+  color: #FFF5FE;
   width: 300px;
   height:auto;
   float:right;
@@ -637,7 +645,7 @@ margin-left: 100px;
 .alert {
   font-family: 'Helvetica';
   background: black;
-  color: WhiteSmoke;
+  color: #FFF5FE;
   width: 300px;
   height:auto;
   float:right;
@@ -662,7 +670,7 @@ margin-left: 100px;
 }
 
 .new_user{
-background: WhiteSmoke;
+background: #FFF5FE;
 color: black;
 font-family: 'Helvetica';
 font-size: 15px;
@@ -740,7 +748,7 @@ border: 1px solid rgba(0,0,0,0.2);
 border-color: #0195eb #0083c7 #0175b8 #0083c7;
 font-size: 14px;
 line-height: 30px;
-color: WhiteSmoke;
+color: #FFF5FE;
 text-shadow: 0 -1px 0px rgba(0,0,0,0.2);
 width: 100px;
 text-align: center;
@@ -1705,7 +1713,7 @@ border: 1px solid rgba(0,0,0,0.2);
 border-color: #0195eb #0083c7 #0175b8 #0083c7;
 font-size: 20px;
 line-height: 30px;
-color: WhiteSmoke;
+color: #FFF5FE;
 text-shadow: 0 -1px 0px rgba(0,0,0,0.2);
 width: 600px;
 text-align: center;
@@ -1723,7 +1731,7 @@ text-align: center;
 
 .invite-button:hover{
   background-position: 0;
-  color: WhiteSmoke;
+  color: #FFF5FE;
 }
 
 .invite-button:link {
@@ -1731,7 +1739,7 @@ text-align: center;
 }
 
 #dashboard {
- background:WhiteSmoke;
+ background:#FFF5FE;
 }
 
 .holder{
@@ -2050,7 +2058,7 @@ width: 620px;
 }
 
 .profilebackground {
-  background: WhiteSmoke ;
+  background: #FFF5FE ;
   -webkit-background-clip: border-box;
   -webkit-background-origin: padding-box;
   -webkit-background-size: auto;
@@ -2142,7 +2150,7 @@ html {
 }
 
 body {
-  background: WhiteSmoke;
+  background: #FFF5FE;
   font-family: 'Helvetica';
   min-width: 1200px;
 }
@@ -2157,14 +2165,14 @@ textarea {
 
 .global {
   color: #434d51;
-  background-color: WhiteSmoke;
+  background-color: #FFF5FE;
   height: 70px;
   font-style: 'Helvetica';
 }
 
 .alert {
 
-  background: WhiteSmoke;
+  background: #FFF5FE;
   text-align: center;
   color: 4878A8;
   border-radius: 0;
@@ -2199,7 +2207,7 @@ padding-bottom: 30px;
 }
 .navbar-inner {
 	margin-bottom: 0px;
-	background: WhiteSmoke;
+	background: #FFF5FE;
 	border-radius: 0;
 }
 
@@ -2215,7 +2223,7 @@ padding-bottom: 30px;
 }
 
 #masthead-subtitle{
-  color: WhiteSmoke; 
+  color: #FFF5FE; 
   font-weight: 200;
   letter-spacing: .75px;
   font-size: 35px;
@@ -2260,11 +2268,15 @@ padding-bottom: 30px;
 	background: #cc0066;
 }
 
+a:hover {
+  color: #B602D9;
+}
+
 
 .button {
 	font-size: 20px;
-	border: 2px solid WhiteSmoke;
-	background: #cc0066;
+	border: 2px solid #FFF5FE;
+	background: #B602D9;
 	padding: 10px;
 	color: white;
 	display: inline-block;
@@ -2273,8 +2285,8 @@ padding-bottom: 30px;
 }
 
 .button:hover {
-  background: WhiteSmoke;
-  color: #cc0066;
+  background: #FFF5FE;
+  color: #B602D9;
   text-decoration: none;
 }
 
@@ -2307,13 +2319,21 @@ padding-bottom: 30px;
 /* typography */
 
 .masthead-content {
-	color: WhiteSmoke;
+	color: #FFF5FE;
 }
 
-#hellolinks a {
-	color: WhiteSmoke;
+a:link {
+	color: #FFF5FE;
   font-weight: 200;
   font-size: 15px;
+}
+
+a:visited {
+  color: #FFF5FE;
+}
+
+a:hover {
+  color: #B602D9;
 }
 
 .featured-container{
@@ -2447,8 +2467,9 @@ width: auto;
 /* user sign up page */
 
 
+
 label {
-  color: WhiteSmoke;
+  color: #FFF5FE;
   font-size: 20px;
 }
 
@@ -2456,7 +2477,7 @@ label {
 
     font-family: 'Helvetica';
     background: #F07830; 
-    color: WhiteSmoke;
+    color: #FFF5FE;
     font-size: 20px;
     padding:10px;
     border-width: 0;
@@ -2468,7 +2489,22 @@ label {
     background: #d86c2b; 
 }
 
-.submit_button {
+.success_button {
+  color: #A4FF00;
+}
+
+.invitebtn {
+  color: #333333;
+  background: #A4FF00;
+  height: 40px;
+  border-radius: 5px;
+  border:1px solid #dcdcdc;
+  font-weight:bold;
+  font-family: 'Ovo', serif;
+}
+
+.roundbtn {
+  border-radius: 5px;
 }
 
 .submit_button:hover {
@@ -2487,7 +2523,7 @@ label {
 /* Profile Page */
 
 .profile_title {
-  color: WhiteSmoke;
+  color: #FFF5FE;
   font-size: 30px;
   font-weight: bold;
   margin-top: 10px;
@@ -2508,12 +2544,12 @@ label {
 }
 
 .profile-title-search:hover {
-  color: WhiteSmoke;
+  color: #FFF5FE;
   text-decoration: none;
 }
 
 .profile-logout {
-  color: WhiteSmoke;
+  color: #FFF5FE;
   display: inline;
   font-size: 15px;
   margin-left: 10px;

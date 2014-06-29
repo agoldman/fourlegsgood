@@ -12,17 +12,21 @@
   <div class="navbar-inner">
     <ul class="nav">
       <form id="navsearch" class="navbar-search pull-left" action="/sitting_requests" method="get">
-  		<input type="text" name="zip" class="search-query" placeholder="Earn Swaps! Search Dogs by Address">
-	  </form>
+  		  <input type="text" name="zip" class="search-query" placeholder="Earn Swaps! Search Dogs by Address">
+	    </form>
     </ul>
     <ul class="nav pull-right">
-      <div id="user-widget">
-        <% if current_user %>
-          <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <li>
+        <div id="user-widget">
+          <% if current_user %>
+            <%= link_to "Sign out", signout_path, id: "sign_out" %>
           
-        <% end %>
-      </div>
-        	<li>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <button class="invitebtn">Invite all the Friends</button>
+      </li>
 
             <!-- <form action="/current_requests/new" method="get"><input class="btn" id="navbutton" type="submit" value="Request a Dog Sitter"></form> -->
     </ul>
