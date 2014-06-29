@@ -2691,7 +2691,7 @@ p {
 }
 
 a.dark-link {
-  color: #B602D9;
+  color: #333333;
 }
 
 a.dark-link:hover {
@@ -2704,7 +2704,13 @@ a.dark-link:hover {
   border:1px solid #A4FF00;
 }
 
+p.light{
+  color: #FFF5FE;
+  font-weight: lighter;
+}
+
 #footer {
   height: 240px;
-  background: #B602D9;
+  color: #FFF5FE;
+  background: #333333;
 }
