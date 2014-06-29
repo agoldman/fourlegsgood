@@ -2651,7 +2651,45 @@ h4 {
 }
 
 p {
+  font-family: 'Helvetica';
   font-size: 1.1em;
   line-height: 1.7em;
- 
+}
+
+.small-margin {
+  margin: 30px;
+}
+
+.medium-margin {
+  margin: 50px;
+}
+
+.small-top-padding {
+  padding-top: 30px;
+}
+
+.small-bottom-padding {
+  padding-bottom: 30px;
+}
+
+.small-top-margin {
+  margin-top: 30px;
+}
+
+.tiny-top-margin {
+  margin-top: 15px;
+}
+
+.large-container {
+  width: 1100px;
+  margin: auto;
+}
+
+.italic {
+  font-style: italic;
+}
+
+#footer {
+  height: 240px;
+  background: #B602D9;
 }

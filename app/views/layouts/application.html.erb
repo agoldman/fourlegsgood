@@ -33,15 +33,17 @@
   </div>
 </div>
   
-    <% if notice %>
-       <p class="notice"><%= notice %></p>
-    <% end %>
+<% if notice %>
+   <p class="notice"><%= notice %></p>
+<% end %>
 
-    <% if alert %>
-       <p class="alert"><%= alert %></p>
-    <% end %>
+<% if alert %>
+   <p class="alert"><%= alert %></p>
+<% end %>
 
-      <%= yield %>
+<%= yield %>
+
+<%= render partial: "footer" %>
 
 <link href='http://fonts.googleapis.com/css?family=Gilda+Display|Rufina|Ovo|Merriweather+Sans' rel='stylesheet' type='text/css'>
 </body>
