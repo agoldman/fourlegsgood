@@ -35,7 +35,7 @@ textarea {
 
 #footer {
   height: 240px;
-  color: #FFF5FE;
+  color: $light-beige;
   background: #333333;
 }
 
@@ -191,6 +191,16 @@ a.dark-link:hover {
   background: #FFF5FE;
   color: $berry;
   text-decoration: none;
+}
+
+
+/* Welcome Page Styles */
+
+#masthead-subtitle{
+  color: $light-beige; 
+  font-weight: 200;
+  letter-spacing: .75px;
+  font-size: 35px;
 }
 
 
@@ -2243,13 +2253,6 @@ padding-bottom: 30px;
 .container {
   margin-left: 175px;
 
-}
-
-#masthead-subtitle{
-  color: #FFF5FE; 
-  font-weight: 200;
-  letter-spacing: .75px;
-  font-size: 35px;
 }
 
 
