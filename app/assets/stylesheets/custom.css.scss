@@ -76,6 +76,11 @@ textarea {
   text-shadow: none !important; 
 }
 
+.navbar-inner li a:hover{
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
 /* Headers */
 
 
@@ -181,14 +186,14 @@ a.dark-link:hover {
   font-size: 20px;
   background: $berry;
   padding: 10px;
-  color: white;
+  color: $light-beige;
   display: inline-block;
   margin-bottom: 15px;
   font-family: 'Ovo', serif;
 }
 
 .cherrybtn:hover {
-  background: #FFF5FE;
+  background: $light-beige;
   color: $berry;
   text-decoration: none;
 }
