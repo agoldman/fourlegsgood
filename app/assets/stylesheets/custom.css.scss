@@ -64,7 +64,7 @@ textarea {
   margin-bottom: 0px;
   background: transparent;
   border: transparent;
-  min-height: 0px !important;
+  min-height: 0px !important; 
 }
 
 .navbar-inner li a{
@@ -177,11 +177,27 @@ a.dark-link:hover {
   border:1px solid #A4FF00;
 }
 
+.cherrybtn {
+  font-size: 20px;
+  background: $berry;
+  padding: 10px;
+  color: white;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-family: 'Ovo', serif;
+}
+
+.cherrybtn:hover {
+  background: #FFF5FE;
+  color: $berry;
+  text-decoration: none;
+}
+
 
 /* EVERYTHING BELOW IS OLD CODE */
 
 .background3 {
-  background-image:url("dog3.jpg");
+  background-image:url("longer-background.jpg");
   background-size: cover;
   min-height: 550px;
 }
@@ -2259,24 +2275,6 @@ padding-bottom: 30px;
 
 a:hover {
   color: #B602D9;
-}
-
-
-.button {
-	font-size: 20px;
-	border: 2px solid #FFF5FE;
-	background: $berry;
-	padding: 10px;
-	color: white;
-	display: inline-block;
-	margin-bottom: 15px;
-  font-family: 'Ovo', serif;
-}
-
-.button:hover {
-  background: #FFF5FE;
-  color: $berry;
-  text-decoration: none;
 }
 
 #fb-option{
