@@ -40,4 +40,6 @@ Fourlegsgood::Application.routes.draw do
     end
   end
 
+  post 'stripehook' => 'hooks#stripehook'
+
 end

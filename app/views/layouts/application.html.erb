@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Fourlegsgood</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Fourlegsgood</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<div class="navbar">
-  <div class="navbar-inner">
-    <ul class="nav">
-      <form id="navsearch" class="navbar-search pull-left" action="/sitting_requests" method="get">
-  		  <input type="text" name="zip" class="search-query" placeholder="Search Dogs by Address!">
-	    </form>
-    </ul>
-    <ul class="nav pull-right">
-      <li>
-        <div id="user-widget">
-          <% if current_user %>
-            <%= link_to "Sign out", signout_path, id: "sign_out" %>
-          
-          <% end %>
-        </div>
-      </li>
+    <div class="navbar micro-top-margin">
+      <div class="navbar-inner">
+        <ul class="nav">
+          <li>
+            <form id="navsearch" class="navbar-search pull-left" action="/sitting_requests" method="get">
+        		  <input type="text" name="zip" class="search-query" placeholder="Search Dogs by Address!">
+      	    </form>
+          </li>
+          <li>
+            <%= link_to "FAQ", "" %>
+          </li>
+          <li>
+            <%= link_to "Contact Us", "" %>
+          </li>
 
-            <!-- <form action="/current_requests/new" method="get"><input class="btn" id="navbutton" type="submit" value="Request a Dog Sitter"></form> -->
-    </ul>
-  </div>
-</div>
-  
-<% if notice %>
-   <p class="notice"><%= notice %></p>
-<% end %>
 
-<% if alert %>
-   <p class="alert"><%= alert %></p>
-<% end %>
+        </ul>
+        <ul class="nav pull-right">
+          <li>
+            <div id="user-widget">
+              <% if current_user %>
+                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+              
+              <% end %>
+            </div>
+          </li>
 
-<%= yield %>
+                <!-- <form action="/current_requests/new" method="get"><input class="btn" id="navbutton" type="submit" value="Request a Dog Sitter"></form> -->
+        </ul>
+      </div>
+    </div>
+      
+    <% if notice %>
+       <p class="notice"><%= notice %></p>
+    <% end %>
 
-<%= render partial: "footer" %>
+    <% if alert %>
+       <p class="alert"><%= alert %></p>
+    <% end %>
 
-<link href='http://fonts.googleapis.com/css?family=Gilda+Display|Rufina|Ovo|Merriweather+Sans' rel='stylesheet' type='text/css'>
-</body>
+    <%= yield %>
+
+    <%= render partial: "footer" %>
+
+    <link href='http://fonts.googleapis.com/css?family=Gilda+Display|Rufina|Ovo|Merriweather+Sans' rel='stylesheet' type='text/css'>
+
+  </body>
 </html>
