@@ -17,7 +17,6 @@ body {
   min-width: 1200px;
 }
 
-
 section {
   overflow: auto;
 }
@@ -54,6 +53,7 @@ textarea {
 /* Nav Bar */
 
 .navbar {
+  width: 100%;
   margin-bottom: 0;
   position: absolute;
   z-index: 1;
@@ -86,14 +86,14 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-
 }
 
 h1 {
   font-size: 4em;
-  letter-spacing: -2px;
+  font-weight: 100;
   margin-bottom: 30px;
   text-align: center;
+  font-family: 'Ovo';
 }
 
 h2 {
@@ -107,10 +107,6 @@ h2 {
 
 h3 {
    margin-bottom: 30px;
-}
-
-h4 {
-   
 }
 
 p {
@@ -164,6 +160,10 @@ p.light{
   font-weight: lighter;
 }
 
+.ovo-font {
+  font-family: 'Ovo';
+}
+
 /* Links */
 
 a.dark-link {
@@ -195,6 +195,22 @@ a.dark-link:hover {
 .cherrybtn:hover {
   background: $light-beige;
   color: $berry;
+  text-decoration: none;
+}
+
+.beigebtn {
+  font-size: 20px;
+  background: $light-beige;
+  padding: 10px;
+  color: $berry;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-family: 'Ovo', serif;
+}
+
+.beigebtn:hover {
+  background: $berry;
+  color: $light-beige;
   text-decoration: none;
 }
 
@@ -737,10 +753,9 @@ text-align: center;
 
 
 .welcomebox{
-text-align:center;
-margin-top: 225px;
-margin-left: 100px;
-
+  text-align:center;
+  margin-top: 225px;
+  margin-left: 100px;
 }
 
 .notice {
@@ -2297,11 +2312,6 @@ a:hover {
 
 }
 
-
-.second_welcome{
-  font-family: 'Ovo', serif;
-}
-
 /*.logo{
   font-size: 1.7em;
   font-weight: bolder;
@@ -2313,23 +2323,10 @@ a:hover {
 }*/
 /* typography */
 
-.masthead-content {
-	color: #FFF5FE;
-}
-
 a:link {
-	color: #FFF5FE;
   font-weight: 200;
-  font-size: 15px;
 }
 
-a:visited {
-  color: #FFF5FE;
-}
-
-a:hover {
-  color: #B602D9;
-}
 
 .featured-container{
   width: 1050px;
@@ -2361,10 +2358,6 @@ a:hover {
   font-weight: 300;
 }
 
-.welcomedeets {
-  text-align: center;
-}
-
 .middlesitter{
   margin-right: 20px;
   margin-left: 20px;
@@ -2385,21 +2378,6 @@ text-align: center;
   margin: 20px;
   background-image:url("http://maps.googleapis.com/maps/api/staticmap?center=Berkeley,CA&zoom=12&size=400x400&markers=color:red%7C94710%7C94618%7C94702%7C94618%7C94609%7C94707%7C94706%7C94707%7C94705&sensor=false");
   border-radius: 6px;
-}
-
-.welcomedeets-sitters{
-  margin: 20px;
-  width: 1100px;
-  margin-left:auto;
-  margin-right:auto;
-  text-align: center;
-  padding-bottom: 50px;
-  padding-top: 20px;
-  border-bottom-color: rgb(49, 50, 51);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(0, 0, 0, 0.0980392);
-
 }
 
 .welcomesubbox {
@@ -2428,9 +2406,6 @@ padding-right: 5px;
 padding-top: 15px;
 text-align: center;
 width: auto;
-}
-
-.sitterphoto {
 }
 
 .span4.first {

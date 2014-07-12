@@ -9,7 +9,13 @@
       </div>
     </h2>
 
-    <a href="/auth/facebook" id="sign_in" class="button cherrybtn">Sign in with Facebook</a>
+  <% if current_user %>
+    <a href="" class="button cherrybtn">Ask for a dog sitter</a>
+    <a href="" class="button beigebtn">Browse dogs to watch</a>
+  <% else %>
+    <a href="/auth/facebook" id="sign_in" class="button cherrybtn">Ask for a dog sitter</a>
+    <a href="" class="button beigebtn">Browse dogs to watch</a>
+  <% end %>
   </div>
 
 </div>

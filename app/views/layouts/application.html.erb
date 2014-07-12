@@ -22,17 +22,14 @@
           <li>
             <%= link_to "Contact Us", "" %>
           </li>
-
-
         </ul>
         <ul class="nav pull-right">
           <li>
-            <div id="user-widget">
+            
               <% if current_user %>
-                <%= link_to "Sign out", signout_path, id: "sign_out" %>
-              
+                <%= link_to "Sign out", signout_path, id: "sign_out" %>     
               <% end %>
-            </div>
+           
           </li>
 
                 <!-- <form action="/current_requests/new" method="get"><input class="btn" id="navbutton" type="submit" value="Request a Dog Sitter"></form> -->
@@ -43,7 +40,6 @@
     <% if notice %>
        <p class="notice"><%= notice %></p>
     <% end %>
-
     <% if alert %>
        <p class="alert"><%= alert %></p>
     <% end %>
@@ -51,7 +47,6 @@
     <%= yield %>
 
     <%= render partial: "footer" %>
-
     <link href='http://fonts.googleapis.com/css?family=Gilda+Display|Rufina|Ovo|Merriweather+Sans' rel='stylesheet' type='text/css'>
 
   </body>
