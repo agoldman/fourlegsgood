@@ -164,9 +164,13 @@ p {
   font-style: italic;
 }
 
-p.light{
-  color: #FFF5FE;
+.light-font{
+  color: $light-beige;
   font-weight: lighter;
+}
+
+.small-font{
+  font-size: 17px;
 }
 
 .ovo-font {
