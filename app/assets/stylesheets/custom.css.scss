@@ -81,8 +81,13 @@ textarea {
   border-bottom-width: 1px;
 }
 
-/* Headers */
+/* logos */
 
+.small-logo{
+  font-size: 30px !important;
+}
+
+/* Headers */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -150,6 +155,10 @@ p {
 }
 
 /* Fonts */
+
+.hidden {
+    visibility: hidden;
+}
 
 .italic {
   font-style: italic;
