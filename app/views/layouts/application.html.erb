@@ -7,41 +7,6 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-
-    <div class="navbar micro-top-margin">
-      <div class="navbar-inner">
-        <ul class="nav">
-          <li>
-            <form id="navsearch" class="navbar-search pull-left hidden" action="/sitting_requests" method="get">
-        		  <input type="text" name="zip" class="search-query" placeholder="Search Dogs by Address!">
-      	    </form>
-          </li>
-          <li>
-            <%= link_to "fourlegsgood", root_url, class: "small-logo" %>
-          </li>
-        </ul>
-        <ul class="nav pull-right">
-          <li>
-            <%= link_to "FAQ", "" %>
-          </li>
-          <li>
-            <%= link_to "Make Request", "" %>
-          </li>
-          <li>
-            <%= link_to "Browse Dogs", "" %>
-          </li>
-          <% if current_user %>
-            <li>  <%= link_to "Profile", "" %>   </li>
-            <li>  <%= link_to "Sign out", signout_path, id: "sign_out" %>  
-            </li>  
-          <% else %>
-            <li> <%= link_to "Sign in", "/auth/facebook", id: "sign_in" %>  </li>
-          <% end %>   
-
-                <!-- <form action="/current_requests/new" method="get"><input class="btn" id="navbutton" type="submit" value="Request a Dog Sitter"></form> -->
-        </ul>
-      </div>
-    </div>
       
     <% if notice %>
        <p class="notice"><%= notice %></p>
@@ -49,6 +14,8 @@
     <% if alert %>
        <p class="alert"><%= alert %></p>
     <% end %>
+
+    <%= render partial: "statics/navbar" %>
 
     <%= yield %>
 

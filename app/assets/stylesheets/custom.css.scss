@@ -1,16 +1,26 @@
 /*  Variables  */
 
-$berry: #432C59;
+$berry: #871630;
 $gray: #696876;
 $dark-gray: #333333;
 $medium-gray: #696876;
 $light-gray: #B6B4CC;
+$very-light-gray: #e0e0e0;
 $light-beige: #FFFFFC;
 $dark-orange: #D85D46;
 $dark-blue: #464D73;
 $dark-green: #71A895;
-$dark-purple: #432C59;
+$dark-purple: #31253D;
 $light-purple: #695B74;
+$light-blue: #4EC4E4;
+
+/* Backgrounds */
+
+.neutral-back{
+  background-image:url("neutral.png");
+  background-size: cover;
+  min-height: 550px;
+}
 
 /* Containers */
 
@@ -39,14 +49,10 @@ textarea {
   font-style: 'Helvetica';
 }
 
-.profile {
-  background: $light-purple !important;
-}
-
 #footer {
   height: 240px;
   color: $light-beige;
-  background: $dark-gray;
+  background: $dark-purple;
 }
 
 .alert {
@@ -169,6 +175,10 @@ p {
   padding-top: 30px;
 }
 
+.tiny-bottom-padding{
+  padding-bottom: 15px;
+}
+
 .small-bottom-padding {
   padding-bottom: 30px;
 }
@@ -209,15 +219,9 @@ a.dark-link:hover {
 
 /* Buttons */
 
-.greenbtn:hover {
-  background: #FFF5FE;
-  color: #A4FF00; 
-  border:1px solid #A4FF00;
-}
-
-.cherrybtn {
+.greenbtn {
   font-size: 20px;
-  background: $berry;
+  background: $dark-green;
   padding: 10px;
   color: $light-beige;
   display: inline-block;
@@ -225,9 +229,46 @@ a.dark-link:hover {
   font-family: 'Ovo', serif;
 }
 
-.cherrybtn:hover {
+.greenbtn:hover {
   background: $light-beige;
-  color: $berry;
+  color: $dark-green; 
+  border:1px solid #A4FF00;
+}
+
+.clearbtn {
+  font-size: 20px;
+  font-weight: 900 !important;
+  background: none;
+  padding: 10px;
+  color: $light-beige;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $light-beige;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-family: 'Ovo', serif;
+}
+
+.clearbtn:hover {
+  background: $light-beige;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 900 !important;
+  text-decoration: none;
+}
+
+.bluebtn {
+  font-size: 20px;
+  background: $light-blue;
+  padding: 10px;
+  color: $light-beige;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-family: 'Ovo', serif;
+}
+
+.bluebtn:hover {
+  background: $light-beige;
+  color: $light-blue;
   text-decoration: none;
 }
 
@@ -253,10 +294,11 @@ a.dark-link:hover {
     display: inline-block;
     height: 30px;
     line-height: 30px;
-    width: 200px;
+    width: 250px;
     margin: 5px 1px 0 0;
     text-indent: 35px;
     position: relative;
+    font-family: 'Helvetica';
 }
 
 .profile-nav ul li:before {
@@ -311,7 +353,13 @@ a.dark-link:hover {
     border-color: transparent transparent transparent $medium-gray; 
 }
 
+/* Borders */
 
+.small-bottom-border{
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: $very-light-gray;
+}
 
 /* Welcome Page Styles */
 
@@ -2244,10 +2292,6 @@ width: 620px;
 
 }
 
-.profile {
-  background: rgb(255, 255, 255);
-}
-
 .profilebackground {
   background: #FFF5FE ;
   -webkit-background-clip: border-box;
@@ -2519,17 +2563,6 @@ label {
 
 .success_button {
   color: #A4FF00;
-}
-
-
-.greenbtn {
-  color: #333333;
-  background: #A4FF00;
-  height: 40px;
-  border:1px solid #dcdcdc;
-  font-weight:bold;
-  font-family: 'Ovo', serif;
-  line-height: 3;
 }
 
 .roundbtn {
