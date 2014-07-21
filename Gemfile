@@ -26,6 +26,7 @@ gem 'better_errors'
 gem "compass-rails"
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby', '3.0.1'
+gem "font-awesome-rails"
 
 
 gem 'mail'

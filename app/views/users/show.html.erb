@@ -2,8 +2,9 @@
 	<div class="container">
 		<div class = "profile-box large-top-margin">
 				<div class="row-fluid profile-nav tiny-bottom-padding small-bottom-border"> 
-					<ul >
-				    <li class="active"><a href="#">Profile</a></li>
+					<ul>
+				    <li><a href="#" class="active">Profile</a></li>
+				    <li> <i class="icon-chevron-right"></i></li>
 				    <li><a href="#">Payment Info</a></li>
 				  </ul>
 				</div>	
@@ -12,7 +13,8 @@
 					<div class="profile-pic span6"> 
 						<img src="https://graph.facebook.com/<%=current_user.uid%>/picture?width=200&height=200">
 					</div>
-					<div class="profile-pic span6"> 	
+					<div class="profile-pic span6"> 
+					<%= APP_CONFIG["stripe_amount"] %>	
 						<% if !current_user.pet.avatar_url.include?('dogmissing') %>
 						  <img src="<%=current_user.pet.avatar%>" height='200' width='200'>
 						<% else %>

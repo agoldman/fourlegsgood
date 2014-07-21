@@ -1,0 +1,8 @@
+development:
+  stripe_amount: 1000
+
+test:
+  stripe_amount: 1000
+
+production:
+  stripe_amount: 1000

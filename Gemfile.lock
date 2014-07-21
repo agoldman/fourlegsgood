@@ -90,6 +90,8 @@ GEM
     figaro (0.6.4)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    font-awesome-rails (4.1.0.0)
+      railties (>= 3.2, < 5.0)
     fssm (0.2.10)
     geocoder (1.1.8)
     hashie (2.0.4)
@@ -207,6 +209,7 @@ DEPENDENCIES
   debugger
   ejs
   figaro
+  font-awesome-rails
   geocoder
   jquery-rails
   mail
