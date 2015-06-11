@@ -11,7 +11,7 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'debugger'
+  gem 'pry'
   gem 'binding_of_caller'
 end
 
@@ -56,6 +56,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem 'newrelic_rpm'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
