@@ -407,7 +407,7 @@ a.dark-link:hover {
 }
 
 .dog-background {
-  background-image:url("longer-background.jpg");
+  background-image:url(image-path("longer-background.jpg"));
   background-size: cover;
   min-height: 600px;
 }
