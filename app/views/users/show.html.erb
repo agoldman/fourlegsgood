@@ -1,34 +1,16 @@
-<div class="profile neutral-back">
+<div class="dark-green-background">
 	<div class="container">
-		<div class = "profile-box large-top-margin">
-				<div class="row-fluid profile-nav tiny-bottom-padding small-bottom-border"> 
+		<div class = "profile-box large-top-margin col-xs-12">
+				<div class="profile-nav tiny-bottom-padding small-bottom-border"> 
 					<ul>
 				    <li><a href="#" class="active">Profile</a></li>
-				    <li> <i class="icon-chevron-right"></i></li>
-				    <li><a href="#">Payment Info</a></li>
+				    <li><a href="#">About You</a></li>
 				  </ul>
 				</div>	
-			<div class = "user-profile-form">
-				<div class="row-fluid">
-					<div class="profile-pic span6"> 
-						<img src="https://graph.facebook.com/<%=current_user.uid%>/picture?width=200&height=200">
-					</div>
-					<div class="profile-pic span6"> 
-					<%= APP_CONFIG["stripe_amount"] %>	
-						<% if !current_user.pet.avatar_url.include?('dogmissing') %>
-						  <img src="<%=current_user.pet.avatar%>" height='200' width='200'>
-						<% else %>
-						  <div class="upload-button">
-						  	<a> Upload a Picture of Your Pup </a>
-						  	<br> <br>dog icon
-						  </div>
-						  <%= form_for @user, :html => { :multipart => true } do |form| %>
-						    <%= form.fields_for :pet do |pet_fields| %>
-							    <%= pet_fields.file_field(:avatar, class: "hidden") %>
-							  <% end %>
-							  <%= form.submit(class: "hidden") %>
-						  <% end %>
-					  <% end %>
+			<div class = "tiny-top-margin user-profile-form">
+				<div class="row">
+					<div class="profile-pic col-xs-6">
+						<img src="https://graph.facebook.com/<%=current_user.uid%>/picture?width=400&height=400">
 					</div>
 				</div>
 			</div>

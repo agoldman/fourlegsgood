@@ -18,10 +18,14 @@ $fb-dark-blue: #23355B;
 
 /* Backgrounds */
 
-.neutral-back{
+.neutral-background{
   background-image:url("neutral.png");
   background-size: cover;
   min-height: 550px;
+}
+
+.dark-green-background {
+  background-color: $dark-green;
 }
 
 /* Containers */
@@ -69,9 +73,49 @@ textarea {
   margin: auto;
 }
 
+/* Boxes */
+
+.profile-box {
+background-color: $light-beige;
+background-origin: padding-box;
+border-bottom-color: #e0e0e0;
+border-bottom-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: #e0e0e0;
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: #e0e0e0;
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: #e0e0e0;
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+border-top-style: solid;
+border-top-width: 1px;
+box-shadow: rgba(0, 0, 0, 0.04706) 0px 1px 1px 0px;
+color: $dark-gray;
+display: block;
+font-family: 'Helvetica';
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: auto;
+line-height: 19px;
+margin-bottom: 20px;
+margin-right: auto;
+margin-left: auto;
+padding-bottom: 20px;
+padding-left: 2px;
+padding-right: 2px;
+padding-top: 20px;
+vertical-align: top;
+}
+
 /* Nav Bar */
 
-.navbar {
+.navigation-bar {
   width: 100%;
   margin-bottom: 0;
   position: absolute;
@@ -79,14 +123,14 @@ textarea {
   background: transparent;
 }
 
-.navbar-inner {
+.navigation-bar-inner {
   margin-bottom: 0px;
   background: transparent;
   border: transparent;
   min-height: 0px !important; 
 }
 
-.navbar-inner li a{
+.navigation-bar-inner li a{
   margin-left: 30px;
   color: $light-beige !important;
   font-size: 20px;
@@ -95,9 +139,17 @@ textarea {
   text-shadow: none !important; 
 }
 
-.navbar-inner li a:hover{
+.navigation-bar-inner li a:hover{
   border-bottom-style: solid;
   border-bottom-width: 1px;
+}
+
+.navigation-bar-inner ul {
+  display: inline-block;
+}
+
+.navigation-bar-inner ul li {
+  display: inline-block;
 }
 
 /* logos */
@@ -148,6 +200,11 @@ p {
 .tiny-top-margin {
   margin-top: 15px;
 }
+
+.tiny-right-margin {
+  margin-right: 15px;
+}
+
 
 .small-margin {
   margin: 30px;
@@ -352,7 +409,7 @@ a.dark-link:hover {
 .dog-background {
   background-image:url("longer-background.jpg");
   background-size: cover;
-  min-height: 550px;
+  min-height: 600px;
 }
 
 
@@ -674,46 +731,6 @@ text-align: center;
   border-style: dashed;
   border-width: 2px;
   border-color: #e0e0e0;
-}
-
-.profile-box {
-background-color: $light-beige;
-background-origin: padding-box;
-border-bottom-color: #e0e0e0;
-border-bottom-left-radius: 2px;
-border-bottom-right-radius: 2px;
-border-bottom-style: solid;
-border-bottom-width: 1px;
-border-left-color: #e0e0e0;
-border-left-style: solid;
-border-left-width: 1px;
-border-right-color: #e0e0e0;
-border-right-style: solid;
-border-right-width: 1px;
-border-top-color: #e0e0e0;
-border-top-left-radius: 2px;
-border-top-right-radius: 2px;
-border-top-style: solid;
-border-top-width: 1px;
-box-shadow: rgba(0, 0, 0, 0.04706) 0px 1px 1px 0px;
-color: $dark-gray;
-display: block;
-font-family: 'Helvetica';
-font-style: normal;
-font-variant: normal;
-font-weight: normal;
-height: auto;
-line-height: 19px;
-margin-bottom: 20px;
-margin-right: auto;
-margin-left: auto;
-padding-bottom: 20px;
-padding-left: 2px;
-padding-right: 2px;
-padding-top: 20px;
-vertical-align: top;
-width: 614px;
-text-align: center;
 }
 
 /* new request form */
@@ -2244,22 +2261,6 @@ width: 620px;
 
 }
 
-.profilebackground {
-  background: #FFF5FE ;
-  -webkit-background-clip: border-box;
-  -webkit-background-origin: padding-box;
-  -webkit-background-size: auto;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  height: 1000px;
-  padding-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 8px;
-  width: 964px;
-  margin-top: 10px;
-}
-
 .profilenavtab {
   font-size: 24px;
   padding-right: 10px;
@@ -2323,12 +2324,6 @@ padding-bottom: 30px;
   letter-spacing: .75px;
   font-family: 'Ovo', serif;
 }
-
-.container {
-  margin-left: 175px;
-
-}
-
 
 .center {
   text-align: center;
@@ -2628,8 +2623,4 @@ label {
 
 .numstotals {
   margin-top: 40px;
-}
-
-nav {
-  display: block;
 }

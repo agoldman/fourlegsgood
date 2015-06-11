@@ -1,0 +1,14 @@
+<% if !current_user.pet.avatar_url.include?('dogmissing') %>
+  <img src="<%=current_user.pet.avatar%>" height='200' width='200'>
+<% else %>
+  <div class="upload-button">
+    <a> Upload a Picture of Your Pup </a>
+    <br> <br>dog icon
+  </div>
+  <%= form_for @user, :html => { :multipart => true } do |form| %>
+    <%= form.fields_for :pet do |pet_fields| %>
+      <%= pet_fields.file_field(:avatar, class: "hidden") %>
+    <% end %>
+    <%= form.submit(class: "hidden") %>
+  <% end %>
+<% end %>
