@@ -13,6 +13,8 @@ $dark-green: #71A895;
 $dark-purple: #31253D;
 $light-purple: #695B74;
 $light-blue: #4EC4E4;
+$fb-blue: #3B5998;
+$fb-dark-blue: #23355B;
 
 /* Backgrounds */
 
@@ -288,6 +290,25 @@ a.dark-link:hover {
   text-decoration: none;
 }
 
+.fbbtn {
+  background: $fb-blue;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 900 !important;
+  display: inline-block;
+  font-family: 'Ovo', serif;
+  font-weight: 900 !important;
+}
+
+.fbbtn:hover {
+  background: $fb-dark-blue;
+  color: white;
+  font-weight: 900 !important;
+  text-decoration: none;
+}
+
 /* Icons */
 
 .profile-nav ul li{
@@ -322,28 +343,20 @@ a.dark-link:hover {
   font-size: 35px;
 }
 
+.welcomebox{
+  text-align:center;
+  margin-top: 225px;
+  margin-left: 100px;
+}
 
-/* EVERYTHING BELOW IS OLD CODE */
-
-.background3 {
+.dog-background {
   background-image:url("longer-background.jpg");
   background-size: cover;
   min-height: 550px;
 }
 
-.background2 {
-  background-image:url("dog2.jpg");
-  background-size: cover;
-  min-height: 550px;
-  background-position: 0px -50px;
-}
 
-.background1 {
-  background-image:url("dog1.jpg");
-  background-size: cover;
-  min-height: 550px;
-}
-
+/* EVERYTHING BELOW IS OLD CODE. TERRIBLE!!! */
 
 /*Sitting Request Show */
 .dates {
@@ -653,9 +666,7 @@ text-align: center;
   border-width: 1px
 }
 
-.hidden {
-  display: none;
-}
+
 
 .upload-button {
   height: 200px;
@@ -840,13 +851,6 @@ zoom: 1;
 text-align: center;
 }
 
-
-.welcomebox{
-  text-align:center;
-  margin-top: 225px;
-  margin-left: 100px;
-}
-
 .notice {
   font-family: 'Helvetica';
   background: black;
@@ -903,10 +907,6 @@ text-align: center;
   font-weight: bolder;
   margin-right: auto;
   margin-left: auto;
-}
-
-.masthead {
-  position: relative;
 }
 
 .wrapper {
