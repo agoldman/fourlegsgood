@@ -3,7 +3,6 @@ require 'bcrypt'
 class User < ActiveRecord::Base
 
   include BCrypt
-  attr_accessible :name, :email, :about_me, :avatar, :id, :address, :swaps_earned, :dog_karma, :sitter_karma, :provider, :uid, :pet_attributes
 
   has_one :pet, foreign_key: :owner_id, :dependent => :destroy
   accepts_nested_attributes_for :pet

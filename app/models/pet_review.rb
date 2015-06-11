@@ -1,5 +1,4 @@
 class PetReview < ActiveRecord::Base
-  attr_accessible :pet_reviewer_id, :pet_reviewee_id, :score, :comment
 
   validates :pet_reviewer_id, :pet_reviewee_id, :score, presence: true
 

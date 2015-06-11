@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -21,7 +21,7 @@ gem 'omniauth-facebook', '1.4.0'
 
 gem 'better_errors'
 gem 'bootstrap-sass', '~> 3.3.4'
-gem 'sass-rails', '>= 3.2'
+gem 'sass-rails', '~> 4.0.0'
 
 gem "compass-rails"
 gem 'bcrypt-ruby', '3.0.1'
@@ -35,27 +35,31 @@ gem 'ejs'
 gem 'geocoder'
 
 #### Image storage
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", '~> 4.2'
 gem 'aws-sdk', '~> 1.5.7'
 		
 gem "figaro"
 gem 'twilio-ruby'
-gem "actionmailer", "~> 3.2.13"
+gem "actionmailer", "~>  4.0.0"
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'coffee-rails', '~> 3.2.1'
+
+gem 'coffee-rails', '~> 4.0.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'uglifier', '>= 1.0.3'
+
 
 gem 'jquery-rails'
 
 gem 'newrelic_rpm'
+
+gem 'rails-observers'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

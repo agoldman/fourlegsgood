@@ -1,5 +1,4 @@
 class SitterReview < ActiveRecord::Base
-  attr_accessible :sitter_reviewer_id, :sitter_reviewee_id, :score, :comment
 
   validates :sitter_reviewer_id, :sitter_reviewee_id, :score, presence: true
 
