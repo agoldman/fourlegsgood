@@ -1,16 +1,22 @@
-<div class="dark-green-background">
+<div class="lighter-gray-background">
 	<div class="container">
 		<div class = "profile-box large-top-margin col-xs-12">
 				<div class="profile-nav tiny-bottom-padding small-bottom-border"> 
 					<ul>
-				    <li><a href="#" class="active">Profile</a></li>
-				    <li><a href="#">About You</a></li>
+				    <li><a href="#" >Owner Profile</a></li>
 				  </ul>
 				</div>	
-			<div class = "tiny-top-margin user-profile-form">
+			<div class="tiny-top-margin user-profile-form" data-uid="<%=current_user.uid%>">
 				<div class="row">
 					<div class="profile-pic col-xs-6">
 						<img src="https://graph.facebook.com/<%=current_user.uid%>/picture?width=400&height=400">
+					</div>
+					<div class="col-xs-6">
+						<ul>
+						  <li> <div> Hi there. My name is <div class="profile-content"></div><%=@user.name%></div> <li>
+						  <li> <div> I live in <div class="profile-content" id="fb-name"></div>.</div> <li>
+						  <li> <div> Three words to describe how I feel about dogs are 
+						<ul>
 					</div>
 				</div>
 			</div>

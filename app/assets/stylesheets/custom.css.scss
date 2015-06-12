@@ -15,6 +15,7 @@ $light-purple: #695B74;
 $light-blue: #4EC4E4;
 $fb-blue: #3B5998;
 $fb-dark-blue: #23355B;
+$lighter-gray: #F7F7F7;
 
 /* Backgrounds */
 
@@ -26,6 +27,10 @@ $fb-dark-blue: #23355B;
 
 .dark-green-background {
   background-color: $dark-green;
+}
+
+.lighter-gray-background{
+  background-color: $lighter-gray;
 }
 
 /* Containers */
@@ -150,6 +155,13 @@ vertical-align: top;
 
 .navigation-bar-inner ul li {
   display: inline-block;
+}
+
+/* Profiles */
+
+.profile-content{
+  display: inline;
+  font-size: 20px;
 }
 
 /* logos */
@@ -2569,10 +2581,6 @@ label {
   color: #cc0066;
 }
 
-.profheader {
-  display: inline;
-}
-
 .profileheader {
   background-color: black;
   height: 70px;
@@ -2583,10 +2591,6 @@ label {
   margin: 50px;
   font-family: 'Ovo', serif;
 
-}
-
-.profile-header {
-  display: inline;
 }
 
 .tab-titles {
