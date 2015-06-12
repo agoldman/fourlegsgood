@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		@light_nav = true
 		@user = User.find(params[:id])  #user profile's are private!
 		if(current_user.id == @user.id)
 			respond_to do |format|

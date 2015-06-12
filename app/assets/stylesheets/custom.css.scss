@@ -6,7 +6,7 @@ $dark-gray: #333333;
 $medium-gray: #696876;
 $light-gray: #B6B4CC;
 $very-light-gray: #e0e0e0;
-$light-beige: #FFFFFC;
+$light-beige: #FFFFFE;
 $dark-orange: #D85D46;
 $dark-blue: #464D73;
 $dark-green: #71A895;
@@ -15,7 +15,7 @@ $light-purple: #695B74;
 $light-blue: #4EC4E4;
 $fb-blue: #3B5998;
 $fb-dark-blue: #23355B;
-$lighter-gray: #F7F7F7;
+$off-white: #edefed;
 
 /* Backgrounds */
 
@@ -29,8 +29,12 @@ $lighter-gray: #F7F7F7;
   background-color: $dark-green;
 }
 
-.lighter-gray-background{
-  background-color: $lighter-gray;
+.light-gray-background{
+  background-color: $light-gray;
+}
+
+.light-background{
+  background-color: $off-white;
 }
 
 /* Containers */
@@ -120,13 +124,45 @@ vertical-align: top;
 
 /* Nav Bar */
 
+
+/* Light Nav Bar */
+
+.light-navigation-bar {
+  width: 100%;
+  margin-bottom: 0;
+  position: absolute;
+  z-index: 1;
+  background: $light-beige;
+  border-bottom-color: #e0e0e0;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+.light-navigation-bar li a{
+  color: $medium-gray !important;
+}
+
+/* Transparent Nav Bar */
+
 .navigation-bar {
   width: 100%;
   margin-bottom: 0;
   position: absolute;
   z-index: 1;
-  background: transparent;
+  background: transparent !important;
+  color: $light-beige;
 }
+
+.navigation-bar li a{
+  color: $light-beige !important;
+}
+
+.navigation-bar li a:hover{
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+/* All Nav Bars */
 
 .navigation-bar-inner {
   margin-bottom: 0px;
@@ -137,16 +173,10 @@ vertical-align: top;
 
 .navigation-bar-inner li a{
   margin-left: 30px;
-  color: $light-beige !important;
   font-size: 20px;
   font-weight: 100;
   font-family: 'Ovo';
   text-shadow: none !important; 
-}
-
-.navigation-bar-inner li a:hover{
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
 }
 
 .navigation-bar-inner ul {
@@ -365,10 +395,8 @@ a.dark-link:hover {
   text-decoration: none;
   padding: 10px;
   font-size: 20px;
-  font-weight: 900 !important;
   display: inline-block;
   font-family: 'Ovo', serif;
-  font-weight: 900 !important;
 }
 
 .fbbtn:hover {
